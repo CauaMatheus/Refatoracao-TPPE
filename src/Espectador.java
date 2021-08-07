@@ -3,9 +3,9 @@ public class Espectador {
 
 	// Atributos //
 
-	String nome;
-	String nasc;
-	String cpf;
+	private String nome;
+	private String nasc;
+	private String cpf;
 	
 	
 		

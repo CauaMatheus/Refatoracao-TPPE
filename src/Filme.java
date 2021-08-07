@@ -4,28 +4,28 @@ public class Filme {
 	
 	// Atributos //
 	
-	int duracao;
-	String genero;
-	double valor;
-	int faixaEtaria;
-	int espCad;
+	private int duracao;
+	private String genero;
+	private double valor;
+	private int faixaEtaria;
+	private int espCad;
 	
 	
 	// Métodos //
 	
-	void cadFilme(){
+	public void cadFilme(){
 		// Função de cadastro
 	}
 	
-	void edFilme(){
+	public void edFilme(){
 		// Função de edição
 	}
 	
-	void dellFilme(){
+	public void dellFilme(){
 		// Função de delete
 	}
 	
-	void buscFilme(){
+	public void buscFilme(){
 		// Função de busca
 	}
 

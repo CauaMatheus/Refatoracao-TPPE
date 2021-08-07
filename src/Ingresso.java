@@ -3,29 +3,30 @@ public class Ingresso {
 
 	// Atributos //
 	
-	String nome;
-	String sala;
-	String idade;
-	String nomeFilme;
-	String horario;
-	String tipo;
+	private String nome;
+	private String sala;
+	private String idade;
+	private String nomeFilme;
+	private String horario;
+	private String tipo;
 	
 		
 	// Métodos //
 	
-	void cadIng(){
-		// Função de cadastro
+	public void cadIng(){
+		// Função cadastro
+		
 	}
 	
-	void edIng(){
+	public void edIng(){
 		// Função de edição
 	}
 	
-	void dellIng(){
+	public void dellIng(){
 		// Função de delete
 	}
 	
-	void buscIng(){
+	public void buscIng(){
 		// Função de busca
 	}
 
