@@ -13,19 +13,19 @@ public class Ingresso {
 		
 	// Métodos //
 	
-	void CadIng(){
+	void cadIng(){
 		// Função de cadastro
 	}
 	
-	void EdIng(){
+	void edIng(){
 		// Função de edição
 	}
 	
-	void DellIng(){
+	void dellIng(){
 		// Função de delete
 	}
 	
-	void BuscIng(){
+	void buscIng(){
 		// Função de busca
 	}
 

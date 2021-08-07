@@ -13,19 +13,19 @@ public class Filme {
 	
 	// Métodos //
 	
-	void CadFilme(){
+	void cadFilme(){
 		// Função de cadastro
 	}
 	
-	void EdFilme(){
+	void edFilme(){
 		// Função de edição
 	}
 	
-	void DellFilme(){
+	void dellFilme(){
 		// Função de delete
 	}
 	
-	void BuscFilme(){
+	void buscFilme(){
 		// Função de busca
 	}
 

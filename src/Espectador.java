@@ -11,19 +11,19 @@ public class Espectador {
 		
 	// Métodos //
 	
-	void CadEsp(){
+	void cadEsp(){
 		// Função de cadastro
 	}
 	
-	void EdEsp(){
+	void edEsp(){
 		// Função de edição
 	}
 	
-	void DellEsp(){
+	void dellEsp(){
 		// Função de delete
 	}
 	
-	void BuscEsp(){
+	void buscEsp(){
 		// Função de busca
 	}
 }
