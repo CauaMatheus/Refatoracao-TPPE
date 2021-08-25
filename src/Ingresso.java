@@ -3,12 +3,11 @@ public class Ingresso {
 
 	// Atributos //
 	
-	private String nome;
-	private String sala;
-	private String idade;
+	private String nomeEspct;
+	private String numSala;
 	private String nomeFilme;
-	private String horario;
-	private String tipo;
+	private String horaFilme;
+	private String tipoEntrada;
 	
 		
 	// Métodos //
@@ -28,6 +27,9 @@ public class Ingresso {
 	
 	public void buscIng(){
 		// Função de busca
+	}
+	public void showEspct() {
+		// Função de exibição
 	}
 
 }

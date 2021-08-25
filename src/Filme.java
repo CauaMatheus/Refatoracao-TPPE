@@ -8,7 +8,11 @@ public class Filme {
 	private String genero;
 	private double valor;
 	private int faixaEtaria;
+	private String dimensao;
+	private int numSala;
+	private String audio;
 	private int espCad;
+	
 	
 	
 	// Métodos //
