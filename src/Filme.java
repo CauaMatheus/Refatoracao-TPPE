@@ -18,7 +18,7 @@ public class Filme {
 	// Métodos //
 	
 	public void cadFilme(){
-		// Função de cadastro
+		// Função de cadastro filme
 	}
 	
 	public void edFilme(){
