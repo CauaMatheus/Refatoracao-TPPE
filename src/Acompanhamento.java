@@ -21,7 +21,7 @@ public class Acompanhamento {
 		// Função busca de acompanhamento
 	}
 	public void exibAcomp() {
-		// Função exibição de acompanhamento
+		// Função exibição de acompanhamento 
 	}
 	
 }
