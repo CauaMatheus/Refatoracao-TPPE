@@ -3,13 +3,13 @@ public abstract class Conteudo {
 
 	// Atributos
 	private String nomeEspct;
+	private String tipoEntrada;
 	
+		
+	// Get Set
 	public String getNomeEspct() {
 		return nomeEspct;
 	}
-	
-	
-	// Get Set
 	public void setNomeEspct(String nomeEspct) {
 		this.nomeEspct = nomeEspct;
 	}
@@ -19,6 +19,6 @@ public abstract class Conteudo {
 	public void setTipoEntrada(String tipoEntrada) {
 		this.tipoEntrada = tipoEntrada;
 	}
-	private String tipoEntrada;
+	
 
 }

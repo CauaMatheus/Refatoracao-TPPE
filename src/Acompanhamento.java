@@ -7,6 +7,32 @@ public class Acompanhamento {
 	private int qnt;
 	private String tipo;
 	
+	// Get Set
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public double getValor() {
+		return valor;
+	}
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+	public int getQnt() {
+		return qnt;
+	}
+	public void setQnt(int qnt) {
+		this.qnt = qnt;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
 	// Métodos //
 	public void cadAcomp(){
 		// Fução cadastro de acompanhamento
