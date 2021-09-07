@@ -36,7 +36,7 @@ public final class Filme extends Conteudo {
 		return faixaEtaria;
 	}
 	public void setFaixaEtaria(int faixaEtaria) {
-		this.faixaEtaria = FaixaEtária;
+		this.faixaEtaria = faixaEtaria;
 	}
 	public String getDimensao() {
 		return dimensao;
