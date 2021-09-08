@@ -20,5 +20,11 @@ public abstract class Conteudo {
 		this.tipoEntrada = tipoEntrada;
 	}
 	
+	//Método construtor//
+	public Conteudo(String espectador, String entrada) {
+		setNomeEspct(espectador);
+		setTipoEntrada(entrada);
+	}
+	
 
 }

@@ -32,7 +32,13 @@ public class Acompanhamento {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	
+	// Método construtor//
+	public Acompanhamento(String nome, double valor, int qnt, String tipo) {
+		this.nome = "Coca-cola";
+		this.valor = 4,50;
+		this.qnt = 8;
+		this.tipo = "Bebida"			
+	}
 	// Métodos //
 	public void cadAcomp(){
 		// Fução cadastro de acompanhamento

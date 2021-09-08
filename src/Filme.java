@@ -63,6 +63,19 @@ public final class Filme extends Conteudo {
 		this.espCad = espCad;
 	}
 	
+	//Método construtor//
+	public Filme(Int duracao, String genero, double valor, int faixaEtaria, String dimensao, int numSala, String audio, int espCad) {
+		Super(); //adicionando construtor da classe conteúdo
+		setDuracao(duracao);
+		setGenero(genero);
+		setValor(valor);
+		setFaixaEtaria(FaixaEtaria);
+		setDimensao(dimensao);
+		setNumSala(numSala);
+		setAudio(audio);
+		setEspCad(espCad);
+	}
+	
 	// Métodos //
 	
 	public void cadFilme(){
