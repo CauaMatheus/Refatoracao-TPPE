@@ -6,6 +6,7 @@ public class Espectador {
 	private String nome;
 	private String nasc;
 	private int cpf;
+	private Acompanhamento acompanhamento[] = new Acompanhamento[10] ;
 	
 	// Método Constructor //
 	

@@ -2,55 +2,43 @@
 public class Ingresso extends Cadastro {
 
 	
-	// Construtor //
-	
-	public Ingresso(String espectador, String entrada,String filme,String hora, int sala) {
-		super(espectador, entrada);
-		this.setNomeEspct(espectador);
-		this.setTipoEntrada(entrada);
-		this.setNomeFilme(filme);
-		this.setHoraFilme(hora);
-		this.setNumSala(sala);
-		
-	}
 	
 	// Atributos //
+	private String nomeEspct;
+	private String tipoEntrada;
+	private Espectador espectador[] = new Espectador[100];
 	
-	private Espectador espectador[];
-	private int numSala;
-	private String nomeFilme;
-	private String horaFilme;
-
-		
-	// Métodos //
 	
+	
+	// Construtor //
+	
+	
+	public Ingresso(int numSala, String nomeFilme, String horaFilme, String nomeEspct, String tipoEntrada) {
+		super(numSala, nomeFilme, horaFilme);
+		this.setNomeEspct(nomeEspct);
+		this.setTipoEntrada(tipoEntrada);
+	}
 	
 	// Get Set
-	public int getNumSala() {
-		return numSala;
-	}
-
-	public void setNumSala(int sala) {
-		this.numSala = sala;
-	}
-
-	public String getNomeFilme() {
-		return nomeFilme;
-	}
-
-	public void setNomeFilme(String nomeFilme) {
-		this.nomeFilme = nomeFilme;
-	}
 	
 
-	public String getHoraFilme() {
-		return horaFilme;
+	public String getNomeEspct() {
+		return nomeEspct;
 	}
 
-	public void setHoraFilme(String horaFilme) {
-		this.horaFilme = horaFilme;
+	public void setNomeEspct(String nomeEspct) {
+		this.nomeEspct = nomeEspct;
 	}
 
+	public String getTipoEntrada() {
+		return tipoEntrada;
+	}
+
+	public void setTipoEntrada(String tipoEntrada) {
+		this.tipoEntrada = tipoEntrada;
+	}
+
+	
 	
 	// Funções
 	

@@ -2,29 +2,38 @@
 public abstract class Cadastro {
 
 	// Atributos
-	private String nomeEspct;
-	private String tipoEntrada;
+	private int numSala;
+	private String nomeFilme;
+	private String horaFilme;
 	
-	//Método constructor//
+	// Construtor 
 	
-	public Cadastro(String espectador, String entrada) {
-		setNomeEspct(espectador);
-		setTipoEntrada(entrada);
+	public Cadastro(int numSala, String nomeFilme, String horaFilme) {
+		this.setNumSala(numSala);
+		this.setNomeFilme(nomeFilme);
+		this.setHoraFilme(horaFilme);
 	}
-		
-	// Get Set
-	public String getNomeEspct() {
-		return nomeEspct;
+	
+	// Get and Set
+	public int getNumSala() {
+		return numSala;
 	}
-	public void setNomeEspct(String nomeEspct) {
-		this.nomeEspct = nomeEspct;
+	public void setNumSala(int numSala) {
+		this.numSala = numSala;
 	}
-	public String getTipoEntrada() {
-		return tipoEntrada;
+	public String getNomeFilme() {
+		return nomeFilme;
 	}
-	public void setTipoEntrada(String tipoEntrada) {
-		this.tipoEntrada = tipoEntrada;
+	public void setNomeFilme(String nomeFilme) {
+		this.nomeFilme = nomeFilme;
 	}
+	public String getHoraFilme() {
+		return horaFilme;
+	}
+	public void setHoraFilme(String horaFilme) {
+		this.horaFilme = horaFilme;
+	}
+	
 	
 	
 
