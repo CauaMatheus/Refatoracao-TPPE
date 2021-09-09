@@ -1,14 +1,23 @@
 
-public class Ingresso extends Conteudo {
-	public Ingresso(String espectador, String entrada) {
-		super(espectador, entrada);
-		// TODO Auto-generated constructor stub
-	}
-	private Espectador espectador[];
+public class Ingresso extends Cadastro {
 
+	
+	// Construtor //
+	
+	public Ingresso(String espectador, String entrada,String filme,String hora, int sala) {
+		super(espectador, entrada);
+		this.setNomeEspct(espectador);
+		this.setTipoEntrada(entrada);
+		this.setNomeFilme(filme);
+		this.setHoraFilme(hora);
+		this.setNumSala(sala);
+		
+	}
+	
 	// Atributos //
 	
-	private String numSala;
+	private Espectador espectador[];
+	private int numSala;
 	private String nomeFilme;
 	private String horaFilme;
 
@@ -17,12 +26,12 @@ public class Ingresso extends Conteudo {
 	
 	
 	// Get Set
-	public String getNumSala() {
+	public int getNumSala() {
 		return numSala;
 	}
 
-	public void setNumSala(String numSala) {
-		this.numSala = numSala;
+	public void setNumSala(int sala) {
+		this.numSala = sala;
 	}
 
 	public String getNomeFilme() {
@@ -33,13 +42,6 @@ public class Ingresso extends Conteudo {
 		this.nomeFilme = nomeFilme;
 	}
 	
-	
-	// Funções
-	public void cadIng(){
-		
-		// Função cadastro
-		
-	}
 
 	public String getHoraFilme() {
 		return horaFilme;
@@ -49,6 +51,13 @@ public class Ingresso extends Conteudo {
 		this.horaFilme = horaFilme;
 	}
 
+	
+	// Funções
+	
+	public void cadIng(){
+		// Função cadastro
+	}
+	
 	public void edIng(){
 		// Função de edição
 	}
@@ -60,6 +69,7 @@ public class Ingresso extends Conteudo {
 	public void buscIng(){
 		// Função de busca
 	}
+	
 	public void showEspct() {
 		// Função de exibição
 	}

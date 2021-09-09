@@ -1,10 +1,16 @@
 
-public abstract class Conteudo {
+public abstract class Cadastro {
 
 	// Atributos
 	private String nomeEspct;
 	private String tipoEntrada;
 	
+	//Método constructor//
+	
+	public Cadastro(String espectador, String entrada) {
+		setNomeEspct(espectador);
+		setTipoEntrada(entrada);
+	}
 		
 	// Get Set
 	public String getNomeEspct() {
@@ -20,11 +26,6 @@ public abstract class Conteudo {
 		this.tipoEntrada = tipoEntrada;
 	}
 	
-	//Método construtor//
-	public Conteudo(String espectador, String entrada) {
-		setNomeEspct(espectador);
-		setTipoEntrada(entrada);
-	}
 	
 
 }

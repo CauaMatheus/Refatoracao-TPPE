@@ -1,5 +1,5 @@
 
-public class Filme extends Conteudo {
+public class Filme extends Cadastro {
 	
 	
 	// Atributos //
@@ -12,6 +12,27 @@ public class Filme extends Conteudo {
 	private int numSala;
 	private String audio;
 	private int espCad;
+	
+	
+	//Método construtor//
+	
+	public Filme(String espectador, String entrada) {
+		super(espectador, entrada);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Filme(int duracao, String genero, double valor, int faixaEtaria, String dimensao, int numSala, String audio, int espCad) {
+		super(duracao, genero, valor, faixaEtaria, dimensao, audio, espCad);
+
+		this.setDuracao(duracao);
+		this.setGenero(genero);
+		this.setValor(valor);
+		this.setFaixaEtaria(faixaEtaria);
+		this.setDimensao(dimensao);
+		this.setNumSala(numSala);
+		this.setAudio(audio);
+		this.setEspCad(espCad);
+	}
 	
 	// Get Set
 	public int getDuracao() {
@@ -63,23 +84,8 @@ public class Filme extends Conteudo {
 		this.espCad = espCad;
 	}
 	
-	//Método construtor//
-	public Filme(int duracao, String genero, double valor, int faixaEtaria, String dimensao, int numSala, String audio, int espCad) {
-		Super(); //adicionando constructor da classe conteúdo
-		setDuracao(duracao);
-		setGenero(genero);
-		setValor(valor);
-		setFaixaEtaria(faixaEtaria);
-		setDimensao(dimensao);
-		setNumSala(numSala);
-		setAudio(audio);
-		setEspCad(espCad);
-	}
 	
-	private void Super() {
-		// TODO Auto-generated method stub
-		
-	}
+
 	// Métodos //
 	
 	public void cadFilme(){
