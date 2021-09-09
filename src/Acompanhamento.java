@@ -35,9 +35,9 @@ public class Acompanhamento {
 	// Método construtor//
 	public Acompanhamento(String nome, double valor, int qnt, String tipo) {
 		this.nome = "Coca-cola";
-		this.valor = 4,50;
+		this.valor = 4.50;
 		this.qnt = 8;
-		this.tipo = "Bebida"			
+		this.tipo = "Bebida";			
 	}
 	// Métodos //
 	public void cadAcomp(){

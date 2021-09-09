@@ -1,5 +1,9 @@
 
-public final class  Ingresso extends Conteudo {
+public class Ingresso extends Conteudo {
+	public Ingresso(String espectador, String entrada) {
+		super(espectador, entrada);
+		// TODO Auto-generated constructor stub
+	}
 	private Espectador espectador[];
 
 	// Atributos //
