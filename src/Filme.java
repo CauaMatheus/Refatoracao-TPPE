@@ -16,10 +16,6 @@ public class Filme extends Cadastro {
 	
 	//Método construtor//
 	
-	public Filme(String espectador, String entrada) {
-		super(espectador, entrada);
-		// TODO Auto-generated constructor stub
-	}
 
 	public Filme(int duracao, String genero, double valor, int faixaEtaria, String dimensao, int numSala, String audio, int espCad) {
 		super(duracao, genero, valor, faixaEtaria, dimensao, audio, espCad);
