@@ -20,7 +20,7 @@ public class Main {
 		
 		a1.exibir();
 		
-		Espectador e1 = new Espectador("Luiza","31/07/98","75266597062","Pipoca");
+		Espectador e1 = new Espectador("Luiza","31/07/98","75266597062");
 		
 		e1.exibir();
 	}
