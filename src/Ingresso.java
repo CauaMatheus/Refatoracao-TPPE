@@ -4,34 +4,26 @@ public class Ingresso extends Cadastro {
 	
 	
 	// Atributos //
-	private String nomeEspct;
 	private String tipoEntrada;
-	private Espectador espectador;
+	private Espectador espectador[];
 	
 	
 	
 	// Construtor //
 	
 	
-	public Ingresso(int numSala, String nomeFilme, String horaFilme, String nomeEspct, String tipoEntrada) {
+	public Ingresso(int numSala, String nomeFilme, String horaFilme, String nome, String tipoEntrada) {
 		super(numSala, nomeFilme, horaFilme);
 		this.setNumSala(numSala);
 		this.setNomeFilme(nomeFilme);
 		this.setHoraFilme(horaFilme);
-		this.setNomeEspct(nomeEspct);
+		this.setNome(nome);
 		this.setTipoEntrada(tipoEntrada);
 	}
 	
 	// Get Set
 	
 
-	public String getNomeEspct() {
-		return nomeEspct;
-	}
-
-	public void setNomeEspct(String nomeEspct) {
-		this.nomeEspct = nomeEspct;
-	}
 
 	public String getTipoEntrada() {
 		return tipoEntrada;
@@ -69,7 +61,7 @@ public class Ingresso extends Cadastro {
 		System.out.println("Sala: " + this.getNumSala());
 		System.out.println("Filme: " + this.getNomeFilme());
 		System.out.println("Horário: " + this.getHoraFilme());
-		System.out.println("Espectador: " + this.getNomeEspct());
+		System.out.println("Espectador: " + this.getNome());
 		System.out.println("Entrada: " + this.getTipoEntrada());
 		
 	}
