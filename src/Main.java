@@ -12,7 +12,7 @@ public class Main {
 		
 		f1.exibir();
 		
-		Ingresso i1 = new Ingresso(5, "Advengers", "16:00", "Luiza", "Inteira");
+		Ingresso i1 = new Ingresso(5, "Advengers", "16:00", "Inteira",001);
 		
 		i1.exibir();
 		
@@ -25,5 +25,4 @@ public class Main {
 		e1.exibir();
 	}
 	
-
 }

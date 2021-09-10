@@ -11,6 +11,7 @@ public class Filme extends Cadastro {
 	private String dimensao;
 	private String audio;
 	private int espCad;
+	private Ingresso[] entrada = new Ingresso[100];
 	
 	
 	//Método construtor//
@@ -88,7 +89,24 @@ public class Filme extends Cadastro {
 	public void setEspCad(int espCad) {
 		this.espCad = espCad;
 	}
+
+///
+	public Ingresso[] getIngresso() {
+		return this.entrada;
+	}
 	
+	public void setArrayIngresso(Ingresso[] i) {
+		this.entrada = i;
+	}
+
+	
+	 public int getId(int p) {
+		return entrada[p].getId();
+	}
+
+	public void setNome(Ingresso espcCad, int p) {
+		this.entrada[p] = espcCad;
+	}
 	
 
 	// Métodos //

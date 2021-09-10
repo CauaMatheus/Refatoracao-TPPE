@@ -4,27 +4,51 @@ public class Ingresso extends Cadastro {
 	
 	
 	// Atributos //
+	private int id;
 	private String tipoEntrada;
-	private Espectador espectador[];
-	
+	private Espectador[] ingresso = new Espectador[100];
 	
 	
 	// Construtor //
 	
 	
-	public Ingresso(int numSala, String nomeFilme, String horaFilme, String nome, String tipoEntrada) {
+	public Ingresso(int numSala, String nomeFilme, String horaFilme, String tipoEntrada, int id) {
 		super(numSala, nomeFilme, horaFilme);
 		this.setNumSala(numSala);
 		this.setNomeFilme(nomeFilme);
 		this.setHoraFilme(horaFilme);
-		this.setNome(nome);
 		this.setTipoEntrada(tipoEntrada);
 	}
 	
 	// Get Set
 	
+	
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
 
+	public Espectador[] getEspectador() {
+		return this.ingresso;
+	}
+	
+	public void setArrayIngresso(Espectador[] i) {
+		this.ingresso = i;
+	}
+
+	
+	 public String getNome(int p) {
+		return ingresso[p].getNome();
+	}
+
+	public void setNome(Espectador espcCad, int p) {
+		this.ingresso[p] = espcCad;
+	}
+
+	
 	public String getTipoEntrada() {
 		return tipoEntrada;
 	}
@@ -58,10 +82,10 @@ public class Ingresso extends Cadastro {
 	}
 	public void exibir() {
 		System.out.println();
+		System.out.println("Id: "+ this.getId());
 		System.out.println("Sala: " + this.getNumSala());
 		System.out.println("Filme: " + this.getNomeFilme());
 		System.out.println("Horário: " + this.getHoraFilme());
-		System.out.println("Espectador: " + this.getNome());
 		System.out.println("Entrada: " + this.getTipoEntrada());
 		
 	}
