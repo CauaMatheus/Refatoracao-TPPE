@@ -6,7 +6,6 @@ public class Ingresso extends Cadastro {
 	// Atributos //
 	private String nomeEspct;
 	private String tipoEntrada;
-	private Espectador espectador[] = new Espectador[100];
 	
 	
 	
