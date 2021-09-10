@@ -37,6 +37,24 @@ public abstract class Cadastro {
 		this.horaFilme = horaFilme;
 	}
 	
+	// Métodos //
+	
+	public void cad(){
+		// Função de cadastro
+	}
+	
+	public void ed(){
+		// Função de edição
+	}
+	
+	public void dell(){
+		// Função de delete
+	}
+	
+	public void busc(){
+		// Função de busca
+	}
+	
 	
 	
 
