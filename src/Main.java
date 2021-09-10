@@ -8,7 +8,7 @@ public class Main {
 		// presentes na mesma, visto que o construtor atribui os valores dos atributos por meio dos gets and sets
 		
 		
-		Filme f1 = new Filme(5, "Advengers", "16:00", 120, "Ação",25.50 , 14, "2d", "dublado");
+		Filme f1 = new Filme(5, "Advengers", "16:00", 120, "Ação",25.50 , 14, "2d", "dublado",50);
 		
 		f1.exibir();
 		
@@ -20,7 +20,7 @@ public class Main {
 		
 		a1.exibir();
 		
-		Espectador e1 = new Espectador("Luiza","31/07/98","75266597062");
+		Espectador e1 = new Espectador("Luiza","31/07/98","75266597062","Pipoca");
 		
 		e1.exibir();
 	}

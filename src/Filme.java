@@ -15,7 +15,18 @@ public class Filme extends Cadastro {
 	
 	//Método construtor//
 	
-	public Filme(int numSala, String nomeFilme, String horaFilme, int duracao, String genero, double valor,int faixaEtaria, String d, String audio) {
+	public Filme(int numSala, String nomeFilme, String horaFilme, int duracao, String genero, double valor,int faixaEtaria) {
+		super(numSala, nomeFilme, horaFilme);
+		this.setNumSala(numSala);
+		this.setHoraFilme(horaFilme);
+		this.setNomeFilme(nomeFilme);
+		this.setDuracao(duracao);
+		this.setGenero(genero);
+		this.setValor(valor);
+		this.setFaixaEtaria(faixaEtaria);
+	}
+	
+	public Filme(int numSala, String nomeFilme, String horaFilme, int duracao, String genero, double valor,int faixaEtaria, String d, String audio, int espCad) {
 		super(numSala, nomeFilme, horaFilme);
 		this.setNumSala(numSala);
 		this.setHoraFilme(horaFilme);
@@ -26,6 +37,7 @@ public class Filme extends Cadastro {
 		this.setFaixaEtaria(faixaEtaria);
 		this.setDimensao(d);
 		this.setAudio(audio);
+		this.setEspCad(espCad);
 	}
 
 
@@ -72,6 +84,7 @@ public class Filme extends Cadastro {
 	public int getEspCad() {
 		return espCad;
 	}
+	
 	public void setEspCad(int espCad) {
 		this.espCad = espCad;
 	}
@@ -106,7 +119,8 @@ public class Filme extends Cadastro {
 		System.out.println("Duração: " + this.getDuracao());
 		System.out.println("Dimensão: " + this.getDimensao());
 		System.out.println("Faixa Etária: " + this.getFaixaEtaria());
-		System.out.println("Gênero" + this.getGenero());
+		System.out.println("Gênero: " + this.getGenero());
+		System.out.println("Espectadores: " + this.getEspCad());
 			
 	}
 

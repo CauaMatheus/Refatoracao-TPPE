@@ -45,6 +45,7 @@ public class Acompanhamento {
 	}
 
 	// Métodos //
+	
 	public void cadAcomp(){
 		// Fução cadastro de acompanhamento
 	}
@@ -57,6 +58,7 @@ public class Acompanhamento {
 	public void bscAcomp() {
 		// Função busca de acompanhamento
 	}
+	
 	public void exibir() {
 		System.out.println();
 		System.out.println("Nome: " + this.getNome());

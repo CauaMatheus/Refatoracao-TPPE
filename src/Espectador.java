@@ -6,14 +6,17 @@ public class Espectador {
 	private String nome;
 	private String nasc;
 	private String cpf;
-	private Acompanhamento acompanhamento[] = new Acompanhamento[10] ;
+	private String acompanhamento ;
 	
 	// Método Constructor //
 	
-	public Espectador(String nome, String nasc, String cpf){
+
+
+	public Espectador(String nome, String nasc, String cpf, String acompanhamento){
 		this.setNome(nome);
 		this.setNasc(nasc);
 		this.setCpf(cpf);
+		this.setAcompanhamento(acompanhamento);
 	}
 	
 	
@@ -43,6 +46,15 @@ public class Espectador {
 		this.cpf = cpf;
 	}
 
+	public String getAcompanhamento() {
+		return acompanhamento;
+	}
+	
+	public void setAcompanhamento(String acompanhamento) {
+		this.acompanhamento = acompanhamento;
+	}
+	
+	
 	// Métodos //
 	
 	public void cadEsp(){
@@ -61,11 +73,13 @@ public class Espectador {
 		// Função de busca
 	}
 	
+	
 	public void exibir() {
 		System.out.println();
 		System.out.println("Nome: " + this.getNome());
 		System.out.println("Nascimento: " + this.getNasc());
 		System.out.println("Cpf: " + this.getCpf());
+		System.out.println("Acompanhamento: " + this.getAcompanhamento());
 
 	}
 	
