@@ -15,20 +15,23 @@ public class Filme extends Cadastro {
 	
 	//Método construtor//
 	
-	public Filme(int numSala, String nomeFilme, String horaFilme, int duracao, String genero, double valor,int faixaEtaria, String dimensao, int numSala2, String audio, int espCad) {
+	public Filme(int numSala, String nomeFilme, String horaFilme, int duracao, String genero, double valor,int faixaEtaria, String d, String audio) {
 		super(numSala, nomeFilme, horaFilme);
+		this.setNumSala(numSala);
+		this.setHoraFilme(horaFilme);
+		this.setNomeFilme(nomeFilme);
 		this.setDuracao(duracao);
 		this.setGenero(genero);
 		this.setValor(valor);
 		this.setFaixaEtaria(faixaEtaria);
-		this.setDimensao(dimensao);
+		this.setDimensao(d);
 		this.setAudio(audio);
-		this.setEspCad (espCad);
 	}
 
 
 
 	// Get Set
+	
 	public int getDuracao() {
 		return duracao;
 	}
@@ -73,18 +76,6 @@ public class Filme extends Cadastro {
 		this.espCad = espCad;
 	}
 	
-	// Status //
-	
-	public void status() {
-		System.out.println(this.getAudio());
-		System.out.println(this.getDuracao());
-		System.out.println(this.getDimensao());
-		System.out.println(this.getEspCad());
-		System.out.println(this.getFaixaEtaria());
-		System.out.println(this.getGenero());
-
-		
-	}
 	
 
 	// Métodos //
@@ -104,5 +95,20 @@ public class Filme extends Cadastro {
 	public void buscFilme(){
 		// Função de busca
 	}
+	
+	
+	public void exibir() {
+		System.out.println();
+		System.out.println("Nome: " + this.getNomeFilme());
+		System.out.println("Sala: " + this.getNumSala());
+		System.out.println("Hora: "+ this.getHoraFilme());
+		System.out.println("Aúdio: " + this.getAudio());
+		System.out.println("Duração: " + this.getDuracao());
+		System.out.println("Dimensão: " + this.getDimensao());
+		System.out.println("Faixa Etária: " + this.getFaixaEtaria());
+		System.out.println("Gênero" + this.getGenero());
+			
+	}
+
 
 }

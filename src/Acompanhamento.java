@@ -4,17 +4,18 @@ public class Acompanhamento {
 	// Atributos //
 	private String nome;
 	private double valor;
-	private int qnt;
+	private String tam;
 	private String tipo;
 	
 	
 	// Construtor
 	
-	public Acompanhamento(String name, double valor, int qnt, String tipo){
+	public Acompanhamento(String name, double valor, String tam, String tipo){
 		this.setNome(name);
 		this.setValor(valor);
-		this.setQnt(qnt);
+		this.setQnt(tam);
 		this.setTipo(tipo);
+		
 		
 	}
 	// Get Set
@@ -30,11 +31,11 @@ public class Acompanhamento {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-	public int getQnt() {
-		return qnt;
+	public String getQnt() {
+		return tam;
 	}
-	public void setQnt(int qnt) {
-		this.qnt = qnt;
+	public void setQnt(String tam) {
+		this.tam = tam;
 	}
 	public String getTipo() {
 		return tipo;
@@ -56,8 +57,13 @@ public class Acompanhamento {
 	public void bscAcomp() {
 		// Função busca de acompanhamento
 	}
-	public void exibAcomp() {
-		// Função exibição de acompanhamento 
+	public void exibir() {
+		System.out.println();
+		System.out.println("Nome: " + this.getNome());
+		System.out.println("Valor: " + this.getValor());
+		System.out.println("Tamanho: " + this.getQnt());
+		System.out.println("Tipo: " + this.getTipo());
+
 	}
 	
 }

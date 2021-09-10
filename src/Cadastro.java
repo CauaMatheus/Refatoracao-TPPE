@@ -2,9 +2,11 @@
 public abstract class Cadastro {
 
 	// Atributos
+	
 	private int numSala;
 	private String nomeFilme;
 	private String horaFilme;
+	
 	
 	// Construtor 
 	
@@ -15,6 +17,7 @@ public abstract class Cadastro {
 	}
 	
 	// Get and Set
+	
 	public int getNumSala() {
 		return numSala;
 	}

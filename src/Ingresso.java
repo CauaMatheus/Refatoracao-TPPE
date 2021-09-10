@@ -15,6 +15,9 @@ public class Ingresso extends Cadastro {
 	
 	public Ingresso(int numSala, String nomeFilme, String horaFilme, String nomeEspct, String tipoEntrada) {
 		super(numSala, nomeFilme, horaFilme);
+		this.setNumSala(numSala);
+		this.setNomeFilme(nomeFilme);
+		this.setHoraFilme(horaFilme);
 		this.setNomeEspct(nomeEspct);
 		this.setTipoEntrada(tipoEntrada);
 	}
@@ -59,7 +62,16 @@ public class Ingresso extends Cadastro {
 	}
 	
 	public void showEspct() {
-		// Função de exibição
+		
+	}
+	public void exibir() {
+		System.out.println();
+		System.out.println("Sala: " + this.getNumSala());
+		System.out.println("Filme: " + this.getNomeFilme());
+		System.out.println("Horário: " + this.getHoraFilme());
+		System.out.println("Espectador: " + this.getNomeEspct());
+		System.out.println("Entrada: " + this.getTipoEntrada());
+		
 	}
 
 }
