@@ -1,4 +1,4 @@
-package interfac;
+package view;
 
 public class TelaIngresso {
 
