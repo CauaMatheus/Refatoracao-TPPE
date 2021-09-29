@@ -4,17 +4,17 @@ public class ControleFilme {
 
 	// Array para guardar filmes
 	private Filme[]f;
-	private int qtnFilme;
+	private int QntFilmes;
 	
-	public ControleFilme(ControleDados f) {
+	public ControleFilme(ControleDados d) {
 		f = d.getFilmes();
-		qtdFilmes = d.getQtdFilmes();
+		QntFilmes = d.getQntFilmes();
 	}
 	
-	public String[] getNomeAluno() {
-		String[] s = new String[qtdAlunos];
-		for(int i = 0; i < qtdAlunos; i++) {
-			s[i] = a[i].getNome();
+	public String[] getNomeFilme() {
+		String[] s = new String[QntFilmes];
+		for(int i = 0; i < QntFilmes; i++) {
+			s[i] = f[i].getNomeFilme();
 		}
 		
 		return s;
