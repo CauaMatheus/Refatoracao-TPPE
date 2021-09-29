@@ -27,45 +27,43 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	// private JList<String> listaProfsCadastrados;
 	// private String[] listaNomes = new String[100];
 
-	public void mostrarDados(ControleDados d, int op) {
+	public void mostrarDados(ControleDados d) {
 		dados = d;
 
-		switch (op) {
-		case 1: // Mostrar dados de filmes cadastrados (JList)
-			// listaNomes = new ControleFilme(dados).getNomeFilme();
-			listaFilmesCadastrados = new JList<String>();
-			janela = new JFrame("Filmes");
-			titulo = new JLabel("Filmes Cadastrados");
-			cadastroFilme = new JButton("Cadastrar");
-			refreshFilme = new JButton("Refresh");
+		// Mostrar dados de filmes cadastrados (JList)
+		// listaNomes = new ControleFilme(dados).getNomeFilme();
+		listaFilmesCadastrados = new JList<String>();
+		janela = new JFrame("Filmes");
+		titulo = new JLabel("Filmes Cadastrados");
+		cadastroFilme = new JButton("Cadastrar");
+		refreshFilme = new JButton("Refresh");
 
-			titulo.setFont(new Font("Arial", Font.BOLD, 20));
-			titulo.setBounds(90, 10, 250, 30);
+		titulo.setFont(new Font("Arial", Font.BOLD, 20));
+		titulo.setBounds(90, 10, 250, 30);
 
-			listaFilmesCadastrados.setBounds(20, 50, 350, 120);
-			listaFilmesCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-			listaFilmesCadastrados.setVisibleRowCount(10);
+		listaFilmesCadastrados.setBounds(20, 50, 350, 120);
+		listaFilmesCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+		listaFilmesCadastrados.setVisibleRowCount(10);
 
-			cadastroFilme.setBounds(70, 177, 100, 30);
-			refreshFilme.setBounds(200, 177, 100, 30);
+		cadastroFilme.setBounds(70, 177, 100, 30);
+		refreshFilme.setBounds(200, 177, 100, 30);
 
-			janela.setLayout(null);
-			janela.setResizable(false);
-			janela.setLocationRelativeTo(null);
+		janela.setLayout(null);
+		janela.setResizable(false);
+		janela.setLocationRelativeTo(null);
 
-			janela.add(titulo);
-			janela.add(listaFilmesCadastrados);
-			janela.add(cadastroFilme);
-			janela.add(refreshFilme);
+		janela.add(titulo);
+		janela.add(listaFilmesCadastrados);
+		janela.add(cadastroFilme);
+		janela.add(refreshFilme);
 
-			janela.setSize(400, 250);
-			janela.setVisible(true);
+		janela.setSize(400, 250);
+		janela.setVisible(true);
 
-			cadastroFilme.addActionListener(this);
-			refreshFilme.addActionListener(this);
-			listaFilmesCadastrados.addListSelectionListener(this);
+		cadastroFilme.addActionListener(this);
+		refreshFilme.addActionListener(this);
+		listaFilmesCadastrados.addListSelectionListener(this);
 
-			break;
 		/*
 		 * case 2:// Mostrar dados de professores cadastrados (JList) listaNomes = new
 		 * ControleProfessor(dados).getNomeProf(); listaProfsCadastrados = new
@@ -131,7 +129,6 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		 * listaProfsCadastrados.getSelectedIndex()); } }
 		 */
 
-		}
 	}
 
 	@Override
