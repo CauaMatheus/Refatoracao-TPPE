@@ -3,6 +3,7 @@ import modelo.*;
 public class ControleFilme {
 
 	// Array para guardar filmes
+	
 	private Filme[]f;
 	private int QntFilmes;
 	
@@ -21,37 +22,69 @@ public class ControleFilme {
 	}
 	
 	public int getQtd() {
-		return qtdAlunos;
+		return QntFilmes;
 	}
 
 	public void setQtd(int qtd) {
-		this.qtdAlunos = qtd;
+		this.QntFilmes = qtd;
 	}
 	
 	public String getNome(int i) {		
-		return a[i].getNome();
+		return f[i].getNomeFilme();
 	}
 	
-	public String getCPF(int i) {
-		String numCPF = String.valueOf(a[i].getCPF());
-		return numCPF;
+	public String getHora(int i) {
+		return f[i].getHoraFilme();
 	}
 	
-	public String getID(int i) {
-		String numID = String.valueOf(a[i].getNumID());
-		return numID;
+	public int getSala(int i) {
+		return f[i].getNumSala();
 	}
 	
-	public Telefone getTelefone(int i) {
-		return a[i].getNumTel();
+	
+	public int getDuracao(int i) {
+		return f[i].getDuracao();
 	}
 
-	public void setQtdAlunos(int qtdAlunos) {
-		this.qtdAlunos = qtdAlunos;
+	public void setQtdFilme(int QntFilmes) {
+		this.QntFilmes = QntFilmes;
 	}
 	
 	
-	public String getEndereco(int i) {		
-		return a[i].getEndereco();
-	}	
+	public String gethoraFilme(int i) {		
+		return f[i].getHoraFilme();
+	}
+	
+	public String getGenero(int i) {		
+		return f[i].getGenero();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

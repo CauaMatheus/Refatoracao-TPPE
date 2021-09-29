@@ -7,16 +7,18 @@ import javax.swing.event.*;
 import control.*;
 
 
-	public class TelaFilme implements ActionListener, ListSelectionListener {		
+		public class TelaFilme implements ActionListener, ListSelectionListener {		
 		private JFrame janela;
 		private JLabel titulo;
 		private JButton cadastroAluno;
 		private JButton refreshAluno;
+		/*
 		private JButton cadastroProf;
 		private JButton refreshProf;
+		*/
 		private static ControleDados dados;
-		private JList<String> listaAlunosCadastrados;
-		private JList<String> listaProfsCadastrados;
+		private JList<String> listaFilmesCadastrados;
+		//private JList<String> listaProfsCadastrados;
 		private String[] listaNomes = new String[50];
 		
 		
@@ -24,9 +26,9 @@ import control.*;
 			dados = d;
 
 			switch (op) {
-			case 1: Mostrar dados de alunos cadastrados (JList)
-				listaNomes = new ControleAluno(dados).getNomeAluno();
-				listaAlunosCadastrados = new JList<String>(listaNomes);
+			case 1: //Mostrar dados de alunos cadastrados (JList)
+				listaNomes = new ControleFilme(dados).getNomeFilme();
+				listaFilmesCadastrados = new JList<String>(listaNomes);
 				janela = new JFrame("Alunos");
 				titulo = new JLabel("Alunos Cadastrados");
 				cadastroAluno = new JButton("Cadastrar");
@@ -34,9 +36,9 @@ import control.*;
 
 				titulo.setFont(new Font("Arial", Font.BOLD, 20));
 				titulo.setBounds(90, 10, 250, 30);
-				listaAlunosCadastrados.setBounds(20, 50, 350, 120);
-				listaAlunosCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-				listaAlunosCadastrados.setVisibleRowCount(10);
+				listaFilmesCadastrados.setBounds(20, 50, 350, 120);
+				listaFilmesCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+				listaFilmesCadastrados.setVisibleRowCount(10);
 
 				cadastroAluno.setBounds(70, 177, 100, 30);
 				refreshAluno.setBounds(200, 177, 100, 30);
@@ -44,7 +46,7 @@ import control.*;
 				janela.setLayout(null);
 
 				janela.add(titulo);
-				janela.add(listaAlunosCadastrados);
+				janela.add(listaFilmesCadastrados);
 				janela.add(cadastroAluno);
 				janela.add(refreshAluno);
 
@@ -53,10 +55,10 @@ import control.*;
 
 				cadastroAluno.addActionListener(this);
 				refreshAluno.addActionListener(this);
-				listaAlunosCadastrados.addListSelectionListener(this);
+				listaFilmesCadastrados.addListSelectionListener(this);
 
 				break;
-
+/*
 			case 2:// Mostrar dados de professores cadastrados (JList)
 				listaNomes = new ControleProfessor(dados).getNomeProf();
 				listaProfsCadastrados = new JList<String>(listaNomes);
@@ -139,7 +141,22 @@ import control.*;
 				new TelaDetalhePessoa().inserirEditar(4, dados, this, 
 						listaProfsCadastrados.getSelectedIndex());
 			}
-		}
+		}*/
 
 	}
+}
+
+
+		@Override
+		public void valueChanged(ListSelectionEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
 }

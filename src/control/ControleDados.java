@@ -52,7 +52,7 @@ public class ControleDados {
 	public int getQntAcompanhamentos() {
 		return this.getQntAcompanhamentos();
 	}
-	
+	/*
 	public boolean inserirEditarFilme(String[] dadosProfs) {
 		if(!dadosProfs[3].matches("[0-9]+") || !dadosProfs[4].matches("[0-9]+") || 
 				!dadosProfs[5].matches("[0-9]+") || !dadosProfs[6].matches("[0-9]+")) {
@@ -65,6 +65,6 @@ public class ControleDados {
 				return true;
 		}
 
-	
+	*/
 	
 }

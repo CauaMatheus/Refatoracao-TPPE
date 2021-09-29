@@ -3,6 +3,7 @@ package interfac;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import control.*;
 
 	public class Menu implements ActionListener {
 		
@@ -61,13 +62,13 @@ import javax.swing.*;
 			
 			if(src == filme)
 				new TelaFilme().mostrarDados(dados, 1);
-			
+			/*
 			if(src == ingresso)
 				new TelaIngresso().mostrarDados(dados,2) ;
 			
 			if(src == espectador)
 				new TelaEspectador().mostrarDados(dados, 2);
-			
+			*/
 			
 				;
 		}
