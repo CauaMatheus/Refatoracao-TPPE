@@ -1,40 +1,38 @@
 package modelo;
 
 public class Dados {
-	
 
-	private  Filme[] filmes = new Filme[50];
+	private Filme[] filmes = new Filme[50];
 	private int qtdFilmes = 0;
-	
+
 	private Ingresso[] ingressos = new Ingresso[50];
 	private int qtdIngressos = 0;
-	
+
 	private Espectador[] espectadores = new Espectador[50];
 	private int qtdEspectadores = 0;
-	
+
 	private Acompanhamento[] acompanhamentos = new Acompanhamento[50];
 	private int qtdAcompanhamentos = 0;
-	
-	
+
 	public void fillWithSomeData() {
-		
-		for(int i = 0; i < 9; i++) {
-			filmes[i] = new Filme(i+5, "Advengers", "16:00", 120, "Ação",25.50 , 14, "2d", "dublado",50);
-			
-			ingressos[i] = new Ingresso(i, "Advengers", "16:00", "Inteira",i+2);
-					
-			espectadores[i] = new Espectador("Luiza","31/07/9"+i,"75266597062");
-			
-			acompanhamentos[i] = new Acompanhamento("Pipoca",i,"M","Salgado");
-			
+
+		for (int i = 0; i < 9; i++) {
+			filmes[i] = new Filme(i + 5, "Advengers", "16:00", 120, "Ação", 25.50, 14, "2d", "dublado", 50);
+
+			ingressos[i] = new Ingresso(i, "Advengers", "16:00", "Inteira", i + 2);
+
+			espectadores[i] = new Espectador("Luiza", "31/07/9" + i, "75266597062");
+
+			acompanhamentos[i] = new Acompanhamento("Pipoca", i, "M", "Salgado");
+
 		}
-		
+
 		qtdFilmes = 9;
 		qtdIngressos = 9;
 		qtdEspectadores = 9;
 		qtdAcompanhamentos = 9;
 	}
-	
+
 	public Filme[] getFilmes() {
 		return filmes;
 	}
@@ -42,22 +40,21 @@ public class Dados {
 	public void setFilmes(Filme[] filmes) {
 		this.filmes = filmes;
 	}
-	
+
 	public void inserirEditarFilme(Filme f, int pos) {
 		this.filmes[pos] = f;
-		if(pos == qtdFilmes) qtdFilmes++;
+		if (pos == qtdFilmes)
+			qtdFilmes++;
 	}
 
 	public int getQtdFilmes() {
 		return qtdFilmes;
 	}
-	
+
 	public void setQtdFilmes(int qtdFilmes) {
 		this.qtdFilmes = qtdFilmes;
 	}
 
-	
-	
 	public Ingresso[] getIngressos() {
 		return ingressos;
 	}
@@ -65,12 +62,13 @@ public class Dados {
 	public void setIngressos(Ingresso[] ingressos) {
 		this.ingressos = ingressos;
 	}
-	
+
 	public void inserirEditarIngresso(Ingresso i, int pos) {
 		this.ingressos[pos] = i;
-		if(pos == qtdIngressos) qtdIngressos++;
+		if (pos == qtdIngressos)
+			qtdIngressos++;
 	}
-	
+
 	public int getQtdIngressos() {
 		return qtdIngressos;
 	}
@@ -78,8 +76,6 @@ public class Dados {
 	public void setQtdIngressos(int qtdIngressos) {
 		this.qtdIngressos = qtdIngressos;
 	}
-	
-	
 
 	public Espectador[] getEspectadores() {
 		return espectadores;
@@ -91,9 +87,10 @@ public class Dados {
 
 	public void inserirEditarEspectadores(Espectador e, int pos) {
 		this.espectadores[pos] = e;
-		if(pos == qtdEspectadores) qtdEspectadores++;
+		if (pos == qtdEspectadores)
+			qtdEspectadores++;
 	}
-	
+
 	public int getQtdEspectadores() {
 		return qtdEspectadores;
 	}
@@ -102,8 +99,6 @@ public class Dados {
 		this.qtdEspectadores = qtdEspectadores;
 	}
 
-	
-	
 	public Acompanhamento[] getAcompanhamentos() {
 		return acompanhamentos;
 	}
@@ -111,10 +106,11 @@ public class Dados {
 	public void setAcompanhamentos(Acompanhamento[] acompanhamentos) {
 		this.acompanhamentos = acompanhamentos;
 	}
-	
+
 	public void inserirEditarAcompanhamentos(Acompanhamento a, int pos) {
 		this.acompanhamentos[pos] = a;
-		if(pos == qtdAcompanhamentos) qtdAcompanhamentos++;
+		if (pos == qtdAcompanhamentos)
+			qtdAcompanhamentos++;
 	}
 
 	public int getQtdAcompanhamentos() {
@@ -124,6 +120,5 @@ public class Dados {
 	public void setQtdAcompanhamentos(int qtdAcompanhamentos) {
 		this.qtdAcompanhamentos = qtdAcompanhamentos;
 	}
-
 
 }
