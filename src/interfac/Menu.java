@@ -10,9 +10,9 @@ import javax.swing.*;
 		
 		private static JFrame janela = new JFrame("Menu");
 		private static JLabel titulo = new JLabel("Menu Principal");
-		private static JButton filme = new JButton("Filme");   // filme -> filme
-		private static JButton ingresso = new JButton("Ingresso"); // ingresso -> ingresso
-		private static JButton espectador = new JButton("Espectador"); // espectador -> espectador
+		private static JButton filme = new JButton("Filme");   // aluno -> filme
+		private static JButton ingresso = new JButton("Ingresso"); // curso -> ingresso
+		private static JButton espectador = new JButton("Espectador"); // professor -> espectador
 		
 		//public static ControleDados dados = new ControleDados();
 	
@@ -60,13 +60,13 @@ import javax.swing.*;
 			Object src = acao.getSource();
 			
 			if(src == filme)
-				new TelaFilme() ;//mostrarDados(dados, 1)
-				
+				new TelaFilme().mostrarDados(dados, 1);
+			
 			if(src == ingresso)
-				new TelaIngresso() ;//mostrarDados(dados, 1)
-				
+				new TelaIngresso().mostrarDados(dados,2) ;
+			
 			if(src == espectador)
-				new TelaEspectador() // mostrarDados(dados, 2);
+				new TelaEspectador().mostrarDados(dados, 2);
 			
 			
 				;

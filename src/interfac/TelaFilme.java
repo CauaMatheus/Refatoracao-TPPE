@@ -14,7 +14,7 @@ import control.*;
 		private JButton refreshAluno;
 		private JButton cadastroProf;
 		private JButton refreshProf;
-		// private static ControleDados dados;
+		private static ControleDados dados;
 		private JList<String> listaAlunosCadastrados;
 		private JList<String> listaProfsCadastrados;
 		private String[] listaNomes = new String[50];
@@ -24,7 +24,7 @@ import control.*;
 			dados = d;
 
 			switch (op) {
-			case 1:// Mostrar dados de alunos cadastrados (JList)
+			case 1: Mostrar dados de alunos cadastrados (JList)
 				listaNomes = new ControleAluno(dados).getNomeAluno();
 				listaAlunosCadastrados = new JList<String>(listaNomes);
 				janela = new JFrame("Alunos");
@@ -100,6 +100,7 @@ import control.*;
 
 
 		//Captura eventos relacionados aos botões da interface
+		
 		public void actionPerformed(ActionEvent e) {
 			Object src = e.getSource();
 			
