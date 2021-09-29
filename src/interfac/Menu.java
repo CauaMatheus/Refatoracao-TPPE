@@ -13,8 +13,8 @@ import javax.swing.*;
 		private static JButton filme = new JButton("Filme");   // aluno -> filme
 		private static JButton ingresso = new JButton("Ingresso"); // curso -> ingresso
 		private static JButton espectador = new JButton("Espectador"); // professor -> espectador
-		
-		//public static ControleDados dados = new ControleDados();
+	
+		public static ControleDados dados = new ControleDados();
 	
 		
 		public Menu() {
