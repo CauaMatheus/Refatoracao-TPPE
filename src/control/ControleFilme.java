@@ -59,32 +59,30 @@ public class ControleFilme {
 		return f[i].getGenero();
 	}
 	
+	public Double getValor(int i) {		
+		return f[i].getValor();
+	}
+	
+	public int getFaixa(int i) {		
+		return f[i].getFaixaEtaria();
+	}
 	
 	
 	
+	public String getDimensao(int i) {		
+		return f[i].getDimensao();
+	}
 	
+	public String getAudio(int i) {		
+		return f[i].getAudio();
+	}
 	
+	public int getEspCad(int i) {		
+		return f[i].getEspCad();
+	}
 	
-	
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
