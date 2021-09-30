@@ -16,8 +16,8 @@ public class Dados {
 
 	public void fillWithSomeData() {
 
-		for (int i = 0; i < 9; i++) {
-			filmes[i] = new Filme(i + 5, "Advengers", "16:00", 120, "Ação", 25.50, 14, "2d", "dublado", 50);
+		for (int i = 0; i < 3; i++) {
+			filmes[i] = new Filme(i + 5, "Advengers-" + i, "16:00", 120, "Ação", 25.50, 14, "2d", "dublado", 50);
 
 			ingressos[i] = new Ingresso(i, "Advengers", "16:00", "Inteira", i + 2);
 
@@ -27,10 +27,10 @@ public class Dados {
 
 		}
 
-		qtdFilmes = 9;
-		qtdIngressos = 9;
-		qtdEspectadores = 9;
-		qtdAcompanhamentos = 9;
+		qtdFilmes = 3;
+		qtdIngressos = 3;
+		qtdEspectadores = 3;
+		qtdAcompanhamentos = 3;
 	}
 
 	public Filme[] getFilmes() {

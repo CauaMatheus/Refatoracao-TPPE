@@ -13,26 +13,26 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import control.ControleDados;
+import control.ControleFilme;
 
 public class TelaFilme implements ActionListener, ListSelectionListener {
 	private JFrame janela;
 	private JLabel titulo;
 	private JButton cadastroFilme;
 	private JButton refreshFilme;
-	/*
-	 * private JButton cadastroProf; private JButton refreshProf;
-	 */
+
 	private static ControleDados dados;
 	private JList<String> listaFilmesCadastrados;
-	// private JList<String> listaProfsCadastrados;
-	// private String[] listaNomes = new String[100];
+	private String[] listaNomes = new String[100];
 
 	public void mostrarDados(ControleDados d) {
 		dados = d;
 
 		// Mostrar dados de filmes cadastrados (JList)
-		// listaNomes = new ControleFilme(dados).getNomeFilme();
-		listaFilmesCadastrados = new JList<String>();
+
+		listaNomes = new ControleFilme(dados).getNomeFilme();
+		listaFilmesCadastrados = new JList<String>(listaNomes);
+
 		janela = new JFrame("Filmes");
 		titulo = new JLabel("Filmes Cadastrados");
 		cadastroFilme = new JButton("Cadastrar");
@@ -138,8 +138,11 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+	public void actionPerformed(ActionEvent acao) {
+		Object gatilho = acao.getSource();
+		if (gatilho == cadastroFilme) {
+			new TelaEdit();// .inserirEditar(1, dados, this, 0);
 
+		}
 	}
 }

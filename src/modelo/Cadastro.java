@@ -10,10 +10,8 @@ public abstract class Cadastro {
 
 	// Construtor
 
-	public Cadastro(int numSala, String nomeFilme, String horaFilme) {
-		this.setNumSala(numSala);
-		this.setNomeFilme(nomeFilme);
-		this.setHoraFilme(horaFilme);
+	public Cadastro() {
+		super();
 	}
 
 	// Get and Set

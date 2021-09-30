@@ -20,12 +20,13 @@ public class TelaEspectador implements ActionListener, ListSelectionListener {
 	private JButton cadastroEspectador;
 	private JButton refreshEspectador;
 	private JButton refreshFilme;
-	private static ControleDados dados;;
+	private static ControleDados dados;
 	private JList<String> listaEspectadoresCadastrados;
+	private String[] listaEspectadores = new String[100];
 
 	public void mostrarDados(ControleDados d) {
 		dados = d;
-		listaEspectadoresCadastrados = new JList<String>();
+		listaEspectadoresCadastrados = new JList<String>(listaEspectadores);
 		janela = new JFrame("Espectadores");
 		titulo = new JLabel("Espectadores Cadastrados");
 		cadastroEspectador = new JButton("Cadastrar");

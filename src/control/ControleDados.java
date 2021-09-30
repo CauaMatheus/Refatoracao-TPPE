@@ -1,10 +1,14 @@
 package control;
 
-import modelo.*;
+import modelo.Acompanhamento;
+import modelo.Dados;
+import modelo.Espectador;
+import modelo.Filme;
+import modelo.Ingresso;
 
 public class ControleDados {
 	private Dados d = new Dados();
-	
+
 	public ControleDados() {
 		d.fillWithSomeData();
 	}
@@ -22,7 +26,7 @@ public class ControleDados {
 	}
 
 	public int getQtdFilmes() {
-		return this.getQtdFilmes();
+		return this.d.getQtdFilmes();
 	}
 
 	public Ingresso[] getIngressos() {
@@ -48,44 +52,36 @@ public class ControleDados {
 	public int getQntAcompanhamentos() {
 		return this.getQntAcompanhamentos();
 	}
-	
+
 	// Inserir e editar filme
 	public boolean inserirEditarFilme(String[] dadosFilmes) {
-		if(!dadosFilmes[3].matches("[0-9]+") || !dadosFilmes[4].matches("[0-9]+") || 
-				!dadosFilmes[5].matches("[0-9]+") || !dadosFilmes[6].matches("[0-9]+")) {
+		if (!dadosFilmes[1].matches("[0-9]+") || !dadosFilmes[2].matches("[0-9]+") || !dadosFilmes[3].matches("[0-9]+")
+				|| !dadosFilmes[4].matches("[0-9]+")) {
 			return false;
 		} else {
-				Filme f = new Filme(Integer.parseInt(dadosFilmes[1]), dadosFilmes[2], 
-						dadosFilmes[3], Integer.parseInt(dadosFilmes[4]), dadosFilmes[5], Double.parseDouble(dadosFilmes[6]),
-						Integer.parseInt(dadosFilmes[7]), dadosFilmes[8], dadosFilmes[9], Integer.parseInt(dadosFilmes[10]));
-				d.inserirEditarFilme(f, Integer.parseInt(dadosFilmes[0]));
-				return true;
+			Filme f = new Filme(Integer.parseInt(dadosFilmes[1]), dadosFilmes[2], dadosFilmes[3],
+					Integer.parseInt(dadosFilmes[4]), dadosFilmes[5], Double.parseDouble(dadosFilmes[6]),
+					Integer.parseInt(dadosFilmes[7]), dadosFilmes[8], dadosFilmes[9],
+					Integer.parseInt(dadosFilmes[10]));
+			d.inserirEditarFilme(f, Integer.parseInt(dadosFilmes[0]));
+			return true;
 		}
 	}
-	
+
 	// remover filme
 
 	/**
-	public boolean removerProfessor(int i) {
-		if(i == (d.getQtdFilmes() - 1)) { // O prof a ser removido está no final do array
-			d.setQtdFilmes(d.getQtdFilmes() - 1);
-			d.getFilmes()[d.getQtdFilmes()] = null;
-			return true;
-		} else { // o prof a ser removido está no meio do array
-			int cont = 0;
-			while(d.getFilmes()[cont].getNomeFilme().compareTo(filmeRemovido) != 0)
-				cont++;
-			//Rotina swap
-			for(int j = cont; j < d.getQtdFilmes() - 1; j++) {
-				d.getFilmes()[j] = null;
-				d.getFilmes()[j] = d.getFilmes()[j+1];
-			}
-			d.getFilmes()[d.getQtdFilmes()] = null;
-			d.setQtdFilmes(d.getQtdFilmes() - 1);
-			return true;
-		}
-	**/
-	
+	 * public boolean removerProfessor(int i) { if(i == (d.getQtdFilmes() - 1)) { //
+	 * O prof a ser removido está no final do array d.setQtdFilmes(d.getQtdFilmes()
+	 * - 1); d.getFilmes()[d.getQtdFilmes()] = null; return true; } else { // o prof
+	 * a ser removido está no meio do array int cont = 0;
+	 * while(d.getFilmes()[cont].getNomeFilme().compareTo(filmeRemovido) != 0)
+	 * cont++; //Rotina swap for(int j = cont; j < d.getQtdFilmes() - 1; j++) {
+	 * d.getFilmes()[j] = null; d.getFilmes()[j] = d.getFilmes()[j+1]; }
+	 * d.getFilmes()[d.getQtdFilmes()] = null; d.setQtdFilmes(d.getQtdFilmes() - 1);
+	 * return true; }
+	 **/
+
 	/*
 	 * public boolean inserirEditarFilme(String[] dadosProfs) {
 	 * if(!dadosProfs[3].matches("[0-9]+") || !dadosProfs[4].matches("[0-9]+") ||

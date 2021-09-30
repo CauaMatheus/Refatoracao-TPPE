@@ -20,8 +20,9 @@ public class TelaIngresso implements ActionListener, ListSelectionListener {
 	private JButton cadastroIngresso;
 	private JButton refreshEspectador;
 	private JButton refreshFilme;
-	private static ControleDados dados;;
+	private static ControleDados dados;
 	private JList<String> listaEspectadoresCadastrados;
+	private String[] listaNomes = new String[100];
 
 	public void mostrarDados(ControleDados d) {
 		dados = d;
@@ -68,13 +69,12 @@ public class TelaIngresso implements ActionListener, ListSelectionListener {
 	@Override
 	public void actionPerformed(ActionEvent acao) {
 		// TODO Auto-generated method stub
-		
-		Object gatilho = acao.getSource();
-		
-		if (gatilho == cadastroIngresso) {
-			new 
-		}
 
+		Object gatilho = acao.getSource();
+
+		if (gatilho == cadastroIngresso) {
+			new TelaEdit().inserirEditar();
+		}
 
 	}
 
