@@ -31,10 +31,10 @@ public class Filme extends Cadastro {
 
 	public Filme(int numSala, String nomeFilme, String horaFilme, int duracao, String genero, double valor,
 			int faixaEtaria, String d, String audio, int espCad) {
-		this.setNumSala(numSala);
-		this.setHoraFilme(horaFilme);
-		this.setNomeFilme(nomeFilme);
-		this.setDuracao(duracao);
+		this.setNumSala(numSala);//
+		this.setHoraFilme(horaFilme);//
+		this.setNomeFilme(nomeFilme);//
+		this.setDuracao(duracao);//
 		this.setGenero(genero);
 		this.setValor(valor);
 		this.setFaixaEtaria(faixaEtaria);
