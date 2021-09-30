@@ -1,82 +1,64 @@
 package control;
 
-import modelo.Filme;
+import modelo.Ingresso;
 
 public class ControleIngresso {
 
-	// Array para guardar filmes
+	// Array para guardar ngreaao
 
-	private Filme[] f;
-	private int QntFilmes;
+	private Ingresso[] in;
+	private int QntIngressos;
 
-	/*
-	 * public ControleFilme(ControleDados d) { f = d.getFilmes(); QntFilmes =
-	 * d.getQtdFilmes(); }
-	 */
+	public ControleIngresso(ControleDados d) {
+		in = d.getIngressos();
+		QntIngressos = d.getQntIngressos();
+	}
 
 	public String[] getNomeFilme() {
-		String[] s = new String[QntFilmes];
-		for (int i = 0; i < QntFilmes; i++) {
-			s[i] = f[i].getNomeFilme();
+		String[] s = new String[QntIngressos];
+		for (int i = 0; i < QntIngressos; i++) {
+			s[i] = in[i].getNomeFilme();
 		}
 
 		return s;
 	}
 
 	public int getQtd() {
-		return QntFilmes;
+		return QntIngressos;
 	}
 
 	public void setQtd(int qtd) {
-		this.QntFilmes = qtd;
+		this.QntIngressos = qtd;
 	}
 
 	public String getNome(int i) {
-		return f[i].getNomeFilme();
+		return in[i].getNomeFilme();
 	}
 
 	public String getHora(int i) {
-		return f[i].getHoraFilme();
+		return in[i].getHoraFilme();
 	}
 
 	public int getSala(int i) {
-		return f[i].getNumSala();
+		return in[i].getNumSala();
 	}
 
-	public int getDuracao(int i) {
-		return f[i].getDuracao();
-	}
-
-	public void setQtdFilme(int QntFilmes) {
-		this.QntFilmes = QntFilmes;
+	public void setQtdIngresso(int QntIngressos) {
+		this.QntIngressos = QntIngressos;
 	}
 
 	public String gethoraFilme(int i) {
-		return f[i].getHoraFilme();
+		return in[i].getHoraFilme();
 	}
 
-	public String getGenero(int i) {
-		return f[i].getGenero();
+	public String getTipoEntrada(int i) {
+		return in[i].getTipoEntrada();
 	}
-
-	public Double getValor(int i) {
-		return f[i].getValor();
+	
+	public int getId(int i) {
+		return in[i].getId();
 	}
-
-	public int getFaixa(int i) {
-		return f[i].getFaixaEtaria();
-	}
-
-	public String getDimensao(int i) {
-		return f[i].getDimensao();
-	}
-
-	public String getAudio(int i) {
-		return f[i].getAudio();
-	}
-
-	public int getEspCad(int i) {
-		return f[i].getEspCad();
-	}
+	
+	
 
 }

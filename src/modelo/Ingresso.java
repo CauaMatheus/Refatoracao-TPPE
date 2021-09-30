@@ -6,6 +6,11 @@ public class Ingresso extends Cadastro {
 	private int id;
 	private String tipoEntrada;
 	private Espectador[] ingresso = new Espectador[100];
+	
+	// Método construtor//
+	public Ingresso() {
+		super();
+	}
 
 	// Construtor //
 
