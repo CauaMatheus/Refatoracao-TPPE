@@ -21,7 +21,7 @@ public class Dados {
 
 			ingressos[i] = new Ingresso(i, "Advengers", "16:00", "Inteira", i + 2);
 
-			espectadores[i] = new Espectador("Luiza", "31/07/9" + i, "75266597062");
+			espectadores[i] = new Espectador("Espectador-" + i, "31/07/9" + i, "75266597062");
 
 			acompanhamentos[i] = new Acompanhamento("Pipoca", i, "M", "Salgado");
 

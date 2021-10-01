@@ -3,7 +3,7 @@ package control;
 import modelo.Espectador;
 
 public class ControleEspectador {
-	
+
 	// Array para guardar Espectador
 
 	private Espectador[] e;
@@ -34,7 +34,7 @@ public class ControleEspectador {
 	public void setQtdEspectador(int QntEspectadores) {
 		this.QntEspectadores = QntEspectadores;
 	}
-	
+
 	public String getNome(int i) {
 		return e[i].getNome();
 	}

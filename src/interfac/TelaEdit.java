@@ -73,20 +73,27 @@ public class TelaEdit implements ActionListener {
 			valorAudio = new JTextField(dados.getFilmes()[pos].getAudio(), 200);
 			valorEspCad = new JTextField(String.valueOf(dados.getFilmes()[pos].getEspCad()), 200);
 
-		} else if (op == 4) { // Preenche dados com dados do professor clicado
-
-			valorNome = new JTextField(dados.getIngressos()[pos].getNome(), 200);
-			valorSala = new JTextField(String.valueOf(dados.getEspectadores()[pos].getSala()), 200);
-			valorHora = new JTextField(dados.getEspectadores()[pos].getHoraFilme(), 200);
-			valorDura = new JTextField(String.valueOf(dados.getEspectadores()[pos].getDuracao()), 200);
-			valorGenero = new JTextField(dados.getEspectadores()[pos].getGenero(), 200);
-			valorValor = new JTextField(String.valueOf(dados.getEspectadores()[pos].getValor()), 200);
-			valorFaixa = new JTextField(String.valueOf(dados.getEspectadores()[pos].getFaixaEtaria()), 200);
-			valorDim = new JTextField(dados.getEspectadores()[pos].getDimensao(), 200);
-			valorAudio = new JTextField(dados.getEspectadores()[pos].getAudio(), 200);
-			valorEspCad = new JTextField(String.valueOf(dados.getEspectadores()[pos].getEspCad()), 200);
-
-		} else { // Não preenche com dados
+		} /*
+			 * else if (op == 4) { // Preenche dados com dados do professor clicado
+			 * 
+			 * valorNome = new JTextField(dados.getIngressos()[pos].getNome(), 200);
+			 * valorSala = new
+			 * JTextField(String.valueOf(dados.getEspectadores()[pos].getSala()), 200);
+			 * valorHora = new JTextField(dados.getEspectadores()[pos].getHoraFilme(), 200);
+			 * valorDura = new
+			 * JTextField(String.valueOf(dados.getEspectadores()[pos].getDuracao()), 200);
+			 * valorGenero = new JTextField(dados.getEspectadores()[pos].getGenero(), 200);
+			 * valorValor = new
+			 * JTextField(String.valueOf(dados.getEspectadores()[pos].getValor()), 200);
+			 * valorFaixa = new
+			 * JTextField(String.valueOf(dados.getEspectadores()[pos].getFaixaEtaria()),
+			 * 200); valorDim = new JTextField(dados.getEspectadores()[pos].getDimensao(),
+			 * 200); valorAudio = new JTextField(dados.getEspectadores()[pos].getAudio(),
+			 * 200); valorEspCad = new
+			 * JTextField(String.valueOf(dados.getEspectadores()[pos].getEspCad()), 200);
+			 * 
+			 * }
+			 */ else { // Não preenche com dados
 
 			valorNome = new JTextField(200);
 			valorSala = new JTextField(200);

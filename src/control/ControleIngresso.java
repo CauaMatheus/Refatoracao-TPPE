@@ -7,9 +7,13 @@ public class ControleIngresso {
 	// Array para guardar ngreaao
 
 	private Ingresso[] in;
+	private Ingresso[] out;
 	private int QntIngressos;
 
 	public ControleIngresso(ControleDados d) {
+		out = d.getIngressos();
+		QntIngressos = d.getQntIngressos();
+
 		in = d.getIngressos();
 		QntIngressos = d.getQntIngressos();
 	}
@@ -21,6 +25,15 @@ public class ControleIngresso {
 		}
 
 		return s;
+	}
+
+	public String[] getHoraFilme() {
+		String[] t = new String[QntIngressos];
+		for (int i = 0; i < QntIngressos; i++) {
+			t[i] = out[i].getHoraFilme();
+		}
+
+		return t;
 	}
 
 	public int getQtd() {
@@ -36,7 +49,7 @@ public class ControleIngresso {
 	}
 
 	public String getHora(int i) {
-		return in[i].getHoraFilme();
+		return out[i].getHoraFilme();
 	}
 
 	public int getSala(int i) {

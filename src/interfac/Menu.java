@@ -66,13 +66,13 @@ public class Menu implements ActionListener {
 		Object src = acao.getSource();
 
 		if (src == filme)
-			new TelaFilme().mostrarDados(dados);
+			new TelaFilme().mostrarDados(dados, 1);
 
 		if (src == expectadores)
-			new TelaEspectador().mostrarDados(dados);
+			new TelaFilme().mostrarDados(dados, 2);
 
 		if (src == ingressos)
-			new TelaIngresso().mostrarDados(dados);
+			new TelaFilme().mostrarDados(dados, 3);
 
 	}
 }

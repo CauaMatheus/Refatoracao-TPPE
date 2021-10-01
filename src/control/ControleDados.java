@@ -34,7 +34,7 @@ public class ControleDados {
 	}
 
 	public int getQntIngressos() {
-		return this.getQntIngressos();
+		return this.d.getQtdIngressos();
 	}
 
 	public Espectador[] getEspectadores() {
@@ -50,7 +50,7 @@ public class ControleDados {
 	}
 
 	public int getQntAcompanhamentos() {
-		return this.getQntAcompanhamentos();
+		return this.d.getQtdAcompanhamentos();
 	}
 
 	// Inserir e editar filme
