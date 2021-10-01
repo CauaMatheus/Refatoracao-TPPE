@@ -221,6 +221,8 @@ public class TelaEdit implements ActionListener {
 			this.janela.add(valorID);
 			this.janela.add(labelEntrada);
 			this.janela.add(valorEntrada);
+
+			this.janela.setLayout(null);
 			this.janela.setSize(400, 200);
 
 		}
