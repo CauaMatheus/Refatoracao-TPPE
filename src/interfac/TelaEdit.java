@@ -41,7 +41,7 @@ public class TelaEdit implements ActionListener {
 	private JTextField valorCPF;
 
 	private JLabel LabelEntrada = new JLabel("Entrada: ");
-	private JTextField valorTipoEntrada;
+	private JTextField valorEntrada;
 	// private JTextField valorEntrada;
 	private JLabel LabelID = new JLabel("ID: ");
 	private JTextField valorID;
@@ -107,7 +107,7 @@ public class TelaEdit implements ActionListener {
 				valorNascimento = new JTextField(200);
 				valorCPF = new JTextField(200);
 				valorID = new JTextField(200);
-				valorTipoEntrada = new JTextField(200);
+				valorEntrada = new JTextField(200);
 			}
 
 			// Configuração pagina
@@ -206,7 +206,7 @@ public class TelaEdit implements ActionListener {
 				valorSala = new JTextField(String.valueOf(dados.getIngressos()[pos].getNumSala()), 200);
 				valorHora = new JTextField(dados.getIngressos()[pos].getHoraFilme(), 200);
 				valorID = new JTextField(String.valueOf(dados.getIngressos()[pos].getId()), 200);
-				valorTipoEntrada = new JTextField(dados.getIngressos()[pos].getTipoEntrada(), 200);
+				valorEntrada = new JTextField(dados.getIngressos()[pos].getTipoEntrada(), 200);
 			} else {
 
 				// Criando FIELD para Ingresso sem preencher com os dados
@@ -214,7 +214,7 @@ public class TelaEdit implements ActionListener {
 				valorSala = new JTextField(200);
 				valorHora = new JTextField(200);
 				valorID = new JTextField(200);
-				valorTipoEntrada = new JTextField(200);
+				valorEntrada = new JTextField(200);
 			}
 
 			// Configuração pagina
@@ -227,7 +227,7 @@ public class TelaEdit implements ActionListener {
 			LabelID.setBounds(30, 110, 100, 25);
 			valorID.setBounds(136, 110, 200, 25);
 			LabelEntrada.setBounds(30, 140, 100, 25);
-			valorTipoEntrada.setBounds(136, 140, 200, 25);
+			valorEntrada.setBounds(136, 140, 200, 25);
 
 			// Inserindo Dados
 
@@ -241,13 +241,12 @@ public class TelaEdit implements ActionListener {
 			this.janela.add(valorSala);
 			this.janela.add(valorHora);
 			this.janela.add(valorID);
-			this.janela.add(valorTipoEntrada);
+			this.janela.add(valorEntrada);
 
-			this.janela.setVisible(true);
 			this.janela.setLayout(null);
 			this.janela.setSize(400, 430);
-
 		}
+
 
 		// Coloca botoes de excluir e salvar
 		if (op == 4 || op == 1 || op == 6 || op == 3) {
