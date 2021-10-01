@@ -27,10 +27,10 @@ public class ControleIngresso {
 		return s;
 	}
 
-	public String[] getHoraFilme() {
+	public String[] getIdIngresso() {
 		String[] t = new String[QntIngressos];
 		for (int i = 0; i < QntIngressos; i++) {
-			t[i] = out[i].getHoraFilme();
+			t[i] = out[i].getId();
 		}
 
 		return t;
@@ -68,7 +68,7 @@ public class ControleIngresso {
 		return in[i].getTipoEntrada();
 	}
 
-	public int getId(int i) {
+	public String getId(int i) {
 		return in[i].getId();
 	}
 
