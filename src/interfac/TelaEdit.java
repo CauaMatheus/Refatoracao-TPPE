@@ -257,26 +257,35 @@ public class TelaEdit implements ActionListener {
 		if (src == botaoSalvar) {
 			try {
 				boolean res;
-				if (opcao == 1) // cadastro de novo aluno
-					novoDado[0] = Integer.toString(dados.getQnFilmes());
-				else if (opcao == 2) // cadastro de novo prof
-					novoDado[0] = Integer.toString(dados.getQtdProfs());
-				else // edicao de dado existente
+				if (opcao == 1) { // cadastro de novo Filme
+					novoDado[0] = Integer.toString(dados.getQtdFilmes());
+				} else if (opcao == 2) { // cadastro de novo Espectador
+					novoDado[0] = Integer.toString(dados.getQntEspectadores());
+				} else if (opcao == 4) {// edicao de dado existente
+					novoDado[0] = Integer.toString(posicao);
+
+					novoDado[1] = valorNome.getText();
+					novoDado[2] = valorSala.getText();
+					novoDado[3] = valorHora.getText();
+					novoDado[4] = valorDura.getText();
+					novoDado[5] = valorGenero.getText();
+					novoDado[6] = valorValor.getText();
+					novoDado[7] = valorFaixa.getText();
+					novoDado[8] = valorDim.getText();
+					novoDado[9] = valorAudio.getText();
+					novoDado[10] = valorEspCad.getText();
+
+				} else if (opcao == 5)// edicao de dado existente
 					novoDado[0] = Integer.toString(posicao);
 
 				novoDado[1] = valorNome.getText();
+				novoDado[2] = valorNascimento.getText();
 				novoDado[3] = valorCPF.getText();
-				novoDado[4] = valorID.getText();
-				novoDado[5] = valorDDD.getText();
-				novoDado[6] = valorTelefone.getText();
 
-				if (opcao == 1 || opcao == 3) {
-					novoDado[2] = valorEnd.getText();
-					res = dados.inserirEditarAluno(novoDado);
-				} else {
-					novoDado[2] = valorHoraAula.getText();
-					res = dados.inserirEditarProf(novoDado);
-				}
+				if (opcao == 1 || opcao == 4)
+					res = dados.inserirEditarFilme(novoDado);
+				else if (opcao == 2 || opcao == 5)
+					res = dados.inserirEditarEspectador(novoDado);
 
 				if (res) {
 					mensagemSucessoCadastro();
@@ -293,16 +302,24 @@ public class TelaEdit implements ActionListener {
 		if (src == botaoExcluir) {
 			boolean res = false;
 
-			if (opcao == 3) {// exclui aluno
-				res = dados.removerAluno(posicao);
+			if (opcao == 4) {// exclui aluno
+				res = dados.removerFilme(posicao);
 				if (res)
 					mensagemSucessoExclusao();
 				else
 					mensagemErroExclusaoAluno();
 			}
 
-			if (opcao == 4) { // exclui professor
-				res = dados.removerProfessor(posicao);
+			if (opcao == 5) { // exclui professor
+				res = dados.removerEspectador(posicao);
+				if (res)
+					mensagemSucessoExclusao();
+				else
+					mensagemErroExclusaoProf();
+			}
+
+			if (opcao == 6) { // exclui professor
+				res = dados.removerEspectador(posicao);
 				if (res)
 					mensagemSucessoExclusao();
 				else
