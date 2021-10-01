@@ -132,8 +132,12 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	}
 
 	@Override
-	public void valueChanged(ListSelectionEvent e) {
-		// TODO Auto-generated method stub
+	public void valueChanged(ListSelectionEvent acao) {
+		Object src = acao.getSource();
+
+		if (acao.getValueIsAdjusting() && src == listaFilmesCadastrados) {
+			new TelaEdit().inserirEditar(3, dados, this, listaFilmesCadastrados.getSelectedIndex());
+		}
 
 	}
 
@@ -141,7 +145,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	public void actionPerformed(ActionEvent acao) {
 		Object gatilho = acao.getSource();
 		if (gatilho == cadastroFilme) {
-			new TelaEdit();// .inserirEditar(1, dados, this, 0);
+			new TelaEdit().inserirEditar(1, dados, this, 0);
 
 		}
 	}
