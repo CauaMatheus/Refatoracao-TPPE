@@ -16,9 +16,9 @@ public class Menu implements ActionListener {
 
 	private static JFrame janela = new JFrame("Menu Principal");
 	private static JLabel titulo = new JLabel("Cinefun");
-	private static JButton filme = new JButton("Filme"); // aluno -> filme
-	private static JButton expectadores = new JButton("Espectadores"); // curso -> ingresso
-	private static JButton ingressos = new JButton("Ingressos"); // curso -> ingresso
+	private static JButton filme = new JButton("Filme");
+	private static JButton expectadores = new JButton("Espectadores");
+	private static JButton ingressos = new JButton("Ingressos");
 
 	public static ControleDados dados = new ControleDados();
 

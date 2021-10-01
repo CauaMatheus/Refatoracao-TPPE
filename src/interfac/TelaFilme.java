@@ -184,6 +184,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		}
 
 		if (gatilho == refreshFilme) {
+
 			listaNomes = new ControleFilme(dados).getNomeFilme();
 			listaMovie.updateUI();
 		}

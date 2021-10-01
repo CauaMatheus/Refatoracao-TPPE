@@ -47,7 +47,6 @@ public class TelaEdit implements ActionListener {
 	private JLabel LabelID = new JLabel("ID: ");
 	private JTextField valorID;
 
-
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
 	private String[] novoDado = new String[12];
@@ -255,7 +254,6 @@ public class TelaEdit implements ActionListener {
 			this.janela.setSize(400, 430);
 		}
 
-
 		// Coloca botoes de excluir e salvar
 		if (op == 4 || op == 1 || op == 6 || op == 3) {
 
@@ -280,6 +278,9 @@ public class TelaEdit implements ActionListener {
 		this.janela.setResizable(false);
 		this.janela.setLocationRelativeTo(null);
 		this.janela.setVisible(true);
+		botaoSalvar.addActionListener(this);
+		botaoExcluir.addActionListener(this);
+
 	}
 
 	@Override
@@ -287,14 +288,14 @@ public class TelaEdit implements ActionListener {
 		Object src = e.getSource();
 		if (src == botaoSalvar) {
 			try {
-				boolean res = false;
+				boolean res = true;
 				if (opcao == 1) { // cadastro de novo Filme
 					novoDado[0] = Integer.toString(dados.getQtdFilmes());
-				}else if (opcao == 2) { // cadastro de novo Espectador
+				} else if (opcao == 2) { // cadastro de novo Espectador
 					novoDado[0] = Integer.toString(dados.getQntEspectadores());
-				}else if (opcao == 3) {// cadastro de novo Ingresso
+				} else if (opcao == 3) {// cadastro de novo Ingresso
 					novoDado[0] = Integer.toString(posicao);
-				}else if (opcao == 4) {// edicao de dado existente
+				} else if (opcao == 4) {// edicao de dado existente
 					novoDado[0] = Integer.toString(posicao);
 
 					novoDado[1] = valorNome.getText();
@@ -308,13 +309,13 @@ public class TelaEdit implements ActionListener {
 					novoDado[9] = valorAudio.getText();
 					novoDado[10] = valorEspCad.getText();
 
-				}else if (opcao == 5){// edicao de dado existente
+				} else if (opcao == 5) {// edicao de dado existente
 					novoDado[0] = Integer.toString(posicao);
 
-				novoDado[1] = valorNome.getText();
-				novoDado[2] = valorNascimento.getText();
-				novoDado[3] = valorCPF.getText();
-				}else if (opcao == 6)// edicao de dado existente
+					novoDado[1] = valorNome.getText();
+					novoDado[2] = valorNascimento.getText();
+					novoDado[3] = valorCPF.getText();
+				} else if (opcao == 6)// edicao de dado existente
 					novoDado[0] = Integer.toString(posicao);
 
 				novoDado[1] = valorNomeEsp.getText();
@@ -323,16 +324,15 @@ public class TelaEdit implements ActionListener {
 				novoDado[4] = valorHora.getText();
 				novoDado[5] = valorID.getText();
 				novoDado[6] = valorEntrada.getText();
-				
-				
+
 				if (opcao == 1 || opcao == 4) {
 					res = dados.inserirEditarFilme(novoDado);
-				}else if (opcao == 2 || opcao == 5) {
+				} else if (opcao == 2 || opcao == 5) {
 					res = dados.inserirEditarEspectador(novoDado);
-				}else if(opcao == 3 || opcao == 5){
+				} else if (opcao == 3 || opcao == 6) {
 					res = dados.inserirEditarIngresso(novoDado);
 				}
-				
+
 				if (res) {
 					mensagemSucessoCadastro();
 				} else
@@ -348,7 +348,7 @@ public class TelaEdit implements ActionListener {
 		if (src == botaoExcluir) {
 			boolean res = false;
 
-			if (opcao == 4) {// exclui aluno
+			if (opcao == 4) {// exclui Filme
 				res = dados.removerFilme(posicao);
 				if (res)
 					mensagemSucessoExclusao();
@@ -356,7 +356,7 @@ public class TelaEdit implements ActionListener {
 					mensagemErroExclusaoAluno();
 			}
 
-			if (opcao == 5) { // exclui professor
+			if (opcao == 5) { // exclui Espectador
 				res = dados.removerEspectador(posicao);
 				if (res)
 					mensagemSucessoExclusao();
@@ -364,7 +364,7 @@ public class TelaEdit implements ActionListener {
 					mensagemErroExclusaoProf();
 			}
 
-			if (opcao == 6) { // exclui professor
+			if (opcao == 6) { // exclui Ingresso
 				res = dados.removerIngresso(posicao);
 				if (res)
 					mensagemSucessoExclusao();
