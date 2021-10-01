@@ -15,6 +15,8 @@ public class ControleFilme {
 		QntFilmes = d.getQtdFilmes();
 	}
 
+	//Array de String que irá aparecer no Jlist
+	
 	public String[] getNomeFilme() {
 		String[] s = new String[QntFilmes];
 		for (int i = 0; i < QntFilmes; i++) {

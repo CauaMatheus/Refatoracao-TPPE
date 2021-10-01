@@ -45,35 +45,5 @@ public class Espectador {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
-	}
-
-	
-	
-	// Métodos //
-	
-	public void cadEsp(){
-		// Função de cadastro
-	}
-	
-	public void edEsp(){
-		// Função de edição
-	}
-	
-	public void dellEsp(){
-		// Função de delete
-	}
-	
-	public void buscEsp(){
-		// Função de busca
-	}
-	
-	
-	public void exibir() {
-		System.out.println();
-		System.out.println("Nome: " + this.getNome());
-		System.out.println("Nascimento: " + this.getNasc());
-		System.out.println("Cpf: " + this.getCpf());
-
-	}
-	
+	}	
 }

@@ -4,20 +4,18 @@ import modelo.Ingresso;
 
 public class ControleIngresso {
 
-	// Array para guardar ngreaao
+	// Array para guardar Ingresso
 
 	private Ingresso[] in;
-	private Ingresso[] out;
 	private int QntIngressos;
 
 	public ControleIngresso(ControleDados d) {
-		out = d.getIngressos();
-		QntIngressos = d.getQntIngressos();
-
 		in = d.getIngressos();
 		QntIngressos = d.getQntIngressos();
 	}
-
+	
+	//Array de String que irá aparecer no Jlist
+	
 	public String[] getNomeIngresso() {
 		String[] s = new String[QntIngressos];
 		for (int i = 0; i < QntIngressos; i++) {
@@ -25,15 +23,6 @@ public class ControleIngresso {
 		}
 
 		return s;
-	}
-
-	public int[] getIdIngresso() {
-		int[] t = new int [QntIngressos];
-		for (int i = 0; i < QntIngressos; i++) {
-			t[i] = out[i].getId();
-		}
-
-		return t;
 	}
 
 
@@ -49,9 +38,6 @@ public class ControleIngresso {
 		return in[i].getNomeFilme();
 	}
 
-	public String getHora(int i) {
-		return out[i].getHoraFilme();
-	}
 
 	public int getSala(int i) {
 		return in[i].getNumSala();

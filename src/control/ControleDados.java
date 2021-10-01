@@ -9,6 +9,7 @@ import modelo.Ingresso;
 public class ControleDados {
 	private Dados d = new Dados();
 
+	//chama método de criação de dados aleatórios
 	public ControleDados() {
 		d.fillWithSomeData();
 	}
@@ -73,12 +74,12 @@ public class ControleDados {
 	public boolean removerFilme(int i) {
 		String filmeRemovido = d.getFilmes()[i].getNomeFilme();
 
-		if (i == (d.getQtdFilmes() - 1)) { // O prof a ser removido está no final do array
+		if (i == (d.getQtdFilmes() - 1)) { // Remover filme no final do Array
 			d.setQtdFilmes(d.getQtdFilmes() - 1);
 			d.getFilmes()[d.getQtdFilmes()] = null;
 			return true;
 
-		} else { // o prof a ser removido está no meio do array
+		} else { // Remover filme no meio do Array
 			int cont = 0;
 			while (d.getFilmes()[cont].getNomeFilme().compareTo(filmeRemovido) != 0)
 				cont++;
@@ -109,12 +110,12 @@ public class ControleDados {
 	public boolean removerIngresso(int i) {
 		String inRemovido = d.getIngressos()[i].getNomeFilme();
 
-		if (i == (d.getQtdIngressos() - 1)) { // O prof a ser removido está no final do array
+		if (i == (d.getQtdIngressos() - 1)) { // Remover ingresso no final do Array
 			d.setQtdIngressos(d.getQtdIngressos() - 1);
 			d.getIngressos()[d.getQtdIngressos()] = null;
 			return true;
 
-		} else { // o prof a ser removido está no meio do array
+		} else { // Remover ingresso no meio do Array
 			int cont = 0;
 			while (d.getIngressos()[cont].getNomeFilme().compareTo(inRemovido) != 0)
 				cont++;
@@ -140,12 +141,12 @@ public class ControleDados {
 	public boolean removerEspectador(int i) {
 		String espcRemovido = d.getEspectadores()[i].getNome();
 
-		if (i == (d.getQtdEspectadores() - 1)) { // O prof a ser removido está no final do array
+		if (i == (d.getQtdEspectadores() - 1)) { // Remover espectador no final do Array
 			d.setQtdEspectadores(d.getQtdEspectadores() - 1);
 			d.getEspectadores()[d.getQtdEspectadores()] = null;
 			return true;
 
-		} else { // o prof a ser removido está no meio do array
+		} else { // Remover espectador no meio do Array
 			int cont = 0;
 			while (d.getEspectadores()[cont].getNome().compareTo(espcRemovido) != 0)
 				cont++;
@@ -176,12 +177,12 @@ dadosFilmes[4]);
 	public boolean removerAcompanhamento(int i) {
 		String acompanhentoRemovido = d.getAcompanhamentos()[i].getNome();
 
-		if (i == (d.getQtdAcompanhamentos() - 1)) { // O prof a ser removido está no final do array
+		if (i == (d.getQtdAcompanhamentos() - 1)) { // Remover acompanhamento no final do Array
 			d.setQtdAcompanhamentos(d.getQtdAcompanhamentos() - 1);
 			d.getAcompanhamentos()[d.getQtdAcompanhamentos()] = null;
 			return true;
 
-		} else { // o prof a ser removido está no meio do array
+		} else { // Remover acompanhamento no meio do Array
 			int cont = 0;
 			while (d.getAcompanhamentos()[cont].getNome().compareTo(acompanhentoRemovido) != 0)
 				cont++;
@@ -195,29 +196,4 @@ dadosFilmes[4]);
 			return true;
 		}
 	}
-
-	/**
-	 * public boolean removerProfessor(int i) { if(i == (d.getQtdFilmes() - 1)) { //
-	 * O prof a ser removido está no final do array d.setQtdFilmes(d.getQtdFilmes()
-	 * - 1); d.getFilmes()[d.getQtdFilmes()] = null; return true; } else { // o prof
-	 * a ser removido está no meio do array int cont = 0;
-	 * while(d.getFilmes()[cont].getNomeFilme().compareTo(filmeRemovido) != 0)
-	 * cont++; //Rotina swap for(int j = cont; j < d.getQtdFilmes() - 1; j++) {
-	 * d.getFilmes()[j] = null; d.getFilmes()[j] = d.getFilmes()[j+1]; }
-	 * d.getFilmes()[d.getQtdFilmes()] = null; d.setQtdFilmes(d.getQtdFilmes() - 1);
-	 * return true; }
-	 **/
-
-	/*
-	 * public boolean inserirEditarFilme(String[] dadosProfs) {
-	 * if(!dadosProfs[3].matches("[0-9]+") || !dadosProfs[4].matches("[0-9]+") ||
-	 * !dadosProfs[5].matches("[0-9]+") || !dadosProfs[6].matches("[0-9]+")) {
-	 * return false; } else { Professor p = new Professor(dadosProfs[1],
-	 * Double.parseDouble(dadosProfs[2]), Integer.parseInt(dadosProfs[3]),
-	 * Integer.parseInt(dadosProfs[4]), new
-	 * Telefone(Integer.parseInt(dadosProfs[5]), Integer.parseInt(dadosProfs[6])));
-	 * d.inserirEditaProf(p, Integer.parseInt(dadosProfs[0])); return true; }
-	 * 
-	 */
-
 }

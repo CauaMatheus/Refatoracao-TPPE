@@ -51,31 +51,5 @@ public class Acompanhamento {
 		this.tipo = tipo;
 	}
 
-	// Métodos //
-
-	public void cadAcomp() {
-		// Fução cadastro de acompanhamento
-	}
-
-	public void edAcomp() {
-		// Função edição de acompanhamento
-	}
-
-	public void delAcomp() {
-		// Função de deleção de acompanhamento
-	}
-
-	public void bscAcomp() {
-		// Função busca de acompanhamento
-	}
-
-	public void exibir() {
-		System.out.println();
-		System.out.println("Nome: " + this.getNome());
-		System.out.println("Valor: " + this.getValor());
-		System.out.println("Tamanho: " + this.getQnt());
-		System.out.println("Tipo: " + this.getTipo());
-
-	}
 
 }

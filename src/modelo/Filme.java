@@ -14,6 +14,7 @@ public class Filme extends Cadastro {
 	private Ingresso[] entrada = new Ingresso[100];
 
 	// Método construtor//
+	
 	public Filme() {
 		super();
 	}
@@ -116,5 +117,4 @@ public class Filme extends Cadastro {
 	public void setNome(Ingresso espcCad, int p) {
 		this.entrada[p] = espcCad;
 	}
-
 }

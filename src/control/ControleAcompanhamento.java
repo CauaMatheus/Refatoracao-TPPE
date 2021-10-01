@@ -3,6 +3,7 @@ package control;
 import modelo.Acompanhamento;
 
 public class ControleAcompanhamento {
+	
 	// Array para guardar filmes
 
 	private Acompanhamento[] a;
@@ -13,7 +14,9 @@ public class ControleAcompanhamento {
 		a = d.getAcompanhamentos();
 		QntAcompanhamentos = d.getQntAcompanhamentos();
 	}
-
+	
+	//Array de String que irá aparecer no Jlist
+	
 	public String[] getNome() {
 		String[] s = new String[QntAcompanhamentos];
 		for (int i = 0; i < QntAcompanhamentos; i++) {
