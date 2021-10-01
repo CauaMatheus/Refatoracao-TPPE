@@ -13,17 +13,21 @@ public class Dados {
 
 	private Acompanhamento[] acompanhamentos = new Acompanhamento[50];
 	private int qtdAcompanhamentos = 0;
+	
 
 	public void fillWithSomeData() {
 
 		for (int i = 0; i < 3; i++) {
+			
 			filmes[i] = new Filme(i + 5, "Advengers-" + i, "16:00", 120, "Ação", 25.50, 14, "2d", "dublado", 50);
+			
+			espectadores[i] = new Espectador("john");
 
-			ingressos[i] = new Ingresso(i, "Advengers", "16:00", "Inteira", i + 2);
+			ingressos[i] = new Ingresso(i, "Advengers", "16:00", "Inteira", i + 2, espectadores[i]);
 
 			espectadores[i] = new Espectador("Espectador-" + i, "31/07/9" + i, "75266597062");
 
-			acompanhamentos[i] = new Acompanhamento("Pipoca", i, "M", "Salgado");
+			acompanhamentos[i] = new Acompanhamento("Pipoca", i, i+1, "Salgado");
 
 		}
 

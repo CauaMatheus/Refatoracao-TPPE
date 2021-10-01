@@ -5,7 +5,7 @@ public class Ingresso extends Cadastro {
 	// Atributos //
 	private int id;
 	private String tipoEntrada;
-	private Espectador[] ingresso = new Espectador[100];
+	private Espectador nomeEsp;
 	
 	// Método construtor//
 	public Ingresso() {
@@ -14,11 +14,12 @@ public class Ingresso extends Cadastro {
 
 	// Construtor //
 
-	public Ingresso(int numSala, String nomeFilme, String horaFilme, String tipoEntrada, int id) {
+	public Ingresso(int numSala, String nomeFilme, String horaFilme, String tipoEntrada, int id, Espectador nome) {
 		this.setNumSala(numSala);
 		this.setNomeFilme(nomeFilme);
 		this.setHoraFilme(horaFilme);
 		this.setTipoEntrada(tipoEntrada);
+		this.setNomeEsp(nome);
 	}
 
 	// Get Set
@@ -30,7 +31,7 @@ public class Ingresso extends Cadastro {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+/*
 	public Espectador[] getEspectador() {
 		return this.ingresso;
 	}
@@ -46,7 +47,7 @@ public class Ingresso extends Cadastro {
 	public void setNome(Espectador espcCad, int p) {
 		this.ingresso[p] = espcCad;
 	}
-
+*/
 	public String getTipoEntrada() {
 		return tipoEntrada;
 	}
@@ -54,6 +55,16 @@ public class Ingresso extends Cadastro {
 	public void setTipoEntrada(String tipoEntrada) {
 		this.tipoEntrada = tipoEntrada;
 	}
+	
+	public Espectador getNomeEsp() {
+		return nomeEsp;
+	}
+
+	public void setNomeEsp(Espectador nomeEsp) {
+		this.nomeEsp = nomeEsp;
+	}
+	
+	
 
 	// Funções
 

@@ -11,7 +11,9 @@ public class Espectador {
 	
 	// Método Constructor //
 	
-
+	public Espectador(String nome){
+		this.setNome(nome);
+	}
 
 	public Espectador(String nome, String nasc, String cpf){
 		this.setNome(nome);

@@ -5,12 +5,12 @@ public class Acompanhamento {
 	// Atributos //
 	private String nome;
 	private double valor;
-	private String tam;
+	private int qnt;
 	private String tipo;
 
 	// Construtor
 
-	public Acompanhamento(String name, double valor, String tam, String tipo) {
+	public Acompanhamento(String name, double valor, int tam, String tipo) {
 		this.setNome(name);
 		this.setValor(valor);
 		this.setQnt(tam);
@@ -35,12 +35,12 @@ public class Acompanhamento {
 		this.valor = valor;
 	}
 
-	public String getQnt() {
-		return tam;
+	public int getQnt() {
+		return qnt;
 	}
 
-	public void setQnt(String tam) {
-		this.tam = tam;
+	public void setQnt(int qnt) {
+		this.qnt = qnt;
 	}
 
 	public String getTipo() {

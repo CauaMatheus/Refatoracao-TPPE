@@ -57,7 +57,7 @@ public class ControleDados {
 	public boolean inserirEditarFilme(String[] dadosFilmes) {
 		if (!dadosFilmes[2].matches("[0-9]+") || !dadosFilmes[4].matches("[0-9]+") || !dadosFilmes[6].matches("[0-9]+")
 				|| !dadosFilmes[7].matches("[0-9]+") || !dadosFilmes[8].matches("[0-9]+")
-				|| !dadosFilmes[8].matches("[0-9]+")) {
+				|| !dadosFilmes[10].matches("[0-9]+")) {
 			return false;
 		} else {
 			Filme f = new Filme(Integer.parseInt(dadosFilmes[1]), dadosFilmes[2], dadosFilmes[3],
@@ -99,7 +99,7 @@ public class ControleDados {
 			return false;
 		} else {
 			Ingresso in = new Ingresso(Integer.parseInt(dadosIngressos[1]), dadosIngressos[2], dadosIngressos[3],
-					dadosIngressos[4], Integer.parseInt(dadosIngressos[5]));
+					dadosIngressos[4], Integer.parseInt(dadosIngressos[5]), new Espectador(dadosIngressos[6]));
 			d.inserirEditarIngresso(in, Integer.parseInt(dadosIngressos[0]));
 			return true;
 		}
@@ -156,6 +156,42 @@ public class ControleDados {
 			}
 			d.getEspectadores()[d.getQtdEspectadores()] = null;
 			d.setQtdEspectadores(d.getQtdEspectadores() - 1);
+			return true;
+		}
+	}
+	
+	// Inserir e editar acompanhamento
+	public boolean inserirEditarAcompanhamento(String[] dadosFilmes) {
+		if (!dadosFilmes[2].matches("[0-9]+") || !dadosFilmes[4].matches("[0-9]+")) {
+			return false;
+		} else {
+			Acompanhamento a = new Acompanhamento(dadosFilmes[1], Double.parseDouble(dadosFilmes[2]), Integer.parseInt(dadosFilmes[3]),
+dadosFilmes[4]);
+			d.inserirEditarAcompanhamento(a, Integer.parseInt(dadosFilmes[0]));
+			return true;
+		}
+	}
+
+	// remover acompanhamento
+	public boolean removerAcompanhamento(int i) {
+		String acompanhentoRemovido = d.getAcompanhamentos()[i].getNome();
+
+		if (i == (d.getQtdAcompanhamentos() - 1)) { // O prof a ser removido está no final do array
+			d.setQtdAcompanhamentos(d.getQtdAcompanhamentos() - 1);
+			d.getAcompanhamentos()[d.getQtdAcompanhamentos()] = null;
+			return true;
+
+		} else { // o prof a ser removido está no meio do array
+			int cont = 0;
+			while (d.getAcompanhamentos()[cont].getNome().compareTo(acompanhentoRemovido) != 0)
+				cont++;
+			// Rotina swap
+			for (int j = cont; j < d.getQtdAcompanhamentos() - 1; j++) {
+				d.getAcompanhamentos()[j] = null;
+				d.getAcompanhamentos()[j] = d.getAcompanhamentos()[j + 1];
+			}
+			d.getAcompanhamentos()[d.getQtdAcompanhamentos()] = null;
+			d.setQtdAcompanhamentos(d.getQtdAcompanhamentos() - 1);
 			return true;
 		}
 	}
