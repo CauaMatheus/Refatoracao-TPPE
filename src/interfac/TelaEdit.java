@@ -13,6 +13,8 @@ import control.ControleDados;
 
 public class TelaEdit implements ActionListener {
 
+	// Implementando Janelas e propriedades
+
 	private JFrame janela;
 	private JLabel labelNome = new JLabel("Nome: ");
 	private JTextField valorNome;
@@ -34,12 +36,10 @@ public class TelaEdit implements ActionListener {
 	private JTextField valorAudio;
 	private JLabel labelEspCad = new JLabel("Espectadores: ");
 	private JTextField valorEspCad;
-
 	private JLabel labelNascimento = new JLabel("Nasc: ");
 	private JTextField valorNascimento;
 	private JLabel LabelCPF = new JLabel("CPF: ");
 	private JTextField valorCPF;
-
 	private JLabel labelNomeEsp = new JLabel("Espectador: ");
 	private JTextField valorNomeEsp;
 	private JLabel LabelEntrada = new JLabel("Entrada: ");
@@ -47,13 +47,16 @@ public class TelaEdit implements ActionListener {
 	private JLabel LabelID = new JLabel("ID: ");
 	private JTextField valorID;
 
+	// Botões
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
+
 	private String[] novoDado = new String[12];
+
 	private static ControleDados dados;
 	private int posicao;
 	private int opcao;
-	private String s;
+	private String windown;
 
 	public void inserirEditar(int op, ControleDados d, TelaFilme p, int pos) {
 
@@ -62,20 +65,20 @@ public class TelaEdit implements ActionListener {
 		dados = d;
 
 		if (op == 1)
-			s = "Cadastro Filme";
+			windown = "Cadastro Filme";
 		if (op == 2)
-			s = "Cadastro Espectador";
+			windown = "Cadastro Espectador";
 		if (op == 3)
-			s = "Cadastro Ingresso";
+			windown = "Cadastro Ingresso";
 
 		if (op == 4)
-			s = "Edição Filme";
+			windown = "Edição Filme";
 		if (op == 5)
-			s = "Edição Espectador";
+			windown = "Edição Espectador";
 		if (op == 6)
-			s = "Edição Ingresso";
+			windown = "Edição Ingresso";
 
-		janela = new JFrame(s);
+		janela = new JFrame(windown);
 
 		if (op == 4 || op == 1) {
 
@@ -166,7 +169,7 @@ public class TelaEdit implements ActionListener {
 		else if (op == 5 || op == 2) {
 
 			if (op == 5) {
-				// Criando FIlD com dados do Espectador clicado
+				// Criando FIElD com dados do Espectador clicado
 
 				valorNome = new JTextField(dados.getEspectadores()[pos].getNome(), 200);
 				valorNascimento = new JTextField(dados.getEspectadores()[pos].getNasc(), 200);
@@ -254,30 +257,41 @@ public class TelaEdit implements ActionListener {
 			this.janela.setSize(400, 430);
 		}
 
-		// Coloca botoes de excluir e salvar
+		// Bptão de salvar para cadastro filmes, edição filme, cadastro
+		// ingressos, edição ingresso
+
 		if (op == 4 || op == 1 || op == 6 || op == 3) {
 
 			botaoSalvar.setBounds(220, 340, 115, 30);
 			this.janela.add(botaoSalvar);
+
+			// Botãos de excluir editar filmes e editar ingresso
 
 			if (op == 4 || op == 6) {
 				botaoExcluir.setBounds(50, 340, 115, 30);
 				this.janela.add(botaoExcluir);
 			}
 
-		} else if (op == 5 || op == 2 || op == 4) {
+			// Botão de salvar para cadastro Espectador, edição Espectador
+		} else if (op == 5 || op == 2) {
 
 			botaoSalvar.setBounds(220, 110, 115, 30);
 			this.janela.add(botaoSalvar);
 
-			if (op == 5 || op == 6 || op == 4) {
+			// Coloca botão excluir para edição Espectador
+			if (op == 5 || op == 4) {
 				botaoExcluir.setBounds(50, 110, 115, 30);
 				this.janela.add(botaoExcluir);
 			}
 		}
+
+		// Definindo Propriedades na janela
+
 		this.janela.setResizable(false);
 		this.janela.setLocationRelativeTo(null);
 		this.janela.setVisible(true);
+
+		// Atribuindo Escuta a interação dos botões
 		botaoSalvar.addActionListener(this);
 		botaoExcluir.addActionListener(this);
 
@@ -288,14 +302,14 @@ public class TelaEdit implements ActionListener {
 		Object src = e.getSource();
 		if (src == botaoSalvar) {
 			try {
-				boolean res = true;
+				boolean res;
 				if (opcao == 1) { // cadastro de novo Filme
 					novoDado[0] = Integer.toString(dados.getQtdFilmes());
 				} else if (opcao == 2) { // cadastro de novo Espectador
 					novoDado[0] = Integer.toString(dados.getQntEspectadores());
 				} else if (opcao == 3) {// cadastro de novo Ingresso
 					novoDado[0] = Integer.toString(posicao);
-				} else if (opcao == 4) {// edicao de dado existente
+				} else if (opcao == 4) {// edicao de dado existente Filme
 					novoDado[0] = Integer.toString(posicao);
 
 					novoDado[1] = valorNome.getText();
@@ -324,6 +338,8 @@ public class TelaEdit implements ActionListener {
 				novoDado[4] = valorHora.getText();
 				novoDado[5] = valorID.getText();
 				novoDado[6] = valorEntrada.getText();
+
+				res = dados.inserirEditarEspectador(novoDado);
 
 				if (opcao == 1 || opcao == 4) {
 					res = dados.inserirEditarFilme(novoDado);
@@ -388,18 +404,11 @@ public class TelaEdit implements ActionListener {
 	}
 
 	public void mensagemErroCadastro() {
-		JOptionPane.showMessageDialog(null,
-				"ERRO AO SALVAR OS DADOS!\n " + "Pode ter ocorrido um dos dois erros a seguir:  \n"
-						+ "1. Nem todos os campos foram preenchidos \n"
-						+ "2. CPF, identidade, DDD e telefone não contém apenas números",
-				null, JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null, "ERRO AO SALVAR OS DADOS! ");
 	}
 
 	public void mensagemErroExclusaoAluno() {
-		JOptionPane.showMessageDialog(null,
-				"Ocorreu um erro ao excluir o dado.\n " + "Verifique se o aluno está matriculado\n"
-						+ "em alguma disciplina. Se sim, cancele\n " + "a matricula e tente novamente.",
-				null, JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null, "Ocorreu um erro ao excluir o dado");
 	}
 
 	public void mensagemErroExclusaoProf() {

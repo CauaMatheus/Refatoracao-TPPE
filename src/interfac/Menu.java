@@ -61,7 +61,7 @@ public class Menu implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent acao) {
 
-		// e disparando ações para o mesmo
+		// Disparando ações para o mesmo
 
 		Object src = acao.getSource();
 
