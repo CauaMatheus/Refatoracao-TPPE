@@ -76,26 +76,117 @@ public class TelaEdit implements ActionListener {
 		janela = new JFrame(s);
 
 		// Preenche dados com dados do Filme clicado
-		if (op == 4) {
-			valorNome = new JTextField(dados.getFilmes()[pos].getNomeFilme(), 200);
-			valorSala = new JTextField(String.valueOf(dados.getFilmes()[pos].getNumSala()), 200);
-			valorHora = new JTextField(dados.getFilmes()[pos].getHoraFilme(), 200);
-			valorDura = new JTextField(String.valueOf(dados.getFilmes()[pos].getDuracao()), 200);
-			valorGenero = new JTextField(dados.getFilmes()[pos].getGenero(), 200);
-			valorValor = new JTextField(String.valueOf(dados.getFilmes()[pos].getValor()), 200);
-			valorFaixa = new JTextField(String.valueOf(dados.getFilmes()[pos].getFaixaEtaria()), 200);
-			valorDim = new JTextField(dados.getFilmes()[pos].getDimensao(), 200);
-			valorAudio = new JTextField(dados.getFilmes()[pos].getAudio(), 200);
-			valorEspCad = new JTextField(String.valueOf(dados.getFilmes()[pos].getEspCad()), 200);
+		if (op == 4 || op == 1) {
 
+			if (op == 4) {
+
+				valorNome = new JTextField(dados.getFilmes()[pos].getNomeFilme(), 200);
+				valorSala = new JTextField(String.valueOf(dados.getFilmes()[pos].getNumSala()), 200);
+				valorHora = new JTextField(dados.getFilmes()[pos].getHoraFilme(), 200);
+				valorDura = new JTextField(String.valueOf(dados.getFilmes()[pos].getDuracao()), 200);
+				valorGenero = new JTextField(dados.getFilmes()[pos].getGenero(), 200);
+				valorValor = new JTextField(String.valueOf(dados.getFilmes()[pos].getValor()), 200);
+				valorFaixa = new JTextField(String.valueOf(dados.getFilmes()[pos].getFaixaEtaria()), 200);
+				valorDim = new JTextField(dados.getFilmes()[pos].getDimensao(), 200);
+				valorAudio = new JTextField(dados.getFilmes()[pos].getAudio(), 200);
+				valorEspCad = new JTextField(String.valueOf(dados.getFilmes()[pos].getEspCad()), 200);
+			} else {
+				valorNome = new JTextField(200);
+				valorSala = new JTextField(200);
+				valorHora = new JTextField(200);
+				valorDura = new JTextField(200);
+				valorGenero = new JTextField(200);
+				valorValor = new JTextField(200);
+				valorFaixa = new JTextField(200);
+				valorDim = new JTextField(200);
+				valorAudio = new JTextField(200);
+				valorEspCad = new JTextField(200);
+				valorNascimento = new JTextField(200);
+				valorCPF = new JTextField(200);
+				valorID = new JTextField(200);
+				valorEntrada = new JTextField(200);
+			}
+
+			labelNome.setBounds(30, 20, 100, 25);
+			valorNome.setBounds(136, 20, 200, 25);
+			labelSala.setBounds(30, 50, 100, 25);
+			valorSala.setBounds(136, 50, 200, 25);
+			labelHora.setBounds(30, 80, 100, 25);
+			valorHora.setBounds(136, 80, 200, 25);
+			labelDura.setBounds(30, 110, 100, 25);
+			valorDura.setBounds(136, 110, 200, 25);
+			labelGenero.setBounds(30, 140, 100, 25);
+			valorGenero.setBounds(136, 140, 200, 25);
+			Labelvalor.setBounds(30, 170, 100, 25);
+			valorValor.setBounds(136, 170, 200, 25);
+			labelFaixa.setBounds(30, 200, 100, 25);
+			valorFaixa.setBounds(136, 200, 200, 25);
+			labelDim.setBounds(30, 230, 100, 25);
+			valorDim.setBounds(136, 230, 200, 25);
+			labelAudio.setBounds(30, 260, 100, 25);
+			valorAudio.setBounds(136, 260, 200, 25);
+			labelEspCad.setBounds(30, 290, 100, 25);
+			valorEspCad.setBounds(136, 290, 200, 25);
+
+			this.janela.add(labelNome);
+			this.janela.add(valorNome);
+			this.janela.add(labelSala);
+			this.janela.add(valorSala);
+			this.janela.add(labelHora);
+			this.janela.add(valorHora);
+			this.janela.add(labelDura);
+			this.janela.add(valorDura);
+			this.janela.add(labelGenero);
+			this.janela.add(valorGenero);
+
+			this.janela.add(Labelvalor);
+			this.janela.add(valorValor);
+			this.janela.add(labelFaixa);
+			this.janela.add(valorFaixa);
+			this.janela.add(labelDim);
+			this.janela.add(valorDim);
+			this.janela.add(labelAudio);
+			this.janela.add(valorAudio);
+			this.janela.add(labelEspCad);
+			this.janela.add(valorEspCad);
+
+			this.janela.setLayout(null);
+
+			this.janela.setSize(400, 430);
 		}
 
 		// Preenche dados com dados do Expectador clicado
 
-		else if (op == 5) {
-			valorNome = new JTextField(dados.getEspectadores()[pos].getNome(), 200);
-			valorNascimento = new JTextField(dados.getEspectadores()[pos].getNasc(), 200);
-			valorCPF = new JTextField(dados.getEspectadores()[pos].getCpf(), 200);
+		else if (op == 5 || op == 2) {
+
+			if (op == 5) {
+				valorNome = new JTextField(dados.getEspectadores()[pos].getNome(), 200);
+				valorNascimento = new JTextField(dados.getEspectadores()[pos].getNasc(), 200);
+				valorCPF = new JTextField(dados.getEspectadores()[pos].getCpf(), 200);
+			} else {
+				valorNome = new JTextField(200);
+				valorNascimento = new JTextField(200);
+				valorCPF = new JTextField(200);
+
+			}
+
+			labelNome.setBounds(30, 20, 100, 25);
+			valorNome.setBounds(136, 20, 200, 25);
+			labelNascimento.setBounds(30, 50, 100, 25);
+			valorNascimento.setBounds(136, 50, 200, 25);
+			LabelCPF.setBounds(30, 80, 100, 25);
+			valorCPF.setBounds(136, 80, 200, 25);
+
+			this.janela.add(labelNome);
+			this.janela.add(valorNome);
+			this.janela.add(labelNascimento);
+			this.janela.add(valorNascimento);
+			this.janela.add(LabelCPF);
+			this.janela.add(valorCPF);
+
+			this.janela.setLayout(null);
+
+			this.janela.setSize(400, 200);
 
 			// Preenche dados com dados do Ingresso clicado
 
@@ -103,8 +194,12 @@ public class TelaEdit implements ActionListener {
 			valorID = new JTextField(dados.getEspectadores()[pos].getNome(), 200);
 			valorEntrada = new JTextField(dados.getEspectadores()[pos].getNasc(), 200);
 
-		} else if (op == 3 || op == 4) {
 			// Não preenche com dados
+
+		} else if (op == 2) {
+
+		} else if (op == 3) {
+
 		}
 
 		valorNome = new JTextField(200);
@@ -143,23 +238,31 @@ public class TelaEdit implements ActionListener {
 		labelEspCad.setBounds(30, 290, 100, 25);
 		valorEspCad.setBounds(136, 290, 200, 25);
 
-		
-
 		// Coloca botoes de excluir e salvar
-		if (op == 4 || op == 5 || op == 6) {
-			botaoSalvar.setBounds(220, 340, 115, 30);
-			botaoExcluir.setBounds(50, 340, 115, 30);
-			this.janela.add(botaoSalvar);
-			this.janela.add(botaoExcluir);
+		if (op == 4 || op == 1) {
 
-		} else if (op == 1 || op == 2 || op == 3) {
 			botaoSalvar.setBounds(220, 340, 115, 30);
 			this.janela.add(botaoSalvar);
+
+			if (op == 4) {
+				botaoExcluir.setBounds(50, 340, 115, 30);
+				this.janela.add(botaoExcluir);
+			}
+
+		} else if (op == 5 || op == 2 || op == 6 || op == 3) {
+
+			botaoSalvar.setBounds(220, 110, 115, 30);
+			this.janela.add(botaoSalvar);
+
+			if (op == 5 || op == 6) {
+				botaoExcluir.setBounds(50, 110, 115, 30);
+				this.janela.add(botaoExcluir);
+			}
 
 		}
-		
-		if () {
-			
+
+		if (op == 3) {
+
 			this.janela.add(labelNome);
 			this.janela.add(valorNome);
 			this.janela.add(labelSala);
@@ -170,7 +273,7 @@ public class TelaEdit implements ActionListener {
 			this.janela.add(valorDura);
 			this.janela.add(labelGenero);
 			this.janela.add(valorGenero);
-			
+
 			this.janela.add(Labelvalor);
 			this.janela.add(valorValor);
 			this.janela.add(labelFaixa);
@@ -181,17 +284,32 @@ public class TelaEdit implements ActionListener {
 			this.janela.add(valorAudio);
 			this.janela.add(labelEspCad);
 			this.janela.add(valorEspCad);
-			
+
 			this.janela.setLayout(null);
-			
+
 			this.janela.setSize(400, 430);
-			this.janela.setVisible(true);
-			janela.setResizable(false);
-			janela.setLocationRelativeTo(null);
-			
-			botaoSalvar.addActionListener(this);
-			botaoExcluir.addActionListener(this);
+
 		}
+		/*
+		 * else if (op == 5) {
+		 * 
+		 * this.janela.add(valorNome); this.janela.add(valorNascimento);
+		 * this.janela.add(valorCPF); this.janela.setSize(400, 130);
+		 * 
+		 * } else if (op == 6) {
+		 * 
+		 * this.janela.add(valorID); this.janela.add(valorEntrada);
+		 * this.janela.setSize(400, 130);
+		 * 
+		 * }
+		 */
+
+		this.janela.setVisible(true);
+		janela.setResizable(false);
+		janela.setLocationRelativeTo(null);
+
+		botaoSalvar.addActionListener(this);
+		botaoExcluir.addActionListener(this);
 
 	}
 

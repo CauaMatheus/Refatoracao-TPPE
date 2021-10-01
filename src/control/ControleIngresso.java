@@ -27,14 +27,15 @@ public class ControleIngresso {
 		return s;
 	}
 
-	public String[] getHoraFilme() {
-		String[] t = new String[QntIngressos];
+	public int[] getIdIngresso() {
+		int[] t = new int [QntIngressos];
 		for (int i = 0; i < QntIngressos; i++) {
-			t[i] = out[i].getHoraFilme();
+			t[i] = out[i].getId();
 		}
 
 		return t;
 	}
+
 
 	public int getQtd() {
 		return QntIngressos;

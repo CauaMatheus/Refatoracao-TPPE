@@ -7,7 +7,7 @@ public class Ingresso extends Cadastro {
 	private String tipoEntrada;
 	private Espectador nomeEsp;
 	
-	// Método construtor//
+
 	public Ingresso() {
 		super();
 	}

@@ -32,7 +32,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	private JList<String> listaEspectador;
 	private JList<String> listaIngresso;
 	private String[] listaNomes = new String[100];
-	private String[] listaFilme = new String[100];
+	private String[] listaID = new String[100];
 
 	public void mostrarDados(ControleDados d, int esc) {
 		dados = d;
@@ -116,9 +116,10 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		case 3:
 
 			listaNomes = new ControleIngresso(dados).getNomeIngresso();
-			listaFilme = new ControleIngresso(dados).getHoraFilme();
+			listaID = new ControleIngresso(dados).getIdIngresso();
 
 			listaIngresso = new JList<String>(listaNomes);
+
 			janela = new JFrame("Ingressos Cadastrados");
 			titulo = new JLabel("Ingressos");
 			cadastroIngresso = new JButton("Novo");
@@ -162,10 +163,10 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			new TelaEdit().inserirEditar(4, dados, this, listaMovie.getSelectedIndex());
 		}
 		if (acao.getValueIsAdjusting() && src == listaEspectador) {
-			new TelaEdit().inserirEditar(5, dados, this, listaMovie.getSelectedIndex());
+			new TelaEdit().inserirEditar(5, dados, this, listaEspectador.getSelectedIndex());
 		}
 		if (acao.getValueIsAdjusting() && src == listaIngresso) {
-			new TelaEdit().inserirEditar(6, dados, this, listaMovie.getSelectedIndex());
+			new TelaEdit().inserirEditar(6, dados, this, listaIngresso.getSelectedIndex());
 		}
 
 	}
