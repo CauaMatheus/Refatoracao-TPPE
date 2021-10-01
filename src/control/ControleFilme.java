@@ -7,6 +7,7 @@ public class ControleFilme {
 	// Array para guardar filmes
 
 	private Filme[] f;
+
 	private int QntFilmes;
 
 	public ControleFilme(ControleDados d) {

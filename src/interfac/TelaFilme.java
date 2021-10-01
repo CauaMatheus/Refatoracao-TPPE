@@ -28,7 +28,9 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	private JButton refreshIngresso;
 
 	private static ControleDados dados;
-	private JList<String> lista;
+	private JList<String> listaMovie;
+	private JList<String> listaEspectador;
+	private JList<String> listaIngresso;
 	private String[] listaNomes = new String[100];
 	private String[] listaFilme = new String[100];
 
@@ -40,7 +42,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		switch (esc) {
 		case 1:
 			listaNomes = new ControleFilme(dados).getNomeFilme();
-			lista = new JList<String>(listaNomes);
+			listaMovie = new JList<String>(listaNomes);
 
 			janela = new JFrame("Filmes");
 			titulo = new JLabel("Filmes Cadastrados");
@@ -50,9 +52,9 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
 			titulo.setBounds(90, 10, 250, 30);
 
-			lista.setBounds(20, 50, 350, 120);
-			lista.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-			lista.setVisibleRowCount(10);
+			listaMovie.setBounds(20, 50, 350, 120);
+			listaMovie.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+			listaMovie.setVisibleRowCount(10);
 
 			cadastroFilme.setBounds(70, 177, 100, 30);
 			refreshFilme.setBounds(200, 177, 100, 30);
@@ -62,7 +64,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			janela.setLocationRelativeTo(null);
 
 			janela.add(titulo);
-			janela.add(lista);
+			janela.add(listaMovie);
 			janela.add(cadastroFilme);
 			janela.add(refreshFilme);
 
@@ -71,13 +73,13 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 
 			cadastroFilme.addActionListener(this);
 			refreshFilme.addActionListener(this);
-			lista.addListSelectionListener(this);
+			listaMovie.addListSelectionListener(this);
 			break;
 
 		case 2:
 
 			listaNomes = new ControleEspectador(dados).getNome();
-			lista = new JList<String>(listaNomes);
+			listaEspectador = new JList<String>(listaNomes);
 
 			janela = new JFrame("Espectadores Cadastrados");
 			titulo = new JLabel("Espectadores ");
@@ -87,9 +89,9 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
 			titulo.setBounds(90, 10, 250, 30);
 
-			lista.setBounds(20, 50, 350, 120);
-			lista.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-			lista.setVisibleRowCount(10);
+			listaEspectador.setBounds(20, 50, 350, 120);
+			listaEspectador.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+			listaEspectador.setVisibleRowCount(10);
 
 			cadastroEspectador.setBounds(70, 177, 100, 30);
 			refreshEspectador.setBounds(200, 177, 100, 30);
@@ -99,7 +101,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			janela.setLocationRelativeTo(null);
 
 			janela.add(titulo);
-			janela.add(lista);
+			janela.add(listaEspectador);
 			janela.add(cadastroEspectador);
 			janela.add(refreshEspectador);
 
@@ -108,7 +110,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 
 			cadastroEspectador.addActionListener(this);
 			refreshEspectador.addActionListener(this);
-			lista.addListSelectionListener(this);
+			listaEspectador.addListSelectionListener(this);
 			break;
 
 		case 3:
@@ -116,7 +118,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			listaNomes = new ControleIngresso(dados).getNomeIngresso();
 			listaFilme = new ControleIngresso(dados).getHoraFilme();
 
-			lista = new JList<String>(listaNomes);
+			listaIngresso = new JList<String>(listaNomes);
 			janela = new JFrame("Ingressos Cadastrados");
 			titulo = new JLabel("Ingressos");
 			cadastroIngresso = new JButton("Novo");
@@ -125,9 +127,9 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
 			titulo.setBounds(125, 10, 250, 30);
 
-			lista.setBounds(20, 50, 350, 120);
-			lista.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-			lista.setVisibleRowCount(10);
+			listaIngresso.setBounds(20, 50, 350, 120);
+			listaIngresso.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+			listaIngresso.setVisibleRowCount(10);
 
 			cadastroIngresso.setBounds(70, 177, 100, 30);
 			refreshFilme.setBounds(200, 177, 100, 30);
@@ -137,7 +139,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			janela.setLocationRelativeTo(null);
 
 			janela.add(titulo);
-			janela.add(lista);
+			janela.add(listaIngresso);
 			janela.add(cadastroIngresso);
 			janela.add(refreshFilme);
 
@@ -146,7 +148,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 
 			cadastroIngresso.addActionListener(this);
 			refreshFilme.addActionListener(this);
-			lista.addListSelectionListener(this);
+			listaIngresso.addListSelectionListener(this);
 
 		}
 
@@ -156,18 +158,55 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	public void valueChanged(ListSelectionEvent acao) {
 		Object src = acao.getSource();
 
-		if (acao.getValueIsAdjusting() && src == lista) {
-			new TelaEdit().inserirEditar(3, dados, this, lista.getSelectedIndex());
+		if (acao.getValueIsAdjusting() && src == listaMovie) {
+			new TelaEdit().inserirEditar(4, dados, this, listaMovie.getSelectedIndex());
+		}
+		if (acao.getValueIsAdjusting() && src == listaEspectador) {
+			new TelaEdit().inserirEditar(5, dados, this, listaMovie.getSelectedIndex());
+		}
+		if (acao.getValueIsAdjusting() && src == listaIngresso) {
+			new TelaEdit().inserirEditar(6, dados, this, listaMovie.getSelectedIndex());
 		}
 
 	}
 
 	@Override
+
+	// Gatilho botões
 	public void actionPerformed(ActionEvent acao) {
 		Object gatilho = acao.getSource();
 
+		// Gatilhos para a pagina filme -> Exibição, Cadastro e Edit
+
 		if (gatilho == cadastroFilme) {
 			new TelaEdit().inserirEditar(1, dados, this, 0);
+		}
+
+		if (gatilho == refreshFilme) {
+			listaNomes = new ControleFilme(dados).getNomeFilme();
+			listaMovie.updateUI();
+		}
+
+		// Gatilhos para a pagina espectador -> Exibição, Cadastro e Edit
+
+		if (gatilho == cadastroEspectador) {
+			new TelaEdit().inserirEditar(2, dados, this, 0);
+
+		}
+		if (gatilho == refreshEspectador) {
+			listaNomes = new ControleEspectador(dados).getNome();
+			listaEspectador.updateUI();
+		}
+
+		// Gatilhos para a pagina ingresso -> Exibição, Cadastro e Edit
+
+		if (gatilho == cadastroIngresso) {
+			new TelaEdit().inserirEditar(3, dados, this, 0);
+
+			if (gatilho == refreshEspectador) {
+				listaNomes = new ControleIngresso(dados).getNomeIngresso();
+				listaIngresso.updateUI();
+			}
 
 		}
 
