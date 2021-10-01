@@ -2,16 +2,16 @@ package modelo;
 
 public class Dados {
 
-	private Filme[] filmes = new Filme[50];
+	private Filme[] filmes = new Filme[100];
 	private int qtdFilmes = 0;
 
-	private Ingresso[] ingressos = new Ingresso[50];
+	private Ingresso[] ingressos = new Ingresso[100];
 	private int qtdIngressos = 0;
 
-	private Espectador[] espectadores = new Espectador[50];
+	private Espectador[] espectadores = new Espectador[100];
 	private int qtdEspectadores = 0;
 
-	private Acompanhamento[] acompanhamentos = new Acompanhamento[50];
+	private Acompanhamento[] acompanhamentos = new Acompanhamento[10];
 	private int qtdAcompanhamentos = 0;
 	
 
