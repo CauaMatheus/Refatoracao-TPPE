@@ -108,6 +108,7 @@ public class TelaEdit implements ActionListener {
 				valorID = new JTextField(200);
 				valorEntrada = new JTextField(200);
 			}
+
 			// Configuração pagina
 			labelNome.setBounds(30, 20, 100, 25);
 			valorNome.setBounds(136, 20, 200, 25);
@@ -155,7 +156,6 @@ public class TelaEdit implements ActionListener {
 			this.janela.add(valorEspCad);
 
 			this.janela.setLayout(null);
-
 			this.janela.setSize(400, 430);
 		}
 
@@ -195,7 +195,6 @@ public class TelaEdit implements ActionListener {
 			this.janela.add(valorCPF);
 
 			this.janela.setLayout(null);
-
 			this.janela.setSize(400, 200);
 
 		} else if (op == 6 || op == 3) {
@@ -216,6 +215,13 @@ public class TelaEdit implements ActionListener {
 			valorID.setBounds(136, 20, 200, 25);
 			labelEntrada.setBounds(30, 50, 100, 25);
 			valorEntrada.setBounds(136, 50, 200, 25);
+
+			// Inserindo Dados
+			this.janela.add(LabelID);
+			this.janela.add(valorID);
+			this.janela.add(labelEntrada);
+			this.janela.add(valorEntrada);
+			this.janela.setSize(400, 200);
 
 		}
 
@@ -240,6 +246,9 @@ public class TelaEdit implements ActionListener {
 				this.janela.add(botaoExcluir);
 			}
 		}
+		this.janela.setResizable(false);
+		this.janela.setLocationRelativeTo(null);
+		this.janela.setVisible(true);
 	}
 
 	@Override
