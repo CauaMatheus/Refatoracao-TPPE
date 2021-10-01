@@ -116,7 +116,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		case 3:
 
 			listaNomes = new ControleIngresso(dados).getNomeIngresso();
-			listaID = new ControleIngresso(dados).getIdIngresso();
+			// listaID = new ControleIngresso(dados).getIdIngresso();
 
 			listaIngresso = new JList<String>(listaNomes);
 
