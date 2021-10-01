@@ -130,6 +130,41 @@ public class ControleDados {
 		}
 	}
 	
+	// Inserir e editar Ingresso
+	public boolean inserirEditarEspectador(String[] dadosEspectadores) {
+		if (!dadosEspectadores[1].matches("[0-9]+") || !dadosEspectadores[2].matches("[0-9]+") || !dadosEspectadores[3].matches("[0-9]+")) {
+			return false;
+		} else {
+			Espectador e = new Espectador(dadosEspectadores[1], dadosEspectadores[2], dadosEspectadores[3]);
+			d.inserirEditarEspectador(e, Integer.parseInt(dadosEspectadores[0]));
+			return true;
+		}
+	}
+
+	// remover Ingresso 
+	public boolean removerIngresso(int i) {
+		String inRemovido = d.getIngressos()[i].getNomeFilme();
+
+		if(i == (d.getQtdIngressos() - 1)) { // O prof a ser removido está no final do array
+			d.setQtdIngressos(d.getQtdIngressos() - 1);
+			d.getIngressos()[d.getQtdIngressos()] = null;
+			return true;
+			
+		} else { // o prof a ser removido está no meio do array
+			int cont = 0;
+			while(d.getIngressos()[cont].getNomeFilme().compareTo(inRemovido) != 0)
+				cont++;
+			//Rotina swap
+			for(int j = cont; j < d.getQtdIngressos() - 1; j++) {
+				d.getIngressos()[j] = null;
+				d.getIngressos()[j] = d.getIngressos()[j+1];
+			}
+			d.getIngressos()[d.getQtdIngressos()] = null;
+			d.setQtdIngressos(d.getQtdIngressos() - 1);
+			return true;
+		}
+	}
+	
 	/* Inserir e editar filme
 	public boolean inserirEditarFilme(String[] dadosFilmes) {
 		if (!dadosFilmes[1].matches("[0-9]+") || !dadosFilmes[2].matches("[0-9]+") || !dadosFilmes[3].matches("[0-9]+")

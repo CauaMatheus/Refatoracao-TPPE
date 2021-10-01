@@ -85,7 +85,7 @@ public class Dados {
 		this.espectadores = espectadores;
 	}
 
-	public void inserirEditarEspectadores(Espectador e, int pos) {
+	public void inserirEditarEspectador(Espectador e, int pos) {
 		this.espectadores[pos] = e;
 		if (pos == qtdEspectadores)
 			qtdEspectadores++;
@@ -107,7 +107,7 @@ public class Dados {
 		this.acompanhamentos = acompanhamentos;
 	}
 
-	public void inserirEditarAcompanhamentos(Acompanhamento a, int pos) {
+	public void inserirEditarAcompanhamento(Acompanhamento a, int pos) {
 		this.acompanhamentos[pos] = a;
 		if (pos == qtdAcompanhamentos)
 			qtdAcompanhamentos++;
