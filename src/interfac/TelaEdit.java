@@ -40,11 +40,13 @@ public class TelaEdit implements ActionListener {
 	private JLabel LabelCPF = new JLabel("CPF: ");
 	private JTextField valorCPF;
 
+	private JLabel labelNomeEsp = new JLabel("Espectador: ");
+	private JTextField valorNomeEsp;
 	private JLabel LabelEntrada = new JLabel("Entrada: ");
 	private JTextField valorEntrada;
-	// private JTextField valorEntrada;
 	private JLabel LabelID = new JLabel("ID: ");
 	private JTextField valorID;
+
 
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
@@ -202,6 +204,7 @@ public class TelaEdit implements ActionListener {
 
 			if (op == 6) {
 				// Preenche dados com dados do Ingresso clicado
+				valorNomeEsp = new JTextField(String.valueOf(dados.getIngressos()[pos].getNomeEsp()), 200);
 				valorNome = new JTextField(dados.getIngressos()[pos].getNomeFilme(), 200);
 				valorSala = new JTextField(String.valueOf(dados.getIngressos()[pos].getNumSala()), 200);
 				valorHora = new JTextField(dados.getIngressos()[pos].getHoraFilme(), 200);
@@ -210,6 +213,7 @@ public class TelaEdit implements ActionListener {
 			} else {
 
 				// Criando FIELD para Ingresso sem preencher com os dados
+				valorNomeEsp = new JTextField(200);
 				valorNome = new JTextField(200);
 				valorSala = new JTextField(200);
 				valorHora = new JTextField(200);
@@ -218,25 +222,29 @@ public class TelaEdit implements ActionListener {
 			}
 
 			// Configuração pagina
-			labelNome.setBounds(30, 20, 100, 25);
-			valorNome.setBounds(136, 20, 200, 25);
-			labelSala.setBounds(30, 50, 100, 25);
-			valorSala.setBounds(136, 50, 200, 25);
-			labelHora.setBounds(30, 80, 100, 25);
-			valorHora.setBounds(136, 80, 200, 25);
-			LabelID.setBounds(30, 110, 100, 25);
-			valorID.setBounds(136, 110, 200, 25);
-			LabelEntrada.setBounds(30, 140, 100, 25);
-			valorEntrada.setBounds(136, 140, 200, 25);
+			labelNomeEsp.setBounds(30, 20, 100, 25);
+			valorNomeEsp.setBounds(136, 20, 200, 25);
+			labelNome.setBounds(30, 50, 100, 25);
+			valorNome.setBounds(136, 50, 200, 25);
+			labelSala.setBounds(30, 80, 100, 25);
+			valorSala.setBounds(136, 80, 200, 25);
+			labelHora.setBounds(30, 110, 100, 25);
+			valorHora.setBounds(136, 110, 200, 25);
+			LabelID.setBounds(30, 140, 100, 25);
+			valorID.setBounds(136, 140, 200, 25);
+			LabelEntrada.setBounds(30, 170, 100, 25);
+			valorEntrada.setBounds(136, 170, 200, 25);
 
 			// Inserindo Dados
 
+			this.janela.add(labelNomeEsp);
 			this.janela.add(labelNome);
 			this.janela.add(labelSala);
 			this.janela.add(labelHora);
 			this.janela.add(LabelID);
 			this.janela.add(LabelEntrada);
 
+			this.janela.add(valorNomeEsp);
 			this.janela.add(valorNome);
 			this.janela.add(valorSala);
 			this.janela.add(valorHora);
@@ -279,12 +287,14 @@ public class TelaEdit implements ActionListener {
 		Object src = e.getSource();
 		if (src == botaoSalvar) {
 			try {
-				boolean res;
+				boolean res = false;
 				if (opcao == 1) { // cadastro de novo Filme
 					novoDado[0] = Integer.toString(dados.getQtdFilmes());
-				} else if (opcao == 2) { // cadastro de novo Espectador
+				}else if (opcao == 2) { // cadastro de novo Espectador
 					novoDado[0] = Integer.toString(dados.getQntEspectadores());
-				} else if (opcao == 4) {// edicao de dado existente
+				}else if (opcao == 3) {// cadastro de novo Ingresso
+					novoDado[0] = Integer.toString(posicao);
+				}else if (opcao == 4) {// edicao de dado existente
 					novoDado[0] = Integer.toString(posicao);
 
 					novoDado[1] = valorNome.getText();
@@ -298,18 +308,31 @@ public class TelaEdit implements ActionListener {
 					novoDado[9] = valorAudio.getText();
 					novoDado[10] = valorEspCad.getText();
 
-				} else if (opcao == 5)// edicao de dado existente
+				}else if (opcao == 5){// edicao de dado existente
 					novoDado[0] = Integer.toString(posicao);
 
 				novoDado[1] = valorNome.getText();
 				novoDado[2] = valorNascimento.getText();
 				novoDado[3] = valorCPF.getText();
+				}else if (opcao == 6)// edicao de dado existente
+					novoDado[0] = Integer.toString(posicao);
 
-				if (opcao == 1 || opcao == 4)
+				novoDado[1] = valorNomeEsp.getText();
+				novoDado[2] = valorNome.getText();
+				novoDado[3] = valorSala.getText();
+				novoDado[4] = valorHora.getText();
+				novoDado[5] = valorID.getText();
+				novoDado[6] = valorEntrada.getText();
+				
+				
+				if (opcao == 1 || opcao == 4) {
 					res = dados.inserirEditarFilme(novoDado);
-				else if (opcao == 2 || opcao == 5)
+				}else if (opcao == 2 || opcao == 5) {
 					res = dados.inserirEditarEspectador(novoDado);
-
+				}else if(opcao == 3 || opcao == 5){
+					res = dados.inserirEditarIngresso(novoDado);
+				}
+				
 				if (res) {
 					mensagemSucessoCadastro();
 				} else
@@ -342,7 +365,7 @@ public class TelaEdit implements ActionListener {
 			}
 
 			if (opcao == 6) { // exclui professor
-				res = dados.removerEspectador(posicao);
+				res = dados.removerIngresso(posicao);
 				if (res)
 					mensagemSucessoExclusao();
 				else
