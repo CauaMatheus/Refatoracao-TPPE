@@ -40,8 +40,9 @@ public class TelaEdit implements ActionListener {
 	private JLabel LabelCPF = new JLabel("CPF: ");
 	private JTextField valorCPF;
 
-	private JLabel labelEntrada = new JLabel("Entrada: ");
-	private JTextField valorEntrada;
+	private JLabel LabelEntrada = new JLabel("Entrada: ");
+	private JTextField valorTipoEntrada;
+	// private JTextField valorEntrada;
 	private JLabel LabelID = new JLabel("ID: ");
 	private JTextField valorID;
 
@@ -106,7 +107,7 @@ public class TelaEdit implements ActionListener {
 				valorNascimento = new JTextField(200);
 				valorCPF = new JTextField(200);
 				valorID = new JTextField(200);
-				valorEntrada = new JTextField(200);
+				valorTipoEntrada = new JTextField(200);
 			}
 
 			// Configuração pagina
@@ -201,49 +202,70 @@ public class TelaEdit implements ActionListener {
 
 			if (op == 6) {
 				// Preenche dados com dados do Ingresso clicado
-				valorID = new JTextField(dados.getEspectadores()[pos].getNome(), 200);
-				valorEntrada = new JTextField(dados.getEspectadores()[pos].getNasc(), 200);
+				valorNome = new JTextField(dados.getIngressos()[pos].getNomeFilme(), 200);
+				valorSala = new JTextField(String.valueOf(dados.getIngressos()[pos].getNumSala()), 200);
+				valorHora = new JTextField(dados.getIngressos()[pos].getHoraFilme(), 200);
+				valorID = new JTextField(String.valueOf(dados.getIngressos()[pos].getId()), 200);
+				valorTipoEntrada = new JTextField(dados.getIngressos()[pos].getTipoEntrada(), 200);
 			} else {
 
 				// Criando FIELD para Ingresso sem preencher com os dados
+				valorNome = new JTextField(200);
+				valorSala = new JTextField(200);
+				valorHora = new JTextField(200);
 				valorID = new JTextField(200);
-				valorEntrada = new JTextField(200);
+				valorTipoEntrada = new JTextField(200);
 			}
 
 			// Configuração pagina
-			LabelID.setBounds(30, 20, 100, 25);
-			valorID.setBounds(136, 20, 200, 25);
-			labelEntrada.setBounds(30, 50, 100, 25);
-			valorEntrada.setBounds(136, 50, 200, 25);
+			labelNome.setBounds(30, 20, 100, 25);
+			valorNome.setBounds(136, 20, 200, 25);
+			labelSala.setBounds(30, 50, 100, 25);
+			valorSala.setBounds(136, 50, 200, 25);
+			labelHora.setBounds(30, 80, 100, 25);
+			valorHora.setBounds(136, 80, 200, 25);
+			LabelID.setBounds(30, 110, 100, 25);
+			valorID.setBounds(136, 110, 200, 25);
+			LabelEntrada.setBounds(30, 140, 100, 25);
+			valorTipoEntrada.setBounds(136, 140, 200, 25);
 
 			// Inserindo Dados
-			this.janela.add(LabelID);
-			this.janela.add(valorID);
-			this.janela.add(labelEntrada);
-			this.janela.add(valorEntrada);
 
+			this.janela.add(labelNome);
+			this.janela.add(labelSala);
+			this.janela.add(labelHora);
+			this.janela.add(LabelID);
+			this.janela.add(LabelEntrada);
+
+			this.janela.add(valorNome);
+			this.janela.add(valorSala);
+			this.janela.add(valorHora);
+			this.janela.add(valorID);
+			this.janela.add(valorTipoEntrada);
+
+			this.janela.setVisible(true);
 			this.janela.setLayout(null);
-			this.janela.setSize(400, 200);
+			this.janela.setSize(400, 430);
 
 		}
 
 		// Coloca botoes de excluir e salvar
-		if (op == 4 || op == 1) {
+		if (op == 4 || op == 1 || op == 6 || op == 3) {
 
 			botaoSalvar.setBounds(220, 340, 115, 30);
 			this.janela.add(botaoSalvar);
 
-			if (op == 4) {
+			if (op == 4 || op == 6) {
 				botaoExcluir.setBounds(50, 340, 115, 30);
 				this.janela.add(botaoExcluir);
 			}
 
-		} else if (op == 5 || op == 2 || op == 6 || op == 3) {
+		} else if (op == 5 || op == 2 || op == 4) {
 
 			botaoSalvar.setBounds(220, 110, 115, 30);
 			this.janela.add(botaoSalvar);
 
-			if (op == 5 || op == 6) {
+			if (op == 5 || op == 6 || op == 4) {
 				botaoExcluir.setBounds(50, 110, 115, 30);
 				this.janela.add(botaoExcluir);
 			}
