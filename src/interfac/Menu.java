@@ -17,7 +17,8 @@ public class Menu implements ActionListener {
 	private static JFrame janela = new JFrame("Menu Principal");
 	private static JLabel titulo = new JLabel("Cinefun");
 	private static JButton filme = new JButton("Filme"); // aluno -> filme
-	private static JButton ingresso = new JButton("Ingresso"); // curso -> ingresso
+	private static JButton expectadores = new JButton("Espectadores"); // curso -> ingresso
+	private static JButton ingressos = new JButton("Ingressos"); // curso -> ingresso
 
 	public static ControleDados dados = new ControleDados();
 
@@ -28,7 +29,8 @@ public class Menu implements ActionListener {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(160, 10, 150, 50);
 		filme.setBounds(95, 70, 200, 40);
-		ingresso.setBounds(95, 125, 200, 40);
+		expectadores.setBounds(95, 125, 200, 40);
+		ingressos.setBounds(95, 180, 200, 40);
 
 		// Gerando janela com os parâmetros especificados
 
@@ -36,11 +38,12 @@ public class Menu implements ActionListener {
 
 		janela.add(titulo);
 		janela.add(filme);
-		janela.add(ingresso);
+		janela.add(expectadores);
+		janela.add(ingressos);
 
 		// Determinando tamanho padrão da janela
 
-		janela.setSize(400, 250);
+		janela.setSize(400, 300);
 		janela.setResizable(false);
 		janela.setLocationRelativeTo(null);
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -51,7 +54,8 @@ public class Menu implements ActionListener {
 		Menu menu = new Menu();
 
 		filme.addActionListener(menu);
-		ingresso.addActionListener(menu);
+		expectadores.addActionListener(menu);
+		ingressos.addActionListener(menu);
 	}
 
 	@Override
@@ -64,7 +68,10 @@ public class Menu implements ActionListener {
 		if (src == filme)
 			new TelaFilme().mostrarDados(dados);
 
-		if (src == ingresso)
+		if (src == expectadores)
+			new TelaEspectador().mostrarDados(dados);
+
+		if (src == ingressos)
 			new TelaIngresso().mostrarDados(dados);
 
 	}

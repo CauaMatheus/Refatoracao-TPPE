@@ -73,23 +73,20 @@ public class TelaEdit implements ActionListener {
 			valorAudio = new JTextField(dados.getFilmes()[pos].getAudio(), 200);
 			valorEspCad = new JTextField(String.valueOf(dados.getFilmes()[pos].getEspCad()), 200);
 
-		} /*
-			 * else if (op == 4) { // Preenche dados com dados do professor clicado
-			 * valorNome = new JTextField(dados.getProfessores()[pos].getNome(), 200);
-			 * valorHoraAula = new
-			 * JTextField(String.valueOf(dados.getProfessores()[pos].getValorHoraAula()),
-			 * 200); valorEnd = new JTextField(200); valorCPF = new
-			 * JTextField(String.valueOf(dados.getProfessores()[pos].getCPF()), 200);
-			 * valorID = new
-			 * JTextField(String.valueOf(dados.getProfessores()[pos].getNumID()), 200);
-			 * valorDDD = new
-			 * JTextField(String.valueOf(dados.getProfessores()[pos].getNumTel().getDDD()),
-			 * 3); valorTelefone = new
-			 * JTextField(String.valueOf(dados.getProfessores()[pos].getNumTel().getNumero()
-			 * ), 10);
-			 * 
-			 * }
-			 */ else { // Não preenche com dados
+		} else if (op == 4) { // Preenche dados com dados do professor clicado
+
+			valorNome = new JTextField(dados.getIngressos()[pos].getNome(), 200);
+			valorSala = new JTextField(String.valueOf(dados.getEspectadores()[pos].getSala()), 200);
+			valorHora = new JTextField(dados.getEspectadores()[pos].getHoraFilme(), 200);
+			valorDura = new JTextField(String.valueOf(dados.getEspectadores()[pos].getDuracao()), 200);
+			valorGenero = new JTextField(dados.getEspectadores()[pos].getGenero(), 200);
+			valorValor = new JTextField(String.valueOf(dados.getEspectadores()[pos].getValor()), 200);
+			valorFaixa = new JTextField(String.valueOf(dados.getEspectadores()[pos].getFaixaEtaria()), 200);
+			valorDim = new JTextField(dados.getEspectadores()[pos].getDimensao(), 200);
+			valorAudio = new JTextField(dados.getEspectadores()[pos].getAudio(), 200);
+			valorEspCad = new JTextField(String.valueOf(dados.getEspectadores()[pos].getEspCad()), 200);
+
+		} else { // Não preenche com dados
 
 			valorNome = new JTextField(200);
 			valorSala = new JTextField(200);
@@ -124,18 +121,27 @@ public class TelaEdit implements ActionListener {
 		valorAudio.setBounds(136, 260, 200, 25);
 		labelEspCad.setBounds(30, 290, 100, 25);
 		valorEspCad.setBounds(136, 290, 200, 25);
-		botaoSalvar.setBounds(220, 340, 115, 30);
 
 		/*
 		 * // Coloca os campos relacionados a endereco se aluno if (op == 1 || op == 3)
 		 * { this.janela.add(labelEnd); this.janela.add(valorEnd);
 		 * 
 		 * }
-		 * 
-		 * // Coloca botoes de excluir e salvar if (op == 3 || op == 4) {
-		 * botaoSalvar.setBounds(120, 175, 115, 30); botaoExcluir.setBounds(245, 175,
-		 * 115, 30); this.janela.add(botaoExcluir); }
 		 */
+
+		// Coloca botoes de excluir e salvar
+		if (op == 3 || op == 4) {
+			botaoSalvar.setBounds(220, 340, 115, 30);
+			botaoExcluir.setBounds(50, 340, 115, 30);
+			this.janela.add(botaoSalvar);
+			this.janela.add(botaoExcluir);
+
+		} else if (op == 1 || op == 2) {
+			botaoSalvar.setBounds(220, 340, 115, 30);
+			this.janela.add(botaoSalvar);
+
+		}
+
 		this.janela.add(labelNome);
 		this.janela.add(valorNome);
 		this.janela.add(labelSala);
@@ -158,8 +164,6 @@ public class TelaEdit implements ActionListener {
 		this.janela.add(labelEspCad);
 		this.janela.add(valorEspCad);
 
-		this.janela.add(botaoSalvar);
-
 		this.janela.setLayout(null);
 
 		this.janela.setSize(400, 430);
@@ -178,7 +182,7 @@ public class TelaEdit implements ActionListener {
 			try {
 				boolean res;
 				if (opcao == 1) // cadastro de novo aluno
-					novoDado[0] = Integer.toString(dados.getQtdAlunos());
+					novoDado[0] = Integer.toString(dados.getQnFilmes());
 				else if (opcao == 2) // cadastro de novo prof
 					novoDado[0] = Integer.toString(dados.getQtdProfs());
 				else // edicao de dado existente

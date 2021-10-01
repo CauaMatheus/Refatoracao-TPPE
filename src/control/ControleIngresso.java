@@ -14,7 +14,7 @@ public class ControleIngresso {
 		QntIngressos = d.getQntIngressos();
 	}
 
-	public String[] getNomeFilme() {
+	public String[] getNomeIngresso() {
 		String[] s = new String[QntIngressos];
 		for (int i = 0; i < QntIngressos; i++) {
 			s[i] = in[i].getNomeFilme();
@@ -54,11 +54,9 @@ public class ControleIngresso {
 	public String getTipoEntrada(int i) {
 		return in[i].getTipoEntrada();
 	}
-	
+
 	public int getId(int i) {
 		return in[i].getId();
 	}
-	
-	
 
 }
