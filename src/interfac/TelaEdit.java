@@ -164,7 +164,7 @@ public class TelaEdit implements ActionListener {
 			this.janela.setSize(400, 430);
 		}
 
-		// Preenche dados com dados do Expectador clicado
+		// Preenche dados com dados do Epectador clicado
 
 		else if (op == 5 || op == 2) {
 
@@ -254,34 +254,45 @@ public class TelaEdit implements ActionListener {
 			this.janela.add(valorEntrada);
 
 			this.janela.setLayout(null);
-			this.janela.setSize(400, 430);
+			this.janela.setSize(400, 300);
 		}
 
-		// Bptão de salvar para cadastro filmes, edição filme, cadastro
-		// ingressos, edição ingresso
-
-		if (op == 4 || op == 1 || op == 6 || op == 3) {
+		// Botão de salvar para cadastro filmes e edição filme
+		if (op == 4 || op == 1) {
 
 			botaoSalvar.setBounds(220, 340, 115, 30);
 			this.janela.add(botaoSalvar);
 
-			// Botãos de excluir editar filmes e editar ingresso
-
-			if (op == 4 || op == 6) {
+			// Botão de excluir para Editar Filme
+			if (op == 4) {
 				botaoExcluir.setBounds(50, 340, 115, 30);
 				this.janela.add(botaoExcluir);
 			}
 
-			// Botão de salvar para cadastro Espectador, edição Espectador
+			// Botão de salvar para cadastro Espectador e edição Espectador
 		} else if (op == 5 || op == 2) {
 
 			botaoSalvar.setBounds(220, 110, 115, 30);
 			this.janela.add(botaoSalvar);
 
 			// Coloca botão excluir para edição Espectador
-			if (op == 5 || op == 4) {
+			if (op == 5) {
 				botaoExcluir.setBounds(50, 110, 115, 30);
 				this.janela.add(botaoExcluir);
+
+				// Botão salvar para cadastro de ingresso e edição de ingresso
+			}
+
+		} else if (op == 6 || op == 3) {
+
+			botaoSalvar.setBounds(220, 210, 115, 30);
+			this.janela.add(botaoSalvar);
+
+			// Coloca botão excluir para edição Espectador
+			if (op == 6) {
+				botaoExcluir.setBounds(50, 210, 115, 30);
+				this.janela.add(botaoExcluir);
+
 			}
 		}
 
@@ -349,6 +360,8 @@ public class TelaEdit implements ActionListener {
 					res = dados.inserirEditarIngresso(novoDado);
 				}
 
+				// Se Res receber true, retorna uma mensagem de sucesso, se nn retorna uma
+				// mesnagem de erro
 				if (res) {
 					mensagemSucessoCadastro();
 				} else

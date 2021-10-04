@@ -4,7 +4,7 @@ import modelo.Ingresso;
 
 public class ControleIngresso {
 
-	// Array para guardar ngreaao
+	// Array para guardar ingresso
 
 	private Ingresso[] in;
 	private Ingresso[] out;
@@ -28,14 +28,13 @@ public class ControleIngresso {
 	}
 
 	public int[] getIdIngresso() {
-		int[] t = new int [QntIngressos];
+		int[] t = new int[QntIngressos];
 		for (int i = 0; i < QntIngressos; i++) {
 			t[i] = out[i].getId();
 		}
 
 		return t;
 	}
-
 
 	public int getQtd() {
 		return QntIngressos;
