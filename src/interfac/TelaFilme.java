@@ -37,6 +37,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	public void mostrarDados(ControleDados d, int esc) {
 		dados = d;
 
+		// ds
 		// Mostrar dados de filmes cadastrados (JList)
 
 		switch (esc) {
