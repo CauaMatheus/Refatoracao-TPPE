@@ -4,9 +4,9 @@ public abstract class Cadastro {
 
 	// Atributos
 
-	private int numSala;
-	private String nomeFilme;
-	private String horaFilme;
+	protected int numSala;
+	protected String nomeFilme;
+	protected String horaFilme;
 
 	// Construtor
 

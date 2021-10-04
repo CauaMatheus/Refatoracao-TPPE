@@ -81,8 +81,9 @@ public class ControleDados {
 
 		} else { // Remover filme no meio do Array
 			int cont = 0;
-			while (d.getFilmes()[cont].getNomeFilme().compareTo(filmeRemovido) != 0)
+			while (d.getFilmes()[cont].getNomeFilme().compareTo(filmeRemovido) != 0) {
 				cont++;
+			}
 			// Rotina swap
 			for (int j = cont; j < d.getQtdFilmes() - 1; j++) {
 				d.getFilmes()[j] = null;

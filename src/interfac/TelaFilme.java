@@ -1,21 +1,11 @@
 package interfac;
 
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.ListSelectionModel;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-
-import control.ControleDados;
-import control.ControleEspectador;
-import control.ControleFilme;
-import control.ControleIngresso;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
+import control.*;
+import controle.ControleAluno;
 
 public class TelaFilme implements ActionListener, ListSelectionListener {
 	private JFrame janela;
@@ -185,7 +175,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 
 		if (gatilho == refreshFilme) {
 
-			listaNomes = new ControleFilme(dados).getNomeFilme();
+			listaNomes.setListData(new ControleFilme(dados).getNomeFilme());
 			listaMovie.updateUI();
 		}
 
