@@ -7,16 +7,14 @@ public class ControleIngresso {
 	// Array para guardar ingresso
 
 	private Ingresso[] in;
-	private Ingresso[] out;
 	private int QntIngressos;
 
 	public ControleIngresso(ControleDados d) {
-		out = d.getIngressos();
-		QntIngressos = d.getQntIngressos();
-
 		in = d.getIngressos();
 		QntIngressos = d.getQntIngressos();
 	}
+
+	// Array de String que irá aparecer no Jlist
 
 	public String[] getNomeIngresso() {
 		String[] s = new String[QntIngressos];
@@ -46,10 +44,6 @@ public class ControleIngresso {
 
 	public String getNome(int i) {
 		return in[i].getNomeFilme();
-	}
-
-	public String getHora(int i) {
-		return out[i].getHoraFilme();
 	}
 
 	public int getSala(int i) {

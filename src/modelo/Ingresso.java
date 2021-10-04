@@ -11,7 +11,7 @@ public class Ingresso extends Cadastro {
 	public Ingresso() {
 		super();
 	}
-
+	
 	// Construtor //
 
 	public Ingresso(int numSala, String nomeFilme, String horaFilme, String tipoEntrada, int id, Espectador nome) {
@@ -23,6 +23,30 @@ public class Ingresso extends Cadastro {
 	}
 
 	// Get Set
+	
+	public int getNumSala() {
+		return numSala;
+	}
+
+	public void setNumSala(int numSala) {
+		this.numSala = numSala;
+	}
+
+	public String getNomeFilme() {
+		return nomeFilme;
+	}
+
+	public void setNomeFilme(String nomeFilme) {
+		this.nomeFilme = nomeFilme;
+	}
+
+	public String getHoraFilme() {
+		return horaFilme;
+	}
+
+	public void setHoraFilme(String horaFilme) {
+		this.horaFilme = horaFilme;
+	}
 
 	public int getId() {
 		return id;
@@ -31,23 +55,7 @@ public class Ingresso extends Cadastro {
 	public void setId(int id) {
 		this.id = id;
 	}
-/*
-	public Espectador[] getEspectador() {
-		return this.ingresso;
-	}
 
-	public void setArrayIngresso(Espectador[] i) {
-		this.ingresso = i;
-	}
-
-	public String getNome(int p) {
-		return ingresso[p].getNome();
-	}
-
-	public void setNome(Espectador espcCad, int p) {
-		this.ingresso[p] = espcCad;
-	}
-*/
 	public String getTipoEntrada() {
 		return tipoEntrada;
 	}
@@ -63,39 +71,4 @@ public class Ingresso extends Cadastro {
 	public void setNomeEsp(Espectador nomeEsp) {
 		this.nomeEsp = nomeEsp;
 	}
-	
-	
-
-	// Funções
-
-	public void cadIng() {
-		// Função cadastro
-	}
-
-	public void edIng() {
-		// Função de edição
-	}
-
-	public void dellIng() {
-		// Função de delete
-	}
-
-	public void buscIng() {
-		// Função de busca
-	}
-
-	public void showEspct() {
-
-	}
-
-	public void exibir() {
-		System.out.println();
-		System.out.println("Id: " + this.getId());
-		System.out.println("Sala: " + this.getNumSala());
-		System.out.println("Filme: " + this.getNomeFilme());
-		System.out.println("Horário: " + this.getHoraFilme());
-		System.out.println("Entrada: " + this.getTipoEntrada());
-
-	}
-
 }

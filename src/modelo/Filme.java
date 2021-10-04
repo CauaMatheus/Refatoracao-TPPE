@@ -14,6 +14,7 @@ public class Filme extends Cadastro {
 	private Ingresso[] entrada = new Ingresso[100];
 
 	// Método construtor//
+	
 	public Filme() {
 		super();
 	}
@@ -44,6 +45,29 @@ public class Filme extends Cadastro {
 	}
 
 	// Get Set
+	public int getNumSala() {
+		return numSala;
+	}
+
+	public void setNumSala(int numSala) {
+		this.numSala = numSala;
+	}
+
+	public String getNomeFilme() {
+		return nomeFilme;
+	}
+
+	public void setNomeFilme(String nomeFilme) {
+		this.nomeFilme = nomeFilme;
+	}
+
+	public String getHoraFilme() {
+		return horaFilme;
+	}
+
+	public void setHoraFilme(String horaFilme) {
+		this.horaFilme = horaFilme;
+	}
 
 	public int getDuracao() {
 		return duracao;
@@ -116,5 +140,4 @@ public class Filme extends Cadastro {
 	public void setNome(Ingresso espcCad, int p) {
 		this.entrada[p] = espcCad;
 	}
-
 }
