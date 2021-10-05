@@ -316,10 +316,13 @@ public class TelaEdit implements ActionListener {
 				boolean res;
 				if (opcao == 1) { // cadastro de novo Filme
 					novoDado[0] = Integer.toString(dados.getQtdFilmes());
+
 				} else if (opcao == 2) { // cadastro de novo Espectador
 					novoDado[0] = Integer.toString(dados.getQntEspectadores());
+
 				} else if (opcao == 3) {// cadastro de novo Ingresso
-					novoDado[0] = Integer.toString(posicao);
+					novoDado[0] = Integer.toString(dados.getQntIngressos());
+
 				} else if (opcao == 4) {// edicao de dado existente Filme
 					novoDado[0] = Integer.toString(posicao);
 
@@ -333,20 +336,19 @@ public class TelaEdit implements ActionListener {
 					novoDado[8] = valorDim.getText();
 					novoDado[9] = valorAudio.getText();
 					novoDado[10] = valorEspCad.getText();
-					
-					
-					res = dados.inserirEditarEspectador(novoDado);
 
-				} else if (opcao == 5) {// edicao de dado existente
+					res = dados.inserirEditarFilme(novoDado);
+
+				} else if (opcao == 5) {// edicao de dado existente Espectador
 					novoDado[0] = Integer.toString(posicao);
 
 					novoDado[1] = valorNome.getText();
 					novoDado[2] = valorNascimento.getText();
 					novoDado[3] = valorCPF.getText();
-					
-					res = dados.inserirEditarEspectador(novoDado); //Salvar dados
-					
-				} else if (opcao == 6)// edicao de dado existente
+
+					res = dados.inserirEditarEspectador(novoDado); // Salvar dados
+
+				} else if (opcao == 6)// edicao de dado existente Ingresso
 					novoDado[0] = Integer.toString(posicao);
 
 				novoDado[1] = valorNomeEsp.getText();
@@ -356,7 +358,7 @@ public class TelaEdit implements ActionListener {
 				novoDado[5] = valorID.getText();
 				novoDado[6] = valorEntrada.getText();
 
-				res = dados.inserirEditarEspectador(novoDado); //Salvar dados
+				res = dados.inserirEditarIngresso(novoDado); // Salvar dados
 
 				if (opcao == 1 || opcao == 4) {
 					res = dados.inserirEditarFilme(novoDado);
@@ -381,30 +383,23 @@ public class TelaEdit implements ActionListener {
 		}
 
 		if (src == botaoExcluir) {
-			boolean res = false;
 
 			if (opcao == 4) {// exclui Filme
-				res = dados.removerFilme(posicao);
-				if (res)
-					mensagemSucessoExclusao();
-				else
-					mensagemErroExclusaoAluno();
+				dados.removerFilme(posicao);
+				mensagemSucessoExclusao();
+
 			}
 
 			if (opcao == 5) { // exclui Espectador
-				res = dados.removerEspectador(posicao);
-				if (res)
-					mensagemSucessoExclusao();
-				else
-					mensagemErroExclusaoProf();
+				dados.removerEspectador(posicao);
+				mensagemSucessoExclusao();
+
 			}
 
 			if (opcao == 6) { // exclui Ingresso
-				res = dados.removerIngresso(posicao);
-				if (res)
-					mensagemSucessoExclusao();
-				else
-					mensagemErroExclusaoProf();
+				dados.removerIngresso(posicao);
+				mensagemSucessoExclusao();
+
 			}
 
 		}
@@ -424,10 +419,6 @@ public class TelaEdit implements ActionListener {
 
 	public void mensagemErroCadastro() {
 		JOptionPane.showMessageDialog(null, "ERRO AO SALVAR OS DADOS! ");
-	}
-
-	public void mensagemErroExclusaoAluno() {
-		JOptionPane.showMessageDialog(null, "Ocorreu um erro ao excluir o dado");
 	}
 
 	public void mensagemErroExclusaoProf() {
