@@ -14,22 +14,18 @@ public class Filme extends Cadastro {
 	private Ingresso[] entrada = new Ingresso[100];
 
 	// Método construtor//
-	
+
 	public Filme() {
 		super();
 	}
 
-	public Filme(int numSala, String nomeFilme, String horaFilme, int duracao, String genero, double valor,
-			int faixaEtaria) {
-		this.setNumSala(numSala);
-		this.setHoraFilme(horaFilme);
-		this.setNomeFilme(nomeFilme);
-		this.setDuracao(duracao);
-		this.setGenero(genero);
-		this.setValor(valor);
-		this.setFaixaEtaria(faixaEtaria);
-	}
-
+	/*
+	 * public Filme(int numSala, String nomeFilme, String horaFilme, int duracao,
+	 * String genero, double valor, int faixaEtaria) { this.setNumSala(numSala);
+	 * this.setHoraFilme(horaFilme); this.setNomeFilme(nomeFilme);
+	 * this.setDuracao(duracao); this.setGenero(genero); this.setValor(valor);
+	 * this.setFaixaEtaria(faixaEtaria); }
+	 */
 	public Filme(int numSala, String nomeFilme, String horaFilme, int duracao, String genero, double valor,
 			int faixaEtaria, String d, String audio, int espCad) {
 		this.setNumSala(numSala);//
@@ -45,26 +41,32 @@ public class Filme extends Cadastro {
 	}
 
 	// Get Set
+	@Override
 	public int getNumSala() {
 		return numSala;
 	}
 
+	@Override
 	public void setNumSala(int numSala) {
 		this.numSala = numSala;
 	}
 
+	@Override
 	public String getNomeFilme() {
 		return nomeFilme;
 	}
 
+	@Override
 	public void setNomeFilme(String nomeFilme) {
 		this.nomeFilme = nomeFilme;
 	}
 
+	@Override
 	public String getHoraFilme() {
 		return horaFilme;
 	}
 
+	@Override
 	public void setHoraFilme(String horaFilme) {
 		this.horaFilme = horaFilme;
 	}

@@ -9,7 +9,7 @@ import modelo.Ingresso;
 public class ControleDados {
 	private Dados d = new Dados();
 
-	//chama método de criação de dados aleatórios
+	// chama método de criação de dados aleatórios
 	public ControleDados() {
 		d.fillWithSomeData();
 	}
@@ -56,18 +56,18 @@ public class ControleDados {
 
 	// Inserir e editar filme
 	public boolean inserirEditarFilme(String[] dadosFilmes) {
-		if (!dadosFilmes[2].matches("[0-9]+") || !dadosFilmes[4].matches("[0-9]+") || !dadosFilmes[6].matches("[0-9]+")
-				|| !dadosFilmes[7].matches("[0-9]+") || !dadosFilmes[8].matches("[0-9]+")
-				|| !dadosFilmes[10].matches("[0-9]+")) {
-			return false;
-		} else {
-			Filme f = new Filme(Integer.parseInt(dadosFilmes[1]), dadosFilmes[2], dadosFilmes[3],
-					Integer.parseInt(dadosFilmes[4]), dadosFilmes[5], Double.parseDouble(dadosFilmes[6]),
-					Integer.parseInt(dadosFilmes[7]), dadosFilmes[8], dadosFilmes[9],
-					Integer.parseInt(dadosFilmes[10]));
-			d.inserirEditarFilme(f, Integer.parseInt(dadosFilmes[0]));
-			return true;
-		}
+		/*
+		 * if (!dadosFilmes[2].matches("[0-9]+") || !dadosFilmes[4].matches("[0-9]+") ||
+		 * !dadosFilmes[6].matches("[0-9]+") || !dadosFilmes[7].matches("[0-9]+") ||
+		 * !dadosFilmes[8].matches("[0-9]+") || !dadosFilmes[10].matches("[0-9]+")) {
+		 * return false; } else {
+		 */
+		Filme f = new Filme(Integer.parseInt(dadosFilmes[1]), dadosFilmes[2], dadosFilmes[3],
+				Integer.parseInt(dadosFilmes[4]), dadosFilmes[5], Double.parseDouble(dadosFilmes[6]),
+				Integer.parseInt(dadosFilmes[7]), dadosFilmes[8], dadosFilmes[9], Integer.parseInt(dadosFilmes[10]));
+		d.inserirEditarFilme(f, Integer.parseInt(dadosFilmes[0]));
+		return true;
+		// }
 	}
 
 	// remover Filme

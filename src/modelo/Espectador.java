@@ -7,22 +7,21 @@ public class Espectador {
 	private String nome;
 	private String nasc;
 	private String cpf;
-	
+
 	// Método Constructor //
-	
-	public Espectador(String nome){
+
+	public Espectador(String nome) {
 		this.setNome(nome);
 	}
 
-	public Espectador(String nome, String nasc, String cpf){
+	public Espectador(String nome, String nasc, String cpf) {
 		this.setNome(nome);
 		this.setNasc(nasc);
 		this.setCpf(cpf);
 	}
-	
-	
+
 	// Get Set
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -45,5 +44,5 @@ public class Espectador {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
-	}	
+	}
 }

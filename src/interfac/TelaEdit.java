@@ -95,6 +95,10 @@ public class TelaEdit implements ActionListener {
 				valorDim = new JTextField(dados.getFilmes()[pos].getDimensao(), 200);
 				valorAudio = new JTextField(dados.getFilmes()[pos].getAudio(), 200);
 				valorEspCad = new JTextField(String.valueOf(dados.getFilmes()[pos].getEspCad()), 200);
+				valorNascimento = new JTextField(200);
+				valorCPF = new JTextField(200);
+				valorID = new JTextField(200);
+				valorEntrada = new JTextField(200);
 			} else {
 				// Criando FIELD para filme sem preencher com os dados
 
@@ -171,29 +175,58 @@ public class TelaEdit implements ActionListener {
 			if (op == 5) {
 				// Criando FIElD com dados do Espectador clicado
 
-				valorNome = new JTextField(dados.getEspectadores()[pos].getNome(), 200);
+				valorNomeEsp = new JTextField(dados.getEspectadores()[pos].getNome(), 200);
 				valorNascimento = new JTextField(dados.getEspectadores()[pos].getNasc(), 200);
 				valorCPF = new JTextField(dados.getEspectadores()[pos].getCpf(), 200);
+
+				valorNome = new JTextField(200);
+				valorSala = new JTextField(200);
+				valorHora = new JTextField(200);
+				valorID = new JTextField(200);
+				valorEntrada = new JTextField(200);
+
+				valorDura = new JTextField(200);
+				valorGenero = new JTextField(200);
+				valorValor = new JTextField(200);
+				valorFaixa = new JTextField(200);
+				valorDim = new JTextField(200);
+				valorAudio = new JTextField(200);
+				valorEspCad = new JTextField(200);
+
 			} else {
 				// Criando FIELD para Ingresso sem preencher com os dados
 
-				valorNome = new JTextField(200);
+				valorNomeEsp = new JTextField(200);
 				valorNascimento = new JTextField(200);
 				valorCPF = new JTextField(200);
+
+				valorNome = new JTextField(200);
+				valorSala = new JTextField(200);
+				valorHora = new JTextField(200);
+				valorID = new JTextField(200);
+				valorEntrada = new JTextField(200);
+
+				valorDura = new JTextField(200);
+				valorGenero = new JTextField(200);
+				valorValor = new JTextField(200);
+				valorFaixa = new JTextField(200);
+				valorDim = new JTextField(200);
+				valorAudio = new JTextField(200);
+				valorEspCad = new JTextField(200);
 
 			}
 
 			// Configuração pagina
-			labelNome.setBounds(30, 20, 100, 25);
-			valorNome.setBounds(136, 20, 200, 25);
+			labelNomeEsp.setBounds(30, 20, 100, 25);
+			valorNomeEsp.setBounds(136, 20, 200, 25);
 			labelNascimento.setBounds(30, 50, 100, 25);
 			valorNascimento.setBounds(136, 50, 200, 25);
 			LabelCPF.setBounds(30, 80, 100, 25);
 			valorCPF.setBounds(136, 80, 200, 25);
 
 			// Inserindo dados
-			this.janela.add(labelNome);
-			this.janela.add(valorNome);
+			this.janela.add(labelNomeEsp);
+			this.janela.add(valorNomeEsp);
 			this.janela.add(labelNascimento);
 			this.janela.add(valorNascimento);
 			this.janela.add(LabelCPF);
@@ -212,6 +245,16 @@ public class TelaEdit implements ActionListener {
 				valorHora = new JTextField(dados.getIngressos()[pos].getHoraFilme(), 200);
 				valorID = new JTextField(String.valueOf(dados.getIngressos()[pos].getId()), 200);
 				valorEntrada = new JTextField(dados.getIngressos()[pos].getTipoEntrada(), 200);
+
+				valorDura = new JTextField(200);
+				valorGenero = new JTextField(200);
+				valorValor = new JTextField(200);
+				valorFaixa = new JTextField(200);
+				valorDim = new JTextField(200);
+				valorAudio = new JTextField(200);
+				valorEspCad = new JTextField(200);
+				valorNascimento = new JTextField(200);
+				valorCPF = new JTextField(200);
 			} else {
 
 				// Criando FIELD para Ingresso sem preencher com os dados
@@ -221,6 +264,16 @@ public class TelaEdit implements ActionListener {
 				valorHora = new JTextField(200);
 				valorID = new JTextField(200);
 				valorEntrada = new JTextField(200);
+
+				valorDura = new JTextField(200);
+				valorGenero = new JTextField(200);
+				valorValor = new JTextField(200);
+				valorFaixa = new JTextField(200);
+				valorDim = new JTextField(200);
+				valorAudio = new JTextField(200);
+				valorEspCad = new JTextField(200);
+				valorNascimento = new JTextField(200);
+				valorCPF = new JTextField(200);
 			}
 
 			// Configuração pagina
@@ -323,9 +376,11 @@ public class TelaEdit implements ActionListener {
 				} else if (opcao == 3) {// cadastro de novo Ingresso
 					novoDado[0] = Integer.toString(dados.getQntIngressos());
 
-				} else if (opcao == 4) {// edicao de dado existente Filme
+				} else if (opcao == 4 || opcao == 5 || opcao == 6) {// edicao de dado existente Filme
 					novoDado[0] = Integer.toString(posicao);
+					if (opcao == 4) {
 
+					}
 					novoDado[2] = valorNome.getText();
 					novoDado[1] = valorSala.getText();
 					novoDado[3] = valorHora.getText();
@@ -342,7 +397,7 @@ public class TelaEdit implements ActionListener {
 				} else if (opcao == 5) {// edicao de dado existente Espectador
 					novoDado[0] = Integer.toString(posicao);
 
-					novoDado[1] = valorNome.getText();
+					novoDado[1] = valorNomeEsp.getText();
 					novoDado[2] = valorNascimento.getText();
 					novoDado[3] = valorCPF.getText();
 
@@ -375,9 +430,11 @@ public class TelaEdit implements ActionListener {
 				} else
 					mensagemErroCadastro();
 
-			} catch (NullPointerException exc1) {
-				mensagemErroCadastro();
-			} catch (NumberFormatException exc2) {
+			}
+			/*
+			 * catch (NullPointerException exc1) { mensagemErroCadastro();
+			 */
+			catch (NumberFormatException exc2) {
 				mensagemErroCadastro();
 			}
 		}
