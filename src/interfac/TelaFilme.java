@@ -37,7 +37,6 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	public void mostrarDados(ControleDados d, int esc) {
 		dados = d;
 
-		// ds
 		// Mostrar dados de filmes cadastrados (JList)
 
 		switch (esc) {
@@ -117,7 +116,6 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		case 3:
 
 			listaNomes = new ControleIngresso(dados).getNomeIngresso();
-			// listaID = new ControleIngresso(dados).getIdIngresso();
 
 			listaIngresso = new JList<String>(listaNomes);
 
