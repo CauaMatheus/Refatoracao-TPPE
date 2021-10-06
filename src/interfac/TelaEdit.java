@@ -367,20 +367,20 @@ public class TelaEdit implements ActionListener {
 		if (src == botaoSalvar) {
 			try {
 				boolean res;
+				res = true;
 				if (opcao == 1) { // cadastro de novo Filme
 					novoDado[0] = Integer.toString(dados.getQtdFilmes());
-
+					
 				} else if (opcao == 2) { // cadastro de novo Espectador
 					novoDado[0] = Integer.toString(dados.getQntEspectadores());
 
 				} else if (opcao == 3) {// cadastro de novo Ingresso
 					novoDado[0] = Integer.toString(dados.getQntIngressos());
 
-				} else if (opcao == 4 || opcao == 5 || opcao == 6) {// edicao de dado existente Filme
-					novoDado[0] = Integer.toString(posicao);
-					if (opcao == 4) {
-
-					}
+				} else if (opcao == 4) {
+						
+						novoDado[0] = Integer.toString(posicao);
+					
 					novoDado[2] = valorNome.getText();
 					novoDado[1] = valorSala.getText();
 					novoDado[3] = valorHora.getText();
@@ -403,7 +403,7 @@ public class TelaEdit implements ActionListener {
 
 					res = dados.inserirEditarEspectador(novoDado); // Salvar dados
 
-				} else if (opcao == 6)// edicao de dado existente Ingresso
+				} else if (opcao == 6){// edicao de dado existente Ingresso
 					novoDado[0] = Integer.toString(posicao);
 
 				novoDado[1] = valorNomeEsp.getText();
@@ -414,13 +414,6 @@ public class TelaEdit implements ActionListener {
 				novoDado[6] = valorEntrada.getText();
 
 				res = dados.inserirEditarIngresso(novoDado); // Salvar dados
-
-				if (opcao == 1 || opcao == 4) {
-					res = dados.inserirEditarFilme(novoDado);
-				} else if (opcao == 2 || opcao == 5) {
-					res = dados.inserirEditarEspectador(novoDado);
-				} else if (opcao == 3 || opcao == 6) {
-					res = dados.inserirEditarIngresso(novoDado);
 				}
 
 				// Se Res receber true, retorna uma mensagem de sucesso, se nn retorna uma
