@@ -5,7 +5,7 @@ import modelo.Espectador;
 public class ControleEspectador {
 
 	// Array para guardar Espectador
-	
+
 	private Espectador[] e;
 	private int QntEspectadores;
 
@@ -13,15 +13,26 @@ public class ControleEspectador {
 		e = d.getEspectadores();
 		QntEspectadores = d.getQntEspectadores();
 	}
-	
-	//Array de String que irá aparecer no Jlist
-	
+
+	// Array de String que irá aparecer no Jlist
+
 	public String[] getNome() {
 		String[] s = new String[QntEspectadores];
 		for (int i = 0; i < QntEspectadores; i++) {
 			s[i] = e[i].getNome();
 		}
 
+		return s;
+	}
+
+	// Função pesquisa
+	public String[] getPesquisaEspectador(String pesEsp) {
+		String[] s = new String[QntEspectadores];
+		for (int i = 0; i < QntEspectadores; i++) {
+			if ((e[i].getNome()).contains(pesEsp)) {
+				s[i] = e[i].getNome();
+			}
+		}
 		return s;
 	}
 
