@@ -15,14 +15,26 @@ public class ControleFilme {
 		QntFilmes = d.getQtdFilmes();
 	}
 
-	//Array de String que irá aparecer no Jlist
-	
+	// Array de String que irá aparecer no Jlist
+
 	public String[] getNomeFilme() {
 		String[] s = new String[QntFilmes];
 		for (int i = 0; i < QntFilmes; i++) {
 			s[i] = f[i].getNomeFilme();
 		}
 
+		return s;
+	}
+
+	// Função de pesquisa
+
+	public String[] getPesquisaFilme(String pesFilme) {
+		String[] s = new String[QntFilmes];
+		for (int i = 0; i < QntFilmes; i++) {
+			if ((f[i].getNomeFilme()).contains(pesFilme)) {
+				s[i] = f[i].getNomeFilme();
+			}
+		}
 		return s;
 	}
 

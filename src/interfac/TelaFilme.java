@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -26,6 +27,13 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	private JButton refreshEspectador;
 	private JButton cadastroIngresso;
 	private JButton refreshIngresso;
+
+	private JButton pesquisaFilme;
+	private JTextField buscaFilme;
+	private JLabel descricaoPes;
+
+	private JButton pesquisaEspectador;
+	private JTextField buscaEsp;
 
 	private static ControleDados dados;
 	private JList<String> listaMovie;
@@ -46,8 +54,10 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 
 			janela = new JFrame("Filmes");
 			titulo = new JLabel("Filmes Cadastrados");
+
 			cadastroFilme = new JButton("Cadastrar");
 			refreshFilme = new JButton("Refresh");
+			pesquisaFilme = new JButton("Pesquisar");
 
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
 			titulo.setBounds(90, 10, 250, 30);
@@ -58,6 +68,11 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 
 			cadastroFilme.setBounds(70, 177, 100, 30);
 			refreshFilme.setBounds(200, 177, 100, 30);
+			pesquisaFilme.setBounds(250, 250, 100, 30);
+			buscaFilme = new JTextField(200);
+			buscaFilme.setBounds(30, 250, 190, 30);
+			descricaoPes = new JLabel("Pesquise pelo nome do filme");
+			descricaoPes.setBounds(30, 220, 190, 30);
 
 			janela.setLayout(null);
 			janela.setResizable(false);
@@ -67,13 +82,19 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			janela.add(listaMovie);
 			janela.add(cadastroFilme);
 			janela.add(refreshFilme);
+			janela.add(pesquisaFilme);
+			janela.add(buscaFilme);
+			janela.add(descricaoPes);
 
-			janela.setSize(400, 250);
+			janela.setSize(400, 350);
 			janela.setVisible(true);
 
+			pesquisaFilme.addActionListener(this);
 			cadastroFilme.addActionListener(this);
 			refreshFilme.addActionListener(this);
 			listaMovie.addListSelectionListener(this);
+			buscaFilme.getText();
+
 			break;
 
 		case 2:
@@ -178,7 +199,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	public void actionPerformed(ActionEvent acao) {
 		Object gatilho = acao.getSource();
 
-		// Gatilhos para a pagina filme -> Exibição, Cadastro e Edit
+		// Gatilhos para a pagina filme -> Exibição, Cadastro, Edit e Busca
 
 		if (gatilho == cadastroFilme) {
 			new TelaEdit().inserirEditar(1, dados, this, 0);
@@ -188,6 +209,13 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 
 			listaMovie.setListData(new ControleFilme(dados).getNomeFilme());
 			listaMovie.updateUI();
+		}
+
+		if (gatilho == pesquisaFilme) {
+
+			listaMovie.setListData(new ControleFilme(dados).getPesquisaFilme(buscaFilme.getText()));
+			listaMovie.updateUI();
+
 		}
 
 		// Gatilhos para a pagina espectador -> Exibição, Cadastro e Edit
