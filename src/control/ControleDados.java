@@ -104,7 +104,7 @@ public class ControleDados {
 			return false;
 		} else {
 			Ingresso in = new Ingresso(Integer.parseInt(dadosIngressos[1]), dadosIngressos[2], dadosIngressos[3],
-					dadosIngressos[4], Integer.parseInt(dadosIngressos[5]), new Espectador(dadosIngressos[6]));
+					dadosIngressos[4], Integer.parseInt(dadosIngressos[5]), (dadosIngressos[6]));
 			d.inserirEditarIngresso(in, Integer.parseInt(dadosIngressos[0]));
 			return true;
 		}
