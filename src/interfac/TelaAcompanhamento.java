@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -27,6 +28,11 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 
 	private JButton cadastroAcompanhamento;
 	private JButton refreshAcompanhamento;
+
+	private JButton pesquisaAcompanhamento;
+	private JTextField buscaAcom;
+
+	private JLabel descricao;
 
 	private static ControleDados dados;
 
@@ -44,16 +50,23 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 
 		cadastroAcompanhamento = new JButton("Cadastrar");
 		refreshAcompanhamento = new JButton("Refresh");
+		pesquisaAcompanhamento = new JButton("Pesquisar");
 
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
-		titulo.setBounds(90, 10, 250, 30);
+		titulo.setBounds(100, 10, 250, 30);
 
 		listaAcompanhamentos.setBounds(20, 50, 350, 120);
 		listaAcompanhamentos.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		listaAcompanhamentos.setVisibleRowCount(10);
 
-		cadastroAcompanhamento.setBounds(70, 177, 100, 30);
-		refreshAcompanhamento.setBounds(200, 177, 100, 30);
+		pesquisaAcompanhamento.setBounds(275, 200, 100, 30);
+		cadastroAcompanhamento.setBounds(70, 250, 100, 30);
+		refreshAcompanhamento.setBounds(200, 250, 100, 30);
+
+		buscaAcom = new JTextField(200);
+		buscaAcom.setBounds(20, 200, 240, 30);
+		descricao = new JLabel("Pesquise pelo nome do acompanhamento");
+		descricao.setBounds(20, 170, 250, 30);
 
 		janela.setLayout(null);
 		janela.setResizable(false);
@@ -63,8 +76,11 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 		janela.add(listaAcompanhamentos);
 		janela.add(cadastroAcompanhamento);
 		janela.add(refreshAcompanhamento);
+		janela.add(descricao);
+		janela.add(pesquisaAcompanhamento);
+		janela.add(buscaAcom);
 
-		janela.setSize(400, 260);
+		janela.setSize(400, 340);
 		janela.setVisible(true);
 		janela.setLayout(null);
 		janela.setResizable(false);
@@ -73,11 +89,14 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 		cadastroAcompanhamento.addActionListener(this);
 		refreshAcompanhamento.addActionListener(this);
 		listaAcompanhamentos.addListSelectionListener(this);
-		
+		pesquisaAcompanhamento.addActionListener(this);
+
 		/**
-		 * Cria a tela pra mostrar os dados de acompanhamento no jlist com botões e o pesquisador
+		 * Cria a tela pra mostrar os dados de acompanhamento no jlist com botões e o
+		 * pesquisador
+		 * 
 		 * @author Pedro V.
-		 * @param d   ControleDado - Manipular os dados do array
+		 * @param d ControleDado - Manipular os dados do array
 		 * @return mostrar os dados setada
 		 */
 	}
@@ -91,9 +110,11 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 		if (acao.getValueIsAdjusting() && src == listaAcompanhamentos) {
 			new TelaEditCad().inserirEditar(2, dados, this, listaAcompanhamentos.getSelectedIndex());
 		}
-		
+
 		/**
-		 * Método que executa uma açãp de acordo com o evento escutado em um elemento do jlist selecionado
+		 * Método que executa uma açãp de acordo com o evento escutado em um elemento do
+		 * jlist selecionado
+		 * 
 		 * @author Pedro V.
 		 * @param acao ActionSelectionEvent - Ação escutada pelo ListSelectionListener
 		 */
@@ -114,13 +135,21 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 
 			listaAcompanhamentos.setListData(new ControleAcompanhamento(dados).getNome());
 			listaAcompanhamentos.updateUI();
-			
+
 			/**
-			 * Método que executa uma ação de acordo com o evento escutado. Por aqui será feita a ação de cadastro e atualização do jlist pelo refresh
+			 * Método que executa uma ação de acordo com o evento escutado. Por aqui será
+			 * feita a ação de cadastro e atualização do jlist pelo refresh
+			 * 
 			 * @author Pedro V.
 			 * @param acao ActionEvent - Ação escutada pelo ActionListener
 			 */
 		}
 
+		if (gatilho == pesquisaAcompanhamento) {
+			listaAcompanhamentos
+					.setListData(new ControleAcompanhamento(dados).getPesquisaAcompanhamento(buscaAcom.getText()));
+			listaAcompanhamentos.updateUI();
+
+		}
 	}
 }

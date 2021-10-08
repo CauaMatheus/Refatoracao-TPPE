@@ -295,6 +295,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 
 		if (gatilho == cadastroIngresso) {
 			new TelaEdit().inserirEditar(3, dados, this, 0);
+
 		}
 		if (gatilho == refreshIngresso) {
 			listaIngresso.setListData(new ControleIngresso(dados).getNomeIngresso());

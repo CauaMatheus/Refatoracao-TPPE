@@ -46,7 +46,9 @@ public class ControleIngresso {
 		 */
 	}
 
-	public String[] getPesquisaEsp(String pesEsp) { //////////////////////////
+	// Função pesquisar
+
+	public String[] getPesquisaEsp(String pesEsp) {
 		String[] s = new String[QntIngressos];
 		for (int i = 0; i < QntIngressos; i++) {
 			if ((in[i].getNomeEsp()).contains(pesEsp)) {
@@ -57,8 +59,8 @@ public class ControleIngresso {
 		return s;
 
 		/**
-		 * Cria um array de string com os nomes dos filmes dentro do ingresso que irá
-		 * para aparecer na jlist
+		 * Array de strings, pesquisa se no array de ingresso possui a string pesquisada
+		 * exibindo o FILME no qual o espectadore está cadastrado
 		 * 
 		 * @author Pedro V.
 		 * @return s - Lista com os nomes dos filmes na mesma posição no array de

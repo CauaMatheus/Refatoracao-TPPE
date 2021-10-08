@@ -1,4 +1,5 @@
 package control;
+
 /**Faz a comunicação com a classe modelo para manipular dados do Acompanhamento
  * @version 1.0
  * @author Pablo C.
@@ -7,7 +8,7 @@ package control;
 import modelo.Acompanhamento;
 
 public class ControleAcompanhamento {
-	
+
 	// Array para guardar filmes
 
 	private Acompanhamento[] a;
@@ -17,22 +18,42 @@ public class ControleAcompanhamento {
 	public ControleAcompanhamento(ControleDados d) {
 		a = d.getAcompanhamentos();
 		QntAcompanhamentos = d.getQntAcompanhamentos();
-		
-		
-		/**Método para guardar os acompanhamentos
+
+		/**
+		 * Método para guardar os acompanhamentos
+		 * 
 		 * @author Pablo C.
 		 * @param d ControleDados - Chama a classe que possui os gets e sets do dado
 		 */
 	}
-	
-	//Array de String que irá aparecer no Jlist
-	
+
+	// Array de String que irá aparecer no Jlist
+
 	public String[] getNome() {
 		String[] s = new String[QntAcompanhamentos];
 		for (int i = 0; i < QntAcompanhamentos; i++) {
 			s[i] = a[i].getNome();
-			
-			/**String com os nomes do acompanhamento para aparecer na jlist
+
+			/**
+			 * String com os nomes do acompanhamento para aparecer na jlist
+			 * 
+			 * @author Pablo C.
+			 */
+		}
+
+		return s;
+	}
+
+	public String[] getPesquisaAcompanhamento(String pesAcom) { /////////////////////////////////
+		String[] s = new String[QntAcompanhamentos];
+		for (int i = 0; i < QntAcompanhamentos; i++) {
+			if ((a[i].getNome()).contains(pesAcom)) {
+				s[i] = a[i].getNome();
+			}
+
+			/**
+			 * String com os nomes do acompanhamento para aparecer na jlist
+			 * 
 			 * @author Pablo C.
 			 */
 		}
@@ -51,7 +72,6 @@ public class ControleAcompanhamento {
 	public String getNome(int i) {
 		return a[i].getNome();
 	}
-
 
 	public void setQntAcompanhamento(int QntAcompanhamentos) {
 		this.QntAcompanhamentos = QntAcompanhamentos;
