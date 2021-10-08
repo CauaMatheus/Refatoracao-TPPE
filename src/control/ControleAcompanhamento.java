@@ -44,7 +44,7 @@ public class ControleAcompanhamento {
 		return s;
 	}
 
-	public String[] getPesquisaAcompanhamento(String pesAcom) { /////////////////////////////////
+	public String[] getPesquisaAcompanhamento(String pesAcom) {
 		String[] s = new String[QntAcompanhamentos];
 		for (int i = 0; i < QntAcompanhamentos; i++) {
 			if ((a[i].getNome()).contains(pesAcom)) {
@@ -52,7 +52,8 @@ public class ControleAcompanhamento {
 			}
 
 			/**
-			 * String com os nomes do acompanhamento para aparecer na jlist
+			 * String com os nomes do acompanhamento para aparecer na jlist de acordo com o
+			 * dado inserido
 			 * 
 			 * @author Pablo C.
 			 */
