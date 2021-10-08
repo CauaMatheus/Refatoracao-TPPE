@@ -1,4 +1,9 @@
 package modelo;
+/**Classe de construção do Objto Acompanhamento
+ * @version 2.0
+ * @author Pedro V.
+ * @since Out 2021
+ */
 
 public class Acompanhamento {
 
@@ -15,7 +20,14 @@ public class Acompanhamento {
 		this.setValor(valor);
 		this.setQnt(tam);
 		this.setTipo(tipo);
-
+		
+		/** Método construct de Acompanhamento
+		 * @author Pedro V.
+		 * @param name String - Nome do produto
+		 * @param valor double - valor do produto
+		 * @param tam - Quantidade de produtos
+		 * @param tipo String - Tipo do produto(bebida, doce, salgado, entrre outros)
+		 */
 	}
 
 	// Get Set

@@ -1,5 +1,9 @@
 package modelo;
-
+/**Cria arrays que serão necessários para capturar os dados
+ * @version 1.0
+ * @author Pablo C, Pedro V.
+ * @since Out 2021
+ */
 public class Dados {
 
 	private Filme[] filmes = new Filme[100];
@@ -27,6 +31,10 @@ public class Dados {
 			espectadores[i] = new Espectador("Espectador-" + i, "31/07/9" + i, "75266597062");
 
 			acompanhamentos[i] = new Acompanhamento("Pipoca" + i, i, i * 2, "Salgado");
+			
+			/**Método que insere alguns dados em um array específico
+			 * @author Pablo C, Pedro V.
+			 */
 
 		}
 
@@ -48,6 +56,13 @@ public class Dados {
 		this.filmes[pos] = f;
 		if (pos == qtdFilmes)
 			qtdFilmes++;
+		
+		/**
+		 * Método que aumenta a quantidade de filmes no array
+		 * @author Pablo c, Pedro V.
+		 * @param f Filme - Array de Filmes
+		 * @param pos int - Posição no array
+		 */
 	}
 
 	public int getQtdFilmes() {
@@ -70,6 +85,13 @@ public class Dados {
 		this.ingressos[pos] = i;
 		if (pos == qtdIngressos)
 			qtdIngressos++;
+		
+		/**
+		 * Método que aumenta a quantidade de ingresso no array
+		 * @author Pablo c, Pedro V.
+		 * @param i Ingresso - Array de Ingressos
+		 * @param pos int - Posição no array
+		 */
 	}
 
 	public int getQtdIngressos() {
@@ -92,6 +114,13 @@ public class Dados {
 		this.espectadores[pos] = e;
 		if (pos == qtdEspectadores)
 			qtdEspectadores++;
+		
+		/**
+		 * Método que aumenta a quantidade de espectador no array
+		 * @author Pablo c, Pedro V.
+		 * @param e Espectador - Array de espectadores
+		 * @param pos int - Posição no array
+		 */
 	}
 
 	public int getQtdEspectadores() {
@@ -114,6 +143,13 @@ public class Dados {
 		this.acompanhamentos[pos] = a;
 		if (pos == qtdAcompanhamentos)
 			qtdAcompanhamentos++;
+		
+		/**
+		 * Método que aumenta a quantidade de acompanhamentos no array
+		 * @author Pablo c, Pedro V.
+		 * @param a Acompanhamento - Array de acompanhamentos
+		 * @param pos int - Posição no array
+		 */
 	}
 
 	public int getQtdAcompanhamentos() {

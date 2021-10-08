@@ -1,5 +1,9 @@
 package control;
-
+/**Faz a comunicação com a classe modelo para manipular dados do Espectador
+ * @version 1.0
+ * @author Pedro V.
+ * @since Out 2021
+ */
 import modelo.Espectador;
 
 public class ControleEspectador {

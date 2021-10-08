@@ -1,5 +1,11 @@
 package control;
 
+/**Controla os dados que irão entrar nos arrays
+ * @version 1.0
+ * @author Pablo C, Pedro V.
+ * @since Out 2021
+ */
+
 import modelo.Acompanhamento;
 import modelo.Dados;
 import modelo.Espectador;
@@ -71,6 +77,12 @@ public class ControleDados {
 		return true;
 
 		// }
+		
+		/**Método para inserir os dados de Filme no array
+		 * @author Pablo C.
+		 * @param dadosFilmes String[] - String que irá repassar os dados para o array
+		 * @return true - Quando o dado é devidamente inserido
+		 */
 	}
 
 	// remover Filme
@@ -95,7 +107,14 @@ public class ControleDados {
 			d.getFilmes()[d.getQtdFilmes()] = null;
 			d.setQtdFilmes(d.getQtdFilmes() - 1);
 			return true;
+	
 		}
+		
+		/**Método para excluir os dados de um filme
+		 * @author Pablo C.
+		 * @param i int - Variável de posição do filme a ser removido
+		 * @return true - Quando o dado é devidamente removido
+		 */
 	}
 
 	// Inserir e editar Ingresso
@@ -108,6 +127,12 @@ public class ControleDados {
 			d.inserirEditarIngresso(in, Integer.parseInt(dadosIngressos[0]));
 			return true;
 		}
+		
+		/**Método para inserir os dados de Ingresso no array
+		 * @author Pedro V.
+		 * @param dadosIngressos String[] - String que irá repassar os dados para o array
+		 * @return true - Quando o dado é devidamente inserido
+		 */
 	}
 
 	// remover Ingresso
@@ -132,6 +157,12 @@ public class ControleDados {
 			d.setQtdIngressos(d.getQtdIngressos() - 1);
 			return true;
 		}
+		
+		/**Método para excluir os dados de um ingresso
+		 * @author Pedro V.
+		 * @param i int - Variável de posição do ingresso a ser removido
+		 * @return true - Quando o dado é devidamente removido
+		 */
 	}
 
 	// Inserir e editar Espectador
@@ -139,6 +170,12 @@ public class ControleDados {
 		Espectador e = new Espectador(dadosEspectadores[1], dadosEspectadores[2], dadosEspectadores[3]);
 		d.inserirEditarEspectador(e, Integer.parseInt(dadosEspectadores[0]));
 		return true;
+		
+		/**Método para inserir os dados de Espectador no array
+		 * @author Pedro V.
+		 * @param dadosEspectadores String[] - String que irá repassar os dados para o array
+		 * @return true - Quando o dado é devidamente inserido
+		 */
 	}
 
 	// remover Espectador
@@ -163,6 +200,12 @@ public class ControleDados {
 			d.setQtdEspectadores(d.getQtdEspectadores() - 1);
 			return true;
 		}
+		
+		/**Método para excluir os dados de um espectador
+		 * @author Pedro V.
+		 * @param i int - Variável de posição do espectador a ser removido
+		 * @return true - Quando o dado é devidamente removido
+		 */
 	}
 
 	// Inserir e editar acompanhamento
@@ -176,6 +219,12 @@ public class ControleDados {
 		d.inserirEditarAcompanhamento(a, Integer.parseInt(dadosAcomp[0]));
 		return true;
 		// }
+		
+		/**Método para inserir os dados de Espectador no array
+		 * @author Pablo C.
+		 * @param dadosAcompanhamentos String[] - String que irá repassar os dados para o array
+		 * @return true - Quando o dado é devidamente inserido
+		 */
 	}
 
 	// remover acompanhamento
@@ -200,5 +249,11 @@ public class ControleDados {
 			d.setQtdAcompanhamentos(d.getQtdAcompanhamentos() - 1);
 			return true;
 		}
+		
+		/**Método para excluir os dados de um acompanhamento
+		 * @author Pablo C.
+		 * @param i int - Variável de posição do acompanhamento a ser removido
+		 * @return true - Quando o dado é devidamente removido
+		 */
 	}
 }

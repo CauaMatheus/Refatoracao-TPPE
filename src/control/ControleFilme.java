@@ -1,5 +1,9 @@
 package control;
-
+/**Faz a comunicação com a classe modelo para manipular dados do Filme
+ * @version 1.0
+ * @author Pablo C.
+ * @since Out 2021
+ */
 import modelo.Filme;
 
 public class ControleFilme {

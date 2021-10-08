@@ -1,5 +1,9 @@
 package control;
-
+/**Faz a comunicação com a classe modelo para manipular dados do Acompanhamento
+ * @version 1.0
+ * @author Pablo C.
+ * @since Out 2021
+ */
 import modelo.Acompanhamento;
 
 public class ControleAcompanhamento {
@@ -21,6 +25,10 @@ public class ControleAcompanhamento {
 		String[] s = new String[QntAcompanhamentos];
 		for (int i = 0; i < QntAcompanhamentos; i++) {
 			s[i] = a[i].getNome();
+			
+			/**String com os nomes do acompanhamento para aparecer na jlist
+			 * @author Pablo C.
+			 */
 		}
 
 		return s;
