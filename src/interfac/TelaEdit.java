@@ -47,11 +47,6 @@ public class TelaEdit implements ActionListener {
 	private JLabel LabelID = new JLabel("ID: ");
 	private JTextField valorID;
 
-	private JLabel labelQnt = new JLabel("Quantidade: ");
-	private JTextField valorQnt;
-	private JLabel labelTipo = new JLabel("Tipo: ");
-	private JTextField valorTipo;
-
 	// Botões
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
@@ -64,6 +59,7 @@ public class TelaEdit implements ActionListener {
 	private String windown;
 
 	public void inserirEditar(int op, ControleDados d, TelaFilme p, int pos) {
+		dados = d;
 
 		if (op == 1)
 			windown = "Cadastro Filme";

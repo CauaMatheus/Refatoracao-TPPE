@@ -100,14 +100,11 @@ public class ControleDados {
 
 	// Inserir e editar Ingresso
 	public boolean inserirEditarIngresso(String[] dadosIngressos) {
-		if (!dadosIngressos[1].matches("[0-9]+") || !dadosIngressos[2].matches("[0-9]+")) {
-			return false;
-		} else {
-			Ingresso in = new Ingresso(Integer.parseInt(dadosIngressos[1]), dadosIngressos[2], dadosIngressos[3],
-					dadosIngressos[4], Integer.parseInt(dadosIngressos[5]), new Espectador(dadosIngressos[6]));
-			d.inserirEditarIngresso(in, Integer.parseInt(dadosIngressos[0]));
-			return true;
-		}
+
+		Ingresso in = new Ingresso(Integer.parseInt(dadosIngressos[1]), dadosIngressos[2], dadosIngressos[3],
+				dadosIngressos[4], Integer.parseInt(dadosIngressos[5]), new Espectador(dadosIngressos[6]));
+		d.inserirEditarIngresso(in, Integer.parseInt(dadosIngressos[0]));
+		return true;
 	}
 
 	// remover Ingresso
