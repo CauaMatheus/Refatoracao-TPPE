@@ -65,10 +65,6 @@ public class TelaEdit implements ActionListener {
 
 	public void inserirEditar(int op, ControleDados d, TelaFilme p, int pos) {
 
-		opcao = op;
-		posicao = pos;
-		dados = d;
-
 		if (op == 1)
 			windown = "Cadastro Filme";
 		if (op == 2)
@@ -82,13 +78,6 @@ public class TelaEdit implements ActionListener {
 			windown = "Edição Espectador";
 		if (op == 6)
 			windown = "Edição Ingresso";
-
-		if (op == 7) {
-			windown = "Cadastro Acompanhamento";
-		}
-		if (op == 8) {
-			windown = "Edição Acompanhamento";
-		}
 
 		janela = new JFrame(windown);
 

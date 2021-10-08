@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
 
 import control.ControleAcompanhamento;
 import control.ControleDados;
@@ -53,6 +54,17 @@ public class TelaAcompanhamento {
 
 		janela.setSize(400, 260);
 		janela.setVisible(true);
+
+	}
+
+	// Captura de enventos
+	public void valueChanged(ListSelectionEvent acao) {
+		Object src = acao.getSource();
+
+		// Consequência gatilhos
+		if (acao.getValueIsAdjusting() && src == listaAcompanhamentos) {
+			new TelaEdit().inserirEditar(8, dados, this, listaAcompanhamentos.getSelectedIndex());
+		}
 
 	}
 
