@@ -1,4 +1,9 @@
 package modelo;
+/**Classe de construção do Objto Filme
+ * @version 2.0
+ * @author Pedro V.
+ * @since Out 2021
+ */
 
 public class Espectador {
 
@@ -18,6 +23,13 @@ public class Espectador {
 		this.setNome(nome);
 		this.setNasc(nasc);
 		this.setCpf(cpf);
+		
+		/**Método construct de Espectador
+		 * @author Pablo C.
+		 * @param nome String - Nome do espectador
+		 * @param nasc String - Data de nascimento do espectador
+		 * @param cpf String - CPF do espectador
+		 */
 	}
 
 	// Get Set

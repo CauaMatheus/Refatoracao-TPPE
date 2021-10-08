@@ -1,5 +1,9 @@
 package modelo;
-
+/**Classe abstrata que srá pai de Filme e Ingresso
+ * @version 2.0
+ * @author Pablo C. e Pedro V.
+ * @since Out 2021
+ */
 public abstract class Cadastro {
 
 	// Atributos
@@ -12,6 +16,12 @@ public abstract class Cadastro {
 
 	public Cadastro() {
 		super();
+		/**Construtor da classe abstract Cadastro
+		 * @author Pedro V.
+		 * @param numSala int - Número da sala do Cinema
+		 * @param nomeFilme String - Nome do filme que será exibido
+		 * @param horaFilme String - Horarío que o Filme será exibido
+		 */
 	}
 
 	// Get and Set
