@@ -166,14 +166,14 @@ public class ControleDados {
 	}
 
 	// Inserir e editar acompanhamento
-	public boolean inserirEditarAcompanhamento(String[] dadosFilmes) {
+	public boolean inserirEditarAcompanhamento(String[] dadosAcomp) {
 		/*
 		 * if (!dadosFilmes[2].matches("[0-9]+") || !dadosFilmes[4].matches("[0-9]+")) {
 		 * return false; } else {
 		 */
-		Acompanhamento a = new Acompanhamento(dadosFilmes[1], Double.parseDouble(dadosFilmes[2]),
-				Integer.parseInt(dadosFilmes[3]), dadosFilmes[4]);
-		d.inserirEditarAcompanhamento(a, Integer.parseInt(dadosFilmes[0]));
+		Acompanhamento a = new Acompanhamento(dadosAcomp[1], Double.parseDouble(dadosAcomp[2]),
+				Integer.parseInt(dadosAcomp[3]), dadosAcomp[4]);
+		d.inserirEditarAcompanhamento(a, Integer.parseInt(dadosAcomp[0]));
 		return true;
 		// }
 	}

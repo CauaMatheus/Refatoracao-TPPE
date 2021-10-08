@@ -32,6 +32,7 @@ public class TelaEditCad implements ActionListener {
 
 	private static ControleDados dados;
 	private int posicao;
+	private int opcao;
 	private String windown;
 
 	public void inserirEditar(int op, ControleDados d, TelaAcompanhamento telaAcompanhamento, int pos) {
@@ -39,6 +40,7 @@ public class TelaEditCad implements ActionListener {
 
 		janela = new JFrame("Cadastrado Acompanhamentos ");
 
+		opcao = op;
 		posicao = pos;
 		dados = d;
 
@@ -107,7 +109,6 @@ public class TelaEditCad implements ActionListener {
 		this.janela.setLayout(null);
 		this.janela.setSize(400, 250);
 		this.janela.setVisible(true);
-
 	}
 
 	@Override
@@ -116,14 +117,28 @@ public class TelaEditCad implements ActionListener {
 
 		if (acao == botaoSalvar) {
 			boolean res;
-			novoDado[0] = Integer.toString(dados.getQntAcompanhamentos());
+			if (opcao == 1) {
 
-			novoDado[1] = valorNome.getText();
-			novoDado[2] = valorValor.getText();
-			novoDado[3] = valorQnt.getText();
-			novoDado[4] = valorTipo.getText();
+				novoDado[0] = Integer.toString(dados.getQntAcompanhamentos());
 
-			res = dados.inserirEditarAcompanhamento(novoDado); // Salvar dados
+				novoDado[1] = valorNome.getText();
+				novoDado[2] = valorValor.getText();
+				novoDado[3] = valorQnt.getText();
+				novoDado[4] = valorTipo.getText();
+
+				res = dados.inserirEditarAcompanhamento(novoDado); // Salvar dados
+			} else {
+
+				novoDado[0] = Integer.toString(posicao);
+
+				novoDado[1] = valorNome.getText();
+				novoDado[2] = valorValor.getText();
+				novoDado[3] = valorQnt.getText();
+				novoDado[4] = valorTipo.getText();
+
+				res = dados.inserirEditarAcompanhamento(novoDado); // Salvar dados
+
+			}
 
 			if (res) {
 				mensagemSucessoCadastro();
