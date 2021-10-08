@@ -1,4 +1,5 @@
 package control;
+
 /**Faz a comunicação com a classe modelo para manipular dados do Ingresso
  * @version 1.0
  * @author Pedro V.
@@ -16,8 +17,10 @@ public class ControleIngresso {
 	public ControleIngresso(ControleDados d) {
 		in = d.getIngressos();
 		QntIngressos = d.getQntIngressos();
-		
-		/**Método para guardar os ingressos
+
+		/**
+		 * Método para guardar os ingressos
+		 * 
 		 * @author Pedro V.
 		 * @param d ControleDados - Chama a classe que possui os gets e sets do dado
 		 */
@@ -32,10 +35,34 @@ public class ControleIngresso {
 		}
 
 		return s;
-		
-		/**Cria um array de string com os nomes dos filmes dentro do ingresso que irá para aparecer na jlist
+
+		/**
+		 * Cria um array de string com os nomes dos filmes dentro do ingresso que irá
+		 * para aparecer na jlist
+		 * 
 		 * @author Pedro V.
-		 * @return s - Lista com os nomes dos filmes na mesma posição no array de Ingresso
+		 * @return s - Lista com os nomes dos filmes na mesma posição no array de
+		 *         Ingresso
+		 */
+	}
+
+	public String[] getPesquisaEsp(String pesEsp) { //////////////////////////
+		String[] s = new String[QntIngressos];
+		for (int i = 0; i < QntIngressos; i++) {
+			if ((in[i].getNomeEsp()).contains(pesEsp)) {
+				s[i] = in[i].getNomeFilme();
+			}
+		}
+
+		return s;
+
+		/**
+		 * Cria um array de string com os nomes dos filmes dentro do ingresso que irá
+		 * para aparecer na jlist
+		 * 
+		 * @author Pedro V.
+		 * @return s - Lista com os nomes dos filmes na mesma posição no array de
+		 *         Ingresso
 		 */
 	}
 
@@ -49,6 +76,10 @@ public class ControleIngresso {
 
 	public String getNome(int i) {
 		return in[i].getNomeFilme();
+	}
+
+	public String getNomeEsp(int i) {
+		return in[1].getNomeEsp();
 	}
 
 	public int getSala(int i) {

@@ -34,6 +34,9 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	private JButton cadastroIngresso;
 	private JButton refreshIngresso;
 
+	private JButton pesquisaIngresso;
+	private JTextField buscaIngr;
+
 	private JButton pesquisaFilme;
 	private JTextField buscaFilme;
 
@@ -162,9 +165,16 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 
 			janela = new JFrame("Ingressos Cadastrados");
 			titulo = new JLabel("Ingressos");
+
+			pesquisaIngresso = new JButton("Pesquisar");
 			cadastroIngresso = new JButton("Novo");
 			refreshIngresso = new JButton("Refresh");
 			acompanhamento = new JButton("Acompanhamento");
+
+			buscaIngr = new JTextField(200);
+			buscaIngr.setBounds(40, 200, 200, 30);
+			descricao = new JLabel("Pesquise pelo nome do Espectador");
+			descricao.setBounds(40, 165, 200, 40);
 
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
 			titulo.setBounds(145, 10, 250, 30);
@@ -173,9 +183,10 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			listaIngresso.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 			listaIngresso.setVisibleRowCount(10);
 
-			cadastroIngresso.setBounds(75, 177, 100, 30);
-			refreshIngresso.setBounds(205, 177, 100, 30);
-			acompanhamento.setBounds(120, 220, 140, 30);
+			cadastroIngresso.setBounds(20, 250, 90, 30);
+			refreshIngresso.setBounds(270, 250, 90, 30);
+			acompanhamento.setBounds(120, 250, 140, 30);
+			pesquisaIngresso.setBounds(255, 200, 100, 30);
 
 			janela.setLayout(null);
 			janela.setResizable(false);
@@ -186,21 +197,27 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			janela.add(cadastroIngresso);
 			janela.add(refreshIngresso);
 			janela.add(acompanhamento);
+			janela.add(pesquisaIngresso);
+			janela.add(buscaIngr);
+			janela.add(descricao);
 
-			janela.setSize(400, 300);
+			janela.setSize(400, 340);
 			janela.setVisible(true);
 
 			acompanhamento.addActionListener(this);
 			cadastroIngresso.addActionListener(this);
 			refreshIngresso.addActionListener(this);
 			listaIngresso.addListSelectionListener(this);
+			pesquisaIngresso.addActionListener(this);
 
 		}
 		/**
 		 * Cria a tela pra mostrar os dados no jlist com botões e o pesquisador
+		 * 
 		 * @author Pedro V.
 		 * @param d   ControleDado - Manipular os dados do array
-		 * @param esc int - Indica qual tela será mostrada de Filme, espectador ou ingresso
+		 * @param esc int - Indica qual tela será mostrada de Filme, espectador ou
+		 *            ingresso
 		 * @return mostrar os dados setada
 		 */
 	}
@@ -222,7 +239,9 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		}
 
 		/**
-		 * Método que executa uma açãp de acordo com o evento escutado em um elemento do jlist selecionado
+		 * Método que executa uma açãp de acordo com o evento escutado em um elemento do
+		 * jlist selecionado
+		 * 
 		 * @author Pedro V.
 		 * @param acao ActionSelectionEvent - Ação escutada pelo ListSelectionListener
 		 */
@@ -281,13 +300,20 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			listaIngresso.setListData(new ControleIngresso(dados).getNomeIngresso());
 			listaIngresso.updateUI();
 		}
+		if (gatilho == pesquisaIngresso) {
+			listaIngresso.setListData(new ControleIngresso(dados).getPesquisaEsp(buscaIngr.getText()));
+			listaIngresso.updateUI();
+
+		}
 		if (gatilho == acompanhamento) {
 			new TelaAcompanhamento().mostrarDados(dados);
 			;
 		}
 
 		/**
-		 * Método que executa uma ação de acordo com o evento escutado. Por aqui será realizado o cadastro, edição ou remoção dos dados
+		 * Método que executa uma ação de acordo com o evento escutado. Por aqui será
+		 * realizado o cadastro, edição ou remoção dos dados
+		 * 
 		 * @author Pablo C e Pedro V.
 		 * @param acao ActionEvent - Ação escutada pelo ActionListener
 		 */
