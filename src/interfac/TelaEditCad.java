@@ -32,7 +32,6 @@ public class TelaEditCad implements ActionListener {
 
 	private static ControleDados dados;
 	private int posicao;
-	private int opcao;
 	private String windown;
 
 	public void inserirEditar(int op, ControleDados d, TelaAcompanhamento telaAcompanhamento, int pos) {
@@ -40,7 +39,6 @@ public class TelaEditCad implements ActionListener {
 
 		janela = new JFrame("Cadastrado Acompanhamentos ");
 
-		opcao = op;
 		posicao = pos;
 		dados = d;
 
