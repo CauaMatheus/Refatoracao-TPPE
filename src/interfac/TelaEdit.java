@@ -53,11 +53,6 @@ public class TelaEdit implements ActionListener {
 	private JLabel LabelID = new JLabel("ID: ");
 	private JTextField valorID;
 
-	private JLabel labelQnt = new JLabel("Quantidade: ");
-	private JTextField valorQnt;
-	private JLabel labelTipo = new JLabel("Tipo: ");
-	private JTextField valorTipo;
-
 	// Botões
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
