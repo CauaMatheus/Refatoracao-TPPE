@@ -194,17 +194,25 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	}
 
 	@Override
-	// Captura de enventos
+	// Captura de eventos do JList
+
 	public void valueChanged(ListSelectionEvent acao) {
 		Object src = acao.getSource();
 
-		// Consequência gatilhos
+		// Gatilho JList Filme
+
 		if (acao.getValueIsAdjusting() && src == listaMovie) {
 			new TelaEdit().inserirEditar(4, dados, this, listaMovie.getSelectedIndex());
 		}
+
+		// Gatilho JList Espectador
+
 		if (acao.getValueIsAdjusting() && src == listaEspectador) {
 			new TelaEdit().inserirEditar(5, dados, this, listaEspectador.getSelectedIndex());
 		}
+
+		// Gatilho JList Ingresso
+
 		if (acao.getValueIsAdjusting() && src == listaIngresso) {
 			new TelaEdit().inserirEditar(6, dados, this, listaIngresso.getSelectedIndex());
 		}
@@ -214,6 +222,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	@Override
 
 	// Gatilho botões
+
 	public void actionPerformed(ActionEvent acao) {
 		Object gatilho = acao.getSource();
 
@@ -224,10 +233,10 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		}
 
 		if (gatilho == refreshFilme) {
-			/*
-			 * listaMovie.setListData(new ControleFilme(dados).getNomeFilme());
-			 * listaMovie.updateUI();
-			 */
+
+			listaMovie.setListData(new ControleFilme(dados).getNomeFilme());
+			listaMovie.updateUI();
+
 		}
 
 		if (gatilho == pesquisaFilme) {
@@ -260,7 +269,6 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			new TelaEdit().inserirEditar(3, dados, this, 0);
 		}
 		if (gatilho == refreshIngresso) {
-			System.out.print("Teste");
 			listaIngresso.setListData(new ControleIngresso(dados).getNomeIngresso());
 			listaIngresso.updateUI();
 		}

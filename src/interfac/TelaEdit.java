@@ -47,11 +47,6 @@ public class TelaEdit implements ActionListener {
 	private JLabel LabelID = new JLabel("ID: ");
 	private JTextField valorID;
 
-	private JLabel labelQnt = new JLabel("Quantidade: ");
-	private JTextField valorQnt;
-	private JLabel labelTipo = new JLabel("Tipo: ");
-	private JTextField valorTipo;
-
 	// Botões
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
@@ -82,13 +77,6 @@ public class TelaEdit implements ActionListener {
 			windown = "Edição Espectador";
 		if (op == 6)
 			windown = "Edição Ingresso";
-
-		if (op == 7) {
-			windown = "Cadastro Acompanhamento";
-		}
-		if (op == 8) {
-			windown = "Edição Acompanhamento";
-		}
 
 		janela = new JFrame(windown);
 
@@ -439,10 +427,10 @@ public class TelaEdit implements ActionListener {
 
 				novoDado[1] = valorNomeEsp.getText();
 				novoDado[2] = valorNome.getText();
-				novoDado[3] = valorSala.getText();
-				novoDado[4] = valorHora.getText();
+				novoDado[3] = valorHora.getText();
+				novoDado[4] = valorEntrada.getText();
+				novoDado[6] = valorSala.getText();
 				novoDado[5] = valorID.getText();
-				novoDado[6] = valorEntrada.getText();
 
 				res = dados.inserirEditarIngresso(novoDado); // Salvar dados
 			}

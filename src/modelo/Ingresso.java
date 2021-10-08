@@ -1,5 +1,8 @@
 package modelo;
-/**Classe de construção do Objto Ingresso
+
+/**
+ * Classe de construção do Objto Ingresso
+ * 
  * @version 2.0
  * @author Pablo C.
  * @since Out 2021
@@ -9,7 +12,7 @@ public class Ingresso extends Cadastro {
 	// Atributos //
 	private int id;
 	private String tipoEntrada;
-	private Espectador nomeEsp;
+	private String nomeEsp;
 
 	public Ingresso() {
 		super();
@@ -17,21 +20,24 @@ public class Ingresso extends Cadastro {
 
 	// Construtor //
 
-	public Ingresso(int numSala, String nomeFilme, String horaFilme, String tipoEntrada, int id, Espectador nome) {
-		this.setNumSala(numSala);
+	public Ingresso(String dadosIngressos, String nomeFilme, String horaFilme, String tipoEntrada, int id, int i) {
+		this.setNomeEsp(dadosIngressos);
 		this.setNomeFilme(nomeFilme);
 		this.setHoraFilme(horaFilme);
 		this.setTipoEntrada(tipoEntrada);
-		this.setNomeEsp(nome);
-		
-		/**Método construct de Filme
+		this.setId(id);
+		this.setNumSala(i);
+
+		/**
+		 * Método construct de Filme
+		 * 
 		 * @author Pablo C.
-		 * @param numSala int - Número da sala do Cinema
-		 * @param nomeFilme String - Nome do filme que será exibido
-		 * @param horaFilme String - Horarío que o Filme será exibido
+		 * @param numSala     int - Número da sala do Cinema
+		 * @param nomeFilme   String - Nome do filme que será exibido
+		 * @param horaFilme   String - Horarío que o Filme será exibido
 		 * @param tipoEntrada String- Se o tipo de entrada é meia ou inteira
-		 * @param id int - ID do ingresso
-		 * @param nome Espectador- Nome do especatador
+		 * @param id          int - ID do ingresso
+		 * @param nome        Espectador- Nome do especatador
 		 */
 	}
 
@@ -83,11 +89,11 @@ public class Ingresso extends Cadastro {
 		this.tipoEntrada = tipoEntrada;
 	}
 
-	public Espectador getNomeEsp() {
+	public String getNomeEsp() {
 		return nomeEsp;
 	}
 
-	public void setNomeEsp(Espectador nomeEsp) {
-		this.nomeEsp = nomeEsp;
+	public void setNomeEsp(String nome) {
+		this.nomeEsp = nome;
 	}
 }
