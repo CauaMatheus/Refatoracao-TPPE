@@ -1,5 +1,9 @@
 package interfac;
-
+/**Tela de edição dos dados relacionados ao acompanhamento
+ * @version 1.0
+ * @author Pedro V.
+ * @since Out 2021
+ */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -109,6 +113,16 @@ public class TelaEditCad implements ActionListener {
 		this.janela.setLayout(null);
 		this.janela.setSize(400, 250);
 		this.janela.setVisible(true);
+		
+		/** Cria as telas de edição e de cadastro de Acompanahmento 
+		 * @author Pedro V.
+		 * @param op  int - De acordo com a opção selecionada, a tela terá algumas
+		 *            modificações
+		 * @param d   ControleDado - Manipular os dados do array
+		 * @param telaAcompanhamento   TelaAcompanhamento - Tela que mostra os dados de acompanhamento na jlist
+		 * @param pos int - posição do dado em um array
+		 * @return tela de edit setada
+		 */
 	}
 
 	@Override
@@ -152,6 +166,12 @@ public class TelaEditCad implements ActionListener {
 			dados.removerAcompanhamento(posicao);
 			mensagemSucessoExclusao();
 		}
+		
+		/**
+		 * Método que executa uma ação de acordo com o evento escutado. Por aqui será realizado o cadastro, edição ou remoção dos dados
+		 * @author Pedro V.
+		 * @param acao ActionEvent - Ação escutada pelo ActionListener
+		 */
 
 	}
 
@@ -159,16 +179,44 @@ public class TelaEditCad implements ActionListener {
 		JOptionPane.showMessageDialog(null, "Os dados foram salvos com sucesso!", null,
 				JOptionPane.INFORMATION_MESSAGE);
 		janela.dispose();
+		
+		/**
+		 * Exibe mensagem de sucesso quando o dado for devidamente Cadastrado
+		 * 
+		 * @author Pedro V.
+		 */
 	}
 
 	public void mensagemErroCadastro() {
 		JOptionPane.showMessageDialog(null, "ERRO AO SALVAR OS DADOS! ");
+		
+		/**
+		 * Exibe mensagem de Erro quando o dado não for devidamente Cadastrado
+		 * 
+		 * @author Pedro V.
+		 */
 	}
 
 	public void mensagemSucessoExclusao() {
 		JOptionPane.showMessageDialog(null, "Os dados foram excluidos com sucesso!", null,
 				JOptionPane.INFORMATION_MESSAGE);
 		janela.dispose();
+		
+		/**
+		 * Exibe mensagem de Sucesso quando o dado for devidamente excluido
+		 * 
+		 * @author Pedro V.
+		 */
+	}
+	
+	public void mensagemErroExclusao() {
+		JOptionPane.showMessageDialog(null, "ERRO AO EXCLUIR OS DADOS! ");
+
+		/**
+		 * Exibe mensagem de Erro quando o dado não for devidamente excluido
+		 * 
+		 * @author Pablo C. e Pedro V.
+		 */
 	}
 
 }

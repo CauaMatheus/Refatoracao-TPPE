@@ -16,6 +16,11 @@ public class ControleIngresso {
 	public ControleIngresso(ControleDados d) {
 		in = d.getIngressos();
 		QntIngressos = d.getQntIngressos();
+		
+		/**Método para guardar os ingressos
+		 * @author Pedro V.
+		 * @param d ControleDados - Chama a classe que possui os gets e sets do dado
+		 */
 	}
 
 	// Array de String que irá aparecer no Jlist
@@ -27,6 +32,11 @@ public class ControleIngresso {
 		}
 
 		return s;
+		
+		/**Cria um array de string com os nomes dos filmes dentro do ingresso que irá para aparecer na jlist
+		 * @author Pedro V.
+		 * @return s - Lista com os nomes dos filmes na mesma posição no array de Ingresso
+		 */
 	}
 
 	public int getQtd() {

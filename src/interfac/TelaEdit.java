@@ -379,7 +379,7 @@ public class TelaEdit implements ActionListener {
 		 * @param op  int - De acordo com a opção selecionada, a tela terá algumas
 		 *            modificações
 		 * @param d   ControleDado - Manipular os dados do array
-		 * @param P   TelaFilme -
+		 * @param P   TelaFilme - Tela que mostra os dados na jlist
 		 * @param pos int - posição do dado em um array
 		 * @return tela de edit setada
 		 */

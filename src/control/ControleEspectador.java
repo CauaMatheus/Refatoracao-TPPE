@@ -1,5 +1,5 @@
 package control;
-/**Faz a comunicação com a classe modelo para manipular dados do Espectador
+/**Faz a comunicaÃ§Ã£o com a classe modelo para manipular dados do Espectador
  * @version 1.0
  * @author Pedro V.
  * @since Out 2021
@@ -16,9 +16,14 @@ public class ControleEspectador {
 	public ControleEspectador(ControleDados d) {
 		e = d.getEspectadores();
 		QntEspectadores = d.getQntEspectadores();
+		
+		/**Mï¿½todo para guardar os espectadores
+		 * @author Pedro V.
+		 * @param d ControleDados - Chama a classe que possui os gets e sets do dado
+		 */
 	}
 
-	// Array de String que irá aparecer no Jlist
+	// Array de String que irÃ¡ aparecer no Jlist
 
 	public String[] getNome() {
 		String[] s = new String[QntEspectadores];
@@ -27,9 +32,14 @@ public class ControleEspectador {
 		}
 
 		return s;
+		
+		/**Cria um array de string com os nomes dos espectadores para aparecer na jlist
+		 * @author Pedro V.
+		 * @return s - Lista com os nomes dos espectadores na mesma posiï¿½ï¿½o no array de Espectador
+		 */
 	}
 
-	// Função pesquisa
+	// FunÃ§Ã£o pesquisa
 	public String[] getPesquisaEspectador(String pesEsp) {
 		String[] s = new String[QntEspectadores];
 		for (int i = 0; i < QntEspectadores; i++) {
@@ -38,6 +48,12 @@ public class ControleEspectador {
 			}
 		}
 		return s;
+		
+		/**Array de strings, pesquisa se no array de espectador possui a string pesquisada
+		 * @author Pedro V.
+		 * @param pesEsp String - Nome do espectador que serï¿½ pesquisado 
+		 * @return s - O espectador pesquisado
+		 */
 	}
 
 	public int getQtd() {

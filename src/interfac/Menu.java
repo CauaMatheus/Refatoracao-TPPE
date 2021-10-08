@@ -1,5 +1,9 @@
 package interfac;
-
+/**Cria a tela de menu
+ * @version 1.0
+ * @author Pedro V.
+ * @since Out 2021
+ */
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -48,6 +52,11 @@ public class Menu implements ActionListener {
 		janela.setLocationRelativeTo(null);
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.setVisible(true);
+		
+		/**Contruct do menu, cria a tela de menu inserindo objetos e editando os mesmos
+		 * @author Pedro V.
+		 * @return tela de menu setada
+		 */
 	}
 
 	public static void main(String[] args) {
@@ -73,6 +82,11 @@ public class Menu implements ActionListener {
 
 		if (src == ingressos)
 			new TelaFilme().mostrarDados(dados, 3);
+		
+		/**Método que executa uma açãp de acordo com o evento escutado
+		 * @author Pedro V.
+		 * @param acao ActionEvent - Ação escutada pelo ActionListener
+		 */
 
 	}
 }

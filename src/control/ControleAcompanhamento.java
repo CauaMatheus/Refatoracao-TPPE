@@ -1,5 +1,5 @@
 package control;
-/**Faz a comunicaÁ„o com a classe modelo para manipular dados do Acompanhamento
+/**Faz a comunica√ß√£o com a classe modelo para manipular dados do Acompanhamento
  * @version 1.0
  * @author Pablo C.
  * @since Out 2021
@@ -17,9 +17,15 @@ public class ControleAcompanhamento {
 	public ControleAcompanhamento(ControleDados d) {
 		a = d.getAcompanhamentos();
 		QntAcompanhamentos = d.getQntAcompanhamentos();
+		
+		
+		/**M√©todo para guardar os acompanhamentos
+		 * @author Pablo C.
+		 * @param d ControleDados - Chama a classe que possui os gets e sets do dado
+		 */
 	}
 	
-	//Array de String que ir· aparecer no Jlist
+	//Array de String que ir√° aparecer no Jlist
 	
 	public String[] getNome() {
 		String[] s = new String[QntAcompanhamentos];

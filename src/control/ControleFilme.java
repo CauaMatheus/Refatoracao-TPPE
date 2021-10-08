@@ -17,6 +17,11 @@ public class ControleFilme {
 	public ControleFilme(ControleDados d) {
 		f = d.getFilmes();
 		QntFilmes = d.getQtdFilmes();
+		
+		/**Método para guardar os filmes
+		 * @author Pablo C.
+		 * @param d ControleDados - Chama a classe que possui os gets e sets do dado
+		 */
 	}
 
 	// Array de String que irá aparecer no Jlist
@@ -28,6 +33,10 @@ public class ControleFilme {
 		}
 
 		return s;
+		
+		/**Cria um array de string com os nomes dos filmes para aparecer na jlist
+		 * @author Pablo C.
+		 */
 	}
 
 	// Função de pesquisa
@@ -40,6 +49,12 @@ public class ControleFilme {
 			}
 		}
 		return s;
+		
+		/**Array de strings, pesquisa se no array de filme possui a string pesquisada
+		 * @author Pablo C.
+		 * @param pesFilme String - Nome do filme que será pesquisado 
+		 * @return s - O filme pesquisado
+		 */
 	}
 
 	public int getQtd() {

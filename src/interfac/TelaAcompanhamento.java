@@ -1,5 +1,11 @@
 package interfac;
 
+/**Tela de que irá mostrar os dados cadastrados no jlist, dar refresh e estabelecer pesquisador dos acompanhamentos
+ * @version 1.0
+ * @author Pedro V.
+ * @since Out 2021
+ */
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -67,7 +73,13 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 		cadastroAcompanhamento.addActionListener(this);
 		refreshAcompanhamento.addActionListener(this);
 		listaAcompanhamentos.addListSelectionListener(this);
-
+		
+		/**
+		 * Cria a tela pra mostrar os dados de acompanhamento no jlist com botões e o pesquisador
+		 * @author Pedro V.
+		 * @param d   ControleDado - Manipular os dados do array
+		 * @return mostrar os dados setada
+		 */
 	}
 
 	// Captura de enventos
@@ -79,6 +91,12 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 		if (acao.getValueIsAdjusting() && src == listaAcompanhamentos) {
 			new TelaEditCad().inserirEditar(2, dados, this, listaAcompanhamentos.getSelectedIndex());
 		}
+		
+		/**
+		 * Método que executa uma açãp de acordo com o evento escutado em um elemento do jlist selecionado
+		 * @author Pedro V.
+		 * @param acao ActionSelectionEvent - Ação escutada pelo ListSelectionListener
+		 */
 
 	}
 
@@ -96,6 +114,12 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 
 			listaAcompanhamentos.setListData(new ControleAcompanhamento(dados).getNome());
 			listaAcompanhamentos.updateUI();
+			
+			/**
+			 * Método que executa uma ação de acordo com o evento escutado. Por aqui será feita a ação de cadastro e atualização do jlist pelo refresh
+			 * @author Pedro V.
+			 * @param acao ActionEvent - Ação escutada pelo ActionListener
+			 */
 		}
 
 	}
