@@ -390,118 +390,132 @@ public class TelaEdit implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		if (src == botaoSalvar) {
-			boolean res;
-			res = true;
-			if (opcao == 1) { // cadastro de novo Filme
-				novoDado[0] = Integer.toString(dados.getQtdFilmes());
-
-				novoDado[1] = valorSala.getText();
-				novoDado[2] = valorNome.getText();
-				novoDado[3] = valorHora.getText();
-				novoDado[4] = valorDura.getText();
-				novoDado[5] = valorGenero.getText();
-				novoDado[6] = valorValor.getText();
-				novoDado[7] = valorFaixa.getText();
-				novoDado[8] = valorDim.getText();
-				novoDado[9] = valorAudio.getText();
-				novoDado[10] = valorEspCad.getText();
-
-			} else if (opcao == 2) { // cadastro de novo Espectador
-				novoDado[0] = Integer.toString(dados.getQntEspectadores());
-
-				novoDado[1] = valorNomeEsp.getText();
-				novoDado[2] = valorNascimento.getText();
-				novoDado[3] = valorCPF.getText();
-
-			} else if (opcao == 3) {// cadastro de novo Ingresso
-				novoDado[0] = Integer.toString(dados.getQntIngressos());
-
-				novoDado[1] = valorNomeEsp.getText();
-				novoDado[2] = valorNome.getText();
-				novoDado[3] = valorSala.getText();
-				novoDado[4] = valorHora.getText();
-				novoDado[5] = valorID.getText();
-				novoDado[6] = valorEntrada.getText();
-
-			} else if (opcao == 4) {
-
-				novoDado[0] = Integer.toString(posicao);
-
-				novoDado[1] = valorSala.getText();
-				novoDado[2] = valorNome.getText();
-				novoDado[3] = valorHora.getText();
-				novoDado[4] = valorDura.getText();
-				novoDado[5] = valorGenero.getText();
-				novoDado[6] = valorValor.getText();
-				novoDado[7] = valorFaixa.getText();
-				novoDado[8] = valorDim.getText();
-				novoDado[9] = valorAudio.getText();
-				novoDado[10] = valorEspCad.getText();
-
-			} else if (opcao == 5) {// edicao de dado existente Espectador
-				novoDado[0] = Integer.toString(posicao);
-
-				novoDado[1] = valorNomeEsp.getText();
-				novoDado[2] = valorNascimento.getText();
-				novoDado[3] = valorCPF.getText();
-
-				res = dados.inserirEditarEspectador(novoDado); // Salvar dados
-
-			} else {// edicao de dado existente Ingresso
-				novoDado[0] = Integer.toString(posicao);
-
-				novoDado[1] = valorNomeEsp.getText();
-				novoDado[2] = valorNome.getText();
-				novoDado[3] = valorHora.getText();
-				novoDado[4] = valorEntrada.getText();
-				novoDado[5] = valorID.getText();
-				novoDado[6] = valorSala.getText();
-
-				res = dados.inserirEditarIngresso(novoDado); // Salvar dados
-			}
-
-			if (opcao == 1 || opcao == 4) {
-				res = dados.inserirEditarFilme(novoDado);
-
-			} else if (opcao == 2 || opcao == 5) {
-				res = dados.inserirEditarEspectador(novoDado);
-
-			} else if (opcao == 3 || opcao == 6) {
-				res = dados.inserirEditarIngresso(novoDado);
-
-			}
-
-			// Se Res receber true, retorna uma mensagem de sucesso, se nn retorna uma
-			// mesnagem de erro
-			if (res) {
-				mensagemSucessoCadastro();
-			} else
+			try {
+				boolean res;
+				if (opcao == 1) { // cadastro de novo Filme
+					novoDado[0] = Integer.toString(dados.getQtdFilmes());
+	
+					novoDado[1] = valorSala.getText();
+					novoDado[2] = valorNome.getText();
+					novoDado[3] = valorHora.getText();
+					novoDado[4] = valorDura.getText();
+					novoDado[5] = valorGenero.getText();
+					novoDado[6] = valorValor.getText();
+					novoDado[7] = valorFaixa.getText();
+					novoDado[8] = valorDim.getText();
+					novoDado[9] = valorAudio.getText();
+					novoDado[10] = valorEspCad.getText();
+	
+				} else if (opcao == 2) { // cadastro de novo Espectador
+					novoDado[0] = Integer.toString(dados.getQntEspectadores());
+	
+					novoDado[1] = valorNomeEsp.getText();
+					novoDado[2] = valorNascimento.getText();
+					novoDado[3] = valorCPF.getText();
+	
+				} else if (opcao == 3) {// cadastro de novo Ingresso
+					novoDado[0] = Integer.toString(dados.getQntIngressos());
+	
+					novoDado[1] = valorNomeEsp.getText();
+					novoDado[2] = valorNome.getText();
+					novoDado[3] = valorSala.getText();
+					novoDado[4] = valorHora.getText();
+					novoDado[5] = valorID.getText();
+					novoDado[6] = valorEntrada.getText();
+	
+				} else if (opcao == 4) {
+	
+					novoDado[0] = Integer.toString(posicao);
+	
+					novoDado[1] = valorSala.getText();
+					novoDado[2] = valorNome.getText();
+					novoDado[3] = valorHora.getText();
+					novoDado[4] = valorDura.getText();
+					novoDado[5] = valorGenero.getText();
+					novoDado[6] = valorValor.getText();
+					novoDado[7] = valorFaixa.getText();
+					novoDado[8] = valorDim.getText();
+					novoDado[9] = valorAudio.getText();
+					novoDado[10] = valorEspCad.getText();
+	
+				} else if (opcao == 5) {// edicao de dado existente Espectador
+					novoDado[0] = Integer.toString(posicao);
+	
+					novoDado[1] = valorNomeEsp.getText();
+					novoDado[2] = valorNascimento.getText();
+					novoDado[3] = valorCPF.getText();
+	
+					res = dados.inserirEditarEspectador(novoDado); // Salvar dados
+	
+				} else {// edicao de dado existente Ingresso
+					novoDado[0] = Integer.toString(posicao);
+	
+					novoDado[1] = valorNomeEsp.getText();
+					novoDado[2] = valorNome.getText();
+					novoDado[3] = valorHora.getText();
+					novoDado[4] = valorEntrada.getText();
+					novoDado[5] = valorID.getText();
+					novoDado[6] = valorSala.getText();
+	
+					res = dados.inserirEditarIngresso(novoDado); // Salvar dados
+				}
+	
+				if (opcao == 1 || opcao == 4) {
+					res = dados.inserirEditarFilme(novoDado);
+	
+				} else if (opcao == 2 || opcao == 5) {
+					res = dados.inserirEditarEspectador(novoDado);
+	
+				} else {
+					res = dados.inserirEditarIngresso(novoDado);
+	
+				}
+	
+				// Se Res receber true, retorna uma mensagem de sucesso, se nn retorna uma
+				// mesnagem de erro
+				if (res) {
+					mensagemSucessoCadastro();
+				} else {
+					mensagemErroCadastro();
+				}
+			}catch (NullPointerException exc1) {
 				mensagemErroCadastro();
-
+			} catch (NumberFormatException exc2) {
+				mensagemErroCadastro();
+			}
 		}
-		/*
-		 * catch (NullPointerException exc1) { mensagemErroCadastro();
-		 */
-		/*
-		 * catch (NumberFormatException exc2) { mensagemErroCadastro(); }
-		 */
 
 		if (src == botaoExcluir) {
-
+			boolean res = false;
+			
 			if (opcao == 4) {// exclui Filme
-				dados.removerFilme(posicao);
-				mensagemSucessoExclusao();
+				res = dados.removerFilme(posicao);
+				if(res) {
+					mensagemSucessoExclusao();
+				}else {
+					mensagemErroExclusao();
+				}
 			}
 
 			if (opcao == 5) { // exclui Espectador
-				dados.removerEspectador(posicao);
-				mensagemSucessoExclusao();
+				res = dados.removerEspectador(posicao);
+				if(res) {
+					mensagemSucessoExclusao();
+				}
+				else {
+					mensagemErroExclusao();
+				}
 
 			}
 
 			if (opcao == 6) { // exclui Ingresso
-				dados.removerIngresso(posicao);
-				mensagemSucessoExclusao();
+				res = dados.removerIngresso(posicao);
+				if(res) {
+					mensagemSucessoExclusao();
+				}
+				else {
+					mensagemErroExclusao();
+				}
 
 			}
 

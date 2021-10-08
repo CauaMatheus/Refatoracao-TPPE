@@ -130,41 +130,53 @@ public class TelaEditCad implements ActionListener {
 		Object acao = e.getSource();
 
 		if (acao == botaoSalvar) {
-			boolean res;
-			if (opcao == 1) {
-
-				novoDado[0] = Integer.toString(dados.getQntAcompanhamentos());
-
-				novoDado[1] = valorNome.getText();
-				novoDado[2] = valorValor.getText();
-				novoDado[3] = valorQnt.getText();
-				novoDado[4] = valorTipo.getText();
-
-				res = dados.inserirEditarAcompanhamento(novoDado); // Salvar dados
-			} else {
-
-				novoDado[0] = Integer.toString(posicao);
-
-				novoDado[1] = valorNome.getText();
-				novoDado[2] = valorValor.getText();
-				novoDado[3] = valorQnt.getText();
-				novoDado[4] = valorTipo.getText();
-
-				res = dados.inserirEditarAcompanhamento(novoDado); // Salvar dados
-
-			}
-
-			if (res) {
-				mensagemSucessoCadastro();
-			} else
+			try {
+				boolean res;
+				if (opcao == 1) {
+	
+					novoDado[0] = Integer.toString(dados.getQntAcompanhamentos());
+	
+					novoDado[1] = valorNome.getText();
+					novoDado[2] = valorValor.getText();
+					novoDado[3] = valorQnt.getText();
+					novoDado[4] = valorTipo.getText();
+	
+					res = dados.inserirEditarAcompanhamento(novoDado); // Salvar dados
+				} else {
+	
+					novoDado[0] = Integer.toString(posicao);
+	
+					novoDado[1] = valorNome.getText();
+					novoDado[2] = valorValor.getText();
+					novoDado[3] = valorQnt.getText();
+					novoDado[4] = valorTipo.getText();
+	
+					res = dados.inserirEditarAcompanhamento(novoDado); // Salvar dados
+	
+				}
+	
+				if (res) {
+					mensagemSucessoCadastro();
+				} else
+					mensagemErroCadastro();
+				
+			}catch (NullPointerException exc1) {
 				mensagemErroCadastro();
-
+			} catch (NumberFormatException exc2) {
+				mensagemErroCadastro();
+			}
 		}
 
 		if (acao == botaoExcluir) {
+			boolean res = false;
+			res = dados.removerAcompanhamento(posicao);
+			if(res) {
+				mensagemSucessoExclusao();
+			}else {
+				mensagemErroExclusao();
+			}
 
-			dados.removerAcompanhamento(posicao);
-			mensagemSucessoExclusao();
+
 		}
 		
 		/**
