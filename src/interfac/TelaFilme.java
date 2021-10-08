@@ -1,5 +1,11 @@
 package interfac;
 
+/**Tela de que irá mostrar os dados cadastrados no jlist, dar refresh e estabelecer o pesquisador
+ * @version 1.0
+ * @author Pedro V.
+ * @since Out 2021
+ */
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -190,39 +196,40 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			listaIngresso.addListSelectionListener(this);
 
 		}
-
+		/**Cria a tela pra mostrar os dados no jlist com botões e o pesquisador
+		 * @author Pedro V.
+		 * @param d ControleDado - Manipular os dados do array
+		 * @param esc int - Indica qual tela será mostrada de Filme, espectador ou ingresso
+		 * @return mostrar os dados setada
+		 */
 	}
 
 	@Override
-	// Captura de eventos do JList
-
+	// Captura de enventos
 	public void valueChanged(ListSelectionEvent acao) {
 		Object src = acao.getSource();
 
-		// Gatilho JList Filme
-
+		// Consequência gatilhos
 		if (acao.getValueIsAdjusting() && src == listaMovie) {
 			new TelaEdit().inserirEditar(4, dados, this, listaMovie.getSelectedIndex());
 		}
-
-		// Gatilho JList Espectador
-
 		if (acao.getValueIsAdjusting() && src == listaEspectador) {
 			new TelaEdit().inserirEditar(5, dados, this, listaEspectador.getSelectedIndex());
 		}
-
-		// Gatilho JList Ingresso
-
 		if (acao.getValueIsAdjusting() && src == listaIngresso) {
 			new TelaEdit().inserirEditar(6, dados, this, listaIngresso.getSelectedIndex());
 		}
+		
+		/**Método que executa uma açãp de acordo com o evento escutado em um elemento do jlist selecionado
+		 * @author Pedro V.
+		 * @param acao ActionSelectionEvent - Ação escutada pelo ListSelectionListener
+		 */
 
 	}
 
 	@Override
 
 	// Gatilho botões
-
 	public void actionPerformed(ActionEvent acao) {
 		Object gatilho = acao.getSource();
 
@@ -233,10 +240,10 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		}
 
 		if (gatilho == refreshFilme) {
-
-			listaMovie.setListData(new ControleFilme(dados).getNomeFilme());
-			listaMovie.updateUI();
-
+			/*
+			 * listaMovie.setListData(new ControleFilme(dados).getNomeFilme());
+			 * listaMovie.updateUI();
+			 */
 		}
 
 		if (gatilho == pesquisaFilme) {
@@ -269,6 +276,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			new TelaEdit().inserirEditar(3, dados, this, 0);
 		}
 		if (gatilho == refreshIngresso) {
+			System.out.print("Teste");
 			listaIngresso.setListData(new ControleIngresso(dados).getNomeIngresso());
 			listaIngresso.updateUI();
 		}
@@ -276,6 +284,11 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			new TelaAcompanhamento().mostrarDados(dados);
 			;
 		}
+		
+		/**Método que executa uma açãp de acordo com o evento escutado. Por aqui será realizado o cadastro, ediçõa ou remoção dos dados
+		 * @author Pablo C e Pedro V.
+		 * @param acao ActionEvent - Ação escutada pelo ActionListener
+		 */
 
 	}
 

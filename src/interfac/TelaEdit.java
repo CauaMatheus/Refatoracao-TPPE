@@ -1,5 +1,11 @@
 package interfac;
 
+/**Tela de edição, cadastro e remoção de dados
+ * @version 1.0
+ * @author Pablo C. e Pedro V.
+ * @since Out 2021
+ */
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -47,6 +53,11 @@ public class TelaEdit implements ActionListener {
 	private JLabel LabelID = new JLabel("ID: ");
 	private JTextField valorID;
 
+	private JLabel labelQnt = new JLabel("Quantidade: ");
+	private JTextField valorQnt;
+	private JLabel labelTipo = new JLabel("Tipo: ");
+	private JTextField valorTipo;
+
 	// Botões
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
@@ -77,6 +88,13 @@ public class TelaEdit implements ActionListener {
 			windown = "Edição Espectador";
 		if (op == 6)
 			windown = "Edição Ingresso";
+
+		if (op == 7) {
+			windown = "Cadastro Acompanhamento";
+		}
+		if (op == 8) {
+			windown = "Edição Acompanhamento";
+		}
 
 		janela = new JFrame(windown);
 
@@ -358,6 +376,15 @@ public class TelaEdit implements ActionListener {
 		// Atribuindo Escuta a interação dos botões
 		botaoSalvar.addActionListener(this);
 		botaoExcluir.addActionListener(this);
+		
+		/**Cria a tela de Edit adicionando elementos e editando os mesmos,
+		 * @author Pedro V.
+		 * @param op int - De acordo com a opção selecionada, a tela terá algumas modificações
+		 * @param d ControleDado - Manipular os dados do array
+		 * @param P TelaFilme - 
+		 * @param pos int - posição do dado em um array
+		 * @return tela de edit setada
+		 */
 
 	}
 
@@ -427,10 +454,10 @@ public class TelaEdit implements ActionListener {
 
 				novoDado[1] = valorNomeEsp.getText();
 				novoDado[2] = valorNome.getText();
-				novoDado[3] = valorHora.getText();
-				novoDado[4] = valorEntrada.getText();
-				novoDado[6] = valorSala.getText();
+				novoDado[3] = valorSala.getText();
+				novoDado[4] = valorHora.getText();
 				novoDado[5] = valorID.getText();
+				novoDado[6] = valorEntrada.getText();
 
 				res = dados.inserirEditarIngresso(novoDado); // Salvar dados
 			}
@@ -466,7 +493,6 @@ public class TelaEdit implements ActionListener {
 			if (opcao == 4) {// exclui Filme
 				dados.removerFilme(posicao);
 				mensagemSucessoExclusao();
-
 			}
 
 			if (opcao == 5) { // exclui Espectador
@@ -482,22 +508,47 @@ public class TelaEdit implements ActionListener {
 			}
 
 		}
+		
+		/**Método que executa uma açãp de acordo com o evento escutado. Por aqui será realizado o cadastro, ediçõa ou remoção dos dados
+		 * @author Pablo C.
+		 * @param acao ActionEvent - Ação escutada pelo ActionListener
+		 */
 	}
 
 	public void mensagemSucessoExclusao() {
 		JOptionPane.showMessageDialog(null, "Os dados foram excluidos com sucesso!", null,
 				JOptionPane.INFORMATION_MESSAGE);
 		janela.dispose();
+		
+		/**Exibe mensagem de sucesso quando o dado for devidamente excluido
+		 * @author Pablo C. e Pedro V.
+		 */
 	}
 
 	public void mensagemSucessoCadastro() {
 		JOptionPane.showMessageDialog(null, "Os dados foram salvos com sucesso!", null,
 				JOptionPane.INFORMATION_MESSAGE);
 		janela.dispose();
+		
+		/**Exibe mensagem de sucesso quando o dado for devidamente cadastrado
+		 * @author Pablo C. e Pedro V.
+		 */
 	}
 
 	public void mensagemErroCadastro() {
 		JOptionPane.showMessageDialog(null, "ERRO AO SALVAR OS DADOS! ");
+		
+		/**Exibe mensagem de Erro quando o dado não for devidamente cadastrado
+		 * @author Pablo C. e Pedro V.
+		 */
+	}
+	
+	public void mensagemErroExclusao() {
+		JOptionPane.showMessageDialog(null, "ERRO AO EXCLUIR OS DADOS! ");
+		
+		/**Exibe mensagem de Erro quando o dado não for devidamente excluido
+		 * @author Pablo C. e Pedro V.
+		 */
 	}
 
 }
