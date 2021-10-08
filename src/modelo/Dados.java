@@ -27,9 +27,7 @@ public class Dados {
 
 			filmes[i] = new Filme(i + 5, "Advengers-" + i, "16:00", 120, "Ação", 25.50, 14, "2d", "dublado", 50);
 
-			espectadores[i] = new Espectador("Espectador-" + 1);
-
-			ingressos[i] = new Ingresso("Lucid", "Advengers", "16:00", "Inteira", i + 2, i);
+			ingressos[i] = new Ingresso("Espectador-" + i, "Advengers", "16:00", "Inteira", i + 2, i);
 
 			espectadores[i] = new Espectador("Espectador-" + i, "31/07/9" + i, "75266597062");
 

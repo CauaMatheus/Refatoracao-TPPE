@@ -72,19 +72,19 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			pesquisaFilme = new JButton("Pesquisar");
 
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
-			titulo.setBounds(90, 10, 250, 30);
+			titulo.setBounds(100, 10, 250, 30);
 
 			listaMovie.setBounds(20, 50, 350, 120);
 			listaMovie.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 			listaMovie.setVisibleRowCount(10);
 
-			cadastroFilme.setBounds(70, 177, 100, 30);
-			refreshFilme.setBounds(200, 177, 100, 30);
-			pesquisaFilme.setBounds(250, 250, 100, 30);
+			cadastroFilme.setBounds(80, 250, 100, 30);
+			refreshFilme.setBounds(210, 250, 100, 30);
+			pesquisaFilme.setBounds(250, 200, 100, 30);
 			buscaFilme = new JTextField(200);
-			buscaFilme.setBounds(30, 250, 190, 30);
+			buscaFilme.setBounds(30, 200, 190, 30);
 			descricao = new JLabel("Pesquise pelo nome do filme");
-			descricao.setBounds(30, 220, 190, 30);
+			descricao.setBounds(30, 175, 190, 30);
 
 			janela.setLayout(null);
 			janela.setResizable(false);
@@ -127,14 +127,14 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			listaEspectador.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 			listaEspectador.setVisibleRowCount(10);
 
-			cadastroEspectador.setBounds(70, 177, 100, 30);
-			refreshEspectador.setBounds(200, 177, 100, 30);
-			pesquisaEspectador.setBounds(250, 250, 100, 30);
+			cadastroEspectador.setBounds(80, 250, 100, 30);
+			refreshEspectador.setBounds(210, 250, 100, 30);
+			pesquisaEspectador.setBounds(250, 200, 100, 30);
 
 			buscaEsp = new JTextField(200);
-			buscaEsp.setBounds(30, 250, 200, 30);
+			buscaEsp.setBounds(30, 200, 210, 30);
 			descricao = new JLabel("Pesquise pelo nome do Espectador");
-			descricao.setBounds(30, 220, 200, 40);
+			descricao.setBounds(30, 175, 250, 30);
 
 			janela.setLayout(null);
 			janela.setResizable(false);
@@ -201,7 +201,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			janela.add(buscaIngr);
 			janela.add(descricao);
 
-			janela.setSize(400, 340);
+			janela.setSize(400, 350);
 			janela.setVisible(true);
 
 			acompanhamento.addActionListener(this);
