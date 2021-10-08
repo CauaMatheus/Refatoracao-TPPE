@@ -157,7 +157,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			janela = new JFrame("Ingressos Cadastrados");
 			titulo = new JLabel("Ingressos");
 			cadastroIngresso = new JButton("Novo");
-			refreshFilme = new JButton("Refresh");
+			refreshIngresso = new JButton("Refresh");
 			acompanhamento = new JButton("Acompanhamento");
 
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
@@ -168,7 +168,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			listaIngresso.setVisibleRowCount(10);
 
 			cadastroIngresso.setBounds(75, 177, 100, 30);
-			refreshFilme.setBounds(205, 177, 100, 30);
+			refreshIngresso.setBounds(205, 177, 100, 30);
 			acompanhamento.setBounds(120, 220, 140, 30);
 
 			janela.setLayout(null);
@@ -178,7 +178,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			janela.add(titulo);
 			janela.add(listaIngresso);
 			janela.add(cadastroIngresso);
-			janela.add(refreshFilme);
+			janela.add(refreshIngresso);
 			janela.add(acompanhamento);
 
 			janela.setSize(400, 300);
@@ -186,7 +186,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 
 			acompanhamento.addActionListener(this);
 			cadastroIngresso.addActionListener(this);
-			refreshFilme.addActionListener(this);
+			refreshIngresso.addActionListener(this);
 			listaIngresso.addListSelectionListener(this);
 
 		}
@@ -224,9 +224,10 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		}
 
 		if (gatilho == refreshFilme) {
-
-			listaMovie.setListData(new ControleFilme(dados).getNomeFilme());
-			listaMovie.updateUI();
+			/*
+			 * listaMovie.setListData(new ControleFilme(dados).getNomeFilme());
+			 * listaMovie.updateUI();
+			 */
 		}
 
 		if (gatilho == pesquisaFilme) {
@@ -259,6 +260,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			new TelaEdit().inserirEditar(3, dados, this, 0);
 		}
 		if (gatilho == refreshIngresso) {
+			System.out.print("Teste");
 			listaIngresso.setListData(new ControleIngresso(dados).getNomeIngresso());
 			listaIngresso.updateUI();
 		}
