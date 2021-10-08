@@ -36,12 +36,13 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 
 	private JLabel descricao;
 
+	private JButton acompanhamento;
+
 	private static ControleDados dados;
 	private JList<String> listaMovie;
 	private JList<String> listaEspectador;
 	private JList<String> listaIngresso;
 	private String[] listaNomes = new String[100];
-	// private String[] listaID = new String[100];
 
 	public void mostrarDados(ControleDados d, int esc) {
 		dados = d;
@@ -49,6 +50,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		// Mostrar dados de filmes cadastrados (JList)
 
 		switch (esc) {
+
 		case 1:
 			listaNomes = new ControleFilme(dados).getNomeFilme();
 			listaMovie = new JList<String>(listaNomes);
@@ -156,16 +158,18 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			titulo = new JLabel("Ingressos");
 			cadastroIngresso = new JButton("Novo");
 			refreshFilme = new JButton("Refresh");
+			acompanhamento = new JButton("Acompanhamento");
 
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
-			titulo.setBounds(125, 10, 250, 30);
+			titulo.setBounds(145, 10, 250, 30);
 
 			listaIngresso.setBounds(20, 50, 350, 120);
 			listaIngresso.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 			listaIngresso.setVisibleRowCount(10);
 
-			cadastroIngresso.setBounds(70, 177, 100, 30);
-			refreshFilme.setBounds(200, 177, 100, 30);
+			cadastroIngresso.setBounds(75, 177, 100, 30);
+			refreshFilme.setBounds(205, 177, 100, 30);
+			acompanhamento.setBounds(120, 220, 140, 30);
 
 			janela.setLayout(null);
 			janela.setResizable(false);
@@ -175,10 +179,12 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			janela.add(listaIngresso);
 			janela.add(cadastroIngresso);
 			janela.add(refreshFilme);
+			janela.add(acompanhamento);
 
-			janela.setSize(400, 250);
+			janela.setSize(400, 300);
 			janela.setVisible(true);
 
+			acompanhamento.addActionListener(this);
 			cadastroIngresso.addActionListener(this);
 			refreshFilme.addActionListener(this);
 			listaIngresso.addListSelectionListener(this);
@@ -255,6 +261,10 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		if (gatilho == refreshIngresso) {
 			listaIngresso.setListData(new ControleIngresso(dados).getNomeIngresso());
 			listaIngresso.updateUI();
+		}
+		if (gatilho == acompanhamento) {
+			new TelaAcompanhamento().mostrarDados(dados);
+			;
 		}
 
 	}

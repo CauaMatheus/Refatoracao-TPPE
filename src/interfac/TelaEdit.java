@@ -47,6 +47,11 @@ public class TelaEdit implements ActionListener {
 	private JLabel LabelID = new JLabel("ID: ");
 	private JTextField valorID;
 
+	private JLabel labelQnt = new JLabel("Quantidade: ");
+	private JTextField valorQnt;
+	private JLabel labelTipo = new JLabel("Tipo: ");
+	private JTextField valorTipo;
+
 	// Botões
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
@@ -77,6 +82,13 @@ public class TelaEdit implements ActionListener {
 			windown = "Edição Espectador";
 		if (op == 6)
 			windown = "Edição Ingresso";
+
+		if (op == 7) {
+			windown = "Cadastro Acompanhamento";
+		}
+		if (op == 8) {
+			windown = "Edição Acompanhamento";
+		}
 
 		janela = new JFrame(windown);
 
@@ -498,13 +510,6 @@ public class TelaEdit implements ActionListener {
 
 	public void mensagemErroCadastro() {
 		JOptionPane.showMessageDialog(null, "ERRO AO SALVAR OS DADOS! ");
-	}
-
-	public void mensagemErroExclusaoProf() {
-		JOptionPane.showMessageDialog(null,
-				"Ocorreu um erro ao excluir o dado.\n " + "Verifique se o professor está responsável\n"
-						+ "por alguma disciplina. Se sim, substitua\n " + "o professor e tente novamente.",
-				null, JOptionPane.ERROR_MESSAGE);
 	}
 
 }
