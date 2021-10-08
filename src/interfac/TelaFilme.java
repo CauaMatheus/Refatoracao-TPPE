@@ -196,10 +196,13 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			listaIngresso.addListSelectionListener(this);
 
 		}
-		/**Cria a tela pra mostrar os dados no jlist com botões e o pesquisador
+		/**
+		 * Cria a tela pra mostrar os dados no jlist com botões e o pesquisador
+		 * 
 		 * @author Pedro V.
-		 * @param d ControleDado - Manipular os dados do array
-		 * @param esc int - Indica qual tela será mostrada de Filme, espectador ou ingresso
+		 * @param d   ControleDado - Manipular os dados do array
+		 * @param esc int - Indica qual tela será mostrada de Filme, espectador ou
+		 *            ingresso
 		 * @return mostrar os dados setada
 		 */
 	}
@@ -219,8 +222,11 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		if (acao.getValueIsAdjusting() && src == listaIngresso) {
 			new TelaEdit().inserirEditar(6, dados, this, listaIngresso.getSelectedIndex());
 		}
-		
-		/**Método que executa uma açãp de acordo com o evento escutado em um elemento do jlist selecionado
+
+		/**
+		 * Método que executa uma açãp de acordo com o evento escutado em um elemento do
+		 * jlist selecionado
+		 * 
 		 * @author Pedro V.
 		 * @param acao ActionSelectionEvent - Ação escutada pelo ListSelectionListener
 		 */
@@ -240,10 +246,10 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		}
 
 		if (gatilho == refreshFilme) {
-			/*
-			 * listaMovie.setListData(new ControleFilme(dados).getNomeFilme());
-			 * listaMovie.updateUI();
-			 */
+
+			listaMovie.setListData(new ControleFilme(dados).getNomeFilme());
+			listaMovie.updateUI();
+
 		}
 
 		if (gatilho == pesquisaFilme) {
@@ -276,7 +282,6 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			new TelaEdit().inserirEditar(3, dados, this, 0);
 		}
 		if (gatilho == refreshIngresso) {
-			System.out.print("Teste");
 			listaIngresso.setListData(new ControleIngresso(dados).getNomeIngresso());
 			listaIngresso.updateUI();
 		}
@@ -284,8 +289,11 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			new TelaAcompanhamento().mostrarDados(dados);
 			;
 		}
-		
-		/**Método que executa uma açãp de acordo com o evento escutado. Por aqui será realizado o cadastro, ediçõa ou remoção dos dados
+
+		/**
+		 * Método que executa uma açãp de acordo com o evento escutado. Por aqui será
+		 * realizado o cadastro, ediçõa ou remoção dos dados
+		 * 
 		 * @author Pablo C e Pedro V.
 		 * @param acao ActionEvent - Ação escutada pelo ActionListener
 		 */
