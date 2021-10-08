@@ -7,20 +7,18 @@ public class Ingresso extends Cadastro {
 	private String tipoEntrada;
 	private Espectador nomeEsp;
 
-	public Ingresso(int i, String dadosIngressos, String dadosIngressos2, String dadosIngressos3, int j,
-			String dadosIngressos4) {
+	public Ingresso() {
 		super();
 	}
 
 	// Construtor //
 
-	public Ingresso(int numSala, String nomeFilme, String horaFilme, String tipoEntrada, int id,
-			Espectador dadosIngressos) {
+	public Ingresso(int numSala, String nomeFilme, String horaFilme, String tipoEntrada, int id, Espectador nome) {
 		this.setNumSala(numSala);
 		this.setNomeFilme(nomeFilme);
 		this.setHoraFilme(horaFilme);
 		this.setTipoEntrada(tipoEntrada);
-		this.setNomeEsp(dadosIngressos);
+		this.setNomeEsp(nome);
 	}
 
 	// Get Set
@@ -75,7 +73,7 @@ public class Ingresso extends Cadastro {
 		return nomeEsp;
 	}
 
-	public void setNomeEsp(Espectador nome) {
-		this.nomeEsp = nome;
+	public void setNomeEsp(Espectador nomeEsp) {
+		this.nomeEsp = nomeEsp;
 	}
 }

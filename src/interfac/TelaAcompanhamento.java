@@ -1,8 +1,6 @@
 package interfac;
 
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -10,18 +8,13 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
 import control.ControleAcompanhamento;
 import control.ControleDados;
-import control.ControleFilme;
 
-public class TelaAcompanhamento implements ActionListener, ListSelectionListener {
+public class TelaAcompanhamento {
 
 	private JFrame janela;
-
-	private JButton cadastroAcompanhamento;
-	private JButton refreshAcompanhamento;
 
 	private static ControleDados dados;
 
@@ -37,8 +30,8 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 		janela = new JFrame("Acompanhamentos");
 		JLabel titulo = new JLabel("Acompanhamentos Cadastrados");
 
-		cadastroAcompanhamento = new JButton("Cadastrar");
-		refreshAcompanhamento = new JButton("Refresh");
+		JButton cadastroIngresso = new JButton("Cadastrar");
+		JButton refreshIngresso = new JButton("Refresh");
 
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(90, 10, 250, 30);
@@ -47,8 +40,8 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 		listaAcompanhamentos.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		listaAcompanhamentos.setVisibleRowCount(10);
 
-		cadastroAcompanhamento.setBounds(70, 177, 100, 30);
-		refreshAcompanhamento.setBounds(200, 177, 100, 30);
+		cadastroIngresso.setBounds(70, 177, 100, 30);
+		refreshIngresso.setBounds(200, 177, 100, 30);
 
 		janela.setLayout(null);
 		janela.setResizable(false);
@@ -56,45 +49,23 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 
 		janela.add(titulo);
 		janela.add(listaAcompanhamentos);
-		janela.add(cadastroAcompanhamento);
-		janela.add(refreshAcompanhamento);
+		janela.add(cadastroIngresso);
+		janela.add(refreshIngresso);
 
 		janela.setSize(400, 260);
 		janela.setVisible(true);
 
-		cadastroAcompanhamento.addActionListener(this);
-		refreshAcompanhamento.addActionListener(this);
-
 	}
 
 	// Captura de enventos
-	@Override
 	public void valueChanged(ListSelectionEvent acao) {
 		Object src = acao.getSource();
 
 		// Consequência gatilhos
 		if (acao.getValueIsAdjusting() && src == listaAcompanhamentos) {
-			new TelaEditCad().inserirEditar(2, dados, this, listaAcompanhamentos.getSelectedIndex());
+			new TelaEdit().inserirEditar(8, dados, this, listaAcompanhamentos.getSelectedIndex());
 		}
 
 	}
 
-	// Gatilho botões
-
-	@Override
-	public void actionPerformed(ActionEvent acao) {
-		Object gatilho = acao.getSource();
-
-		// Gatilhos para a pagina filme -> Exibição, Cadastro, Edit e Busca
-
-		if (gatilho == cadastroAcompanhamento) {
-			new TelaEditCad().inserirEditar(1, dados, this, 0);
-		}
-		if (gatilho == refreshAcompanhamento) {
-
-			listaAcompanhamentos.setListData(new ControleFilme(dados).getNomeFilme());
-			listaAcompanhamentos.updateUI();
-		}
-
-	}
 }
