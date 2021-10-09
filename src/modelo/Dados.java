@@ -21,6 +21,11 @@ public class Dados {
 	private Acompanhamento[] acompanhamentos = new Acompanhamento[10];
 	private int qtdAcompanhamentos = 0;
 
+	/**
+	 * Método que insere alguns dados em um array específico
+	 * 
+	 * @author Pablo C, Pedro V.
+	 */
 	public void fillWithSomeData() {
 
 		for (int i = 0; i < 3; i++) {
@@ -33,11 +38,6 @@ public class Dados {
 
 			acompanhamentos[i] = new Acompanhamento("Pipoca" + i, i, i * 2, "Salgado");
 
-			/**
-			 * Método que insere alguns dados em um array específico
-			 * 
-			 * @author Pablo C, Pedro V.
-			 */
 
 		}
 
@@ -55,18 +55,18 @@ public class Dados {
 		this.filmes = filmes;
 	}
 
+	/**
+	 * Método que aumenta a quantidade de filmes no array
+	 * 
+	 * @author Pablo c, Pedro V.
+	 * @param f   Filme - Array de Filmes
+	 * @param pos int - Posição no array
+	 */
 	public void inserirEditarFilme(Filme f, int pos) {
 		this.filmes[pos] = f;
 		if (pos == qtdFilmes)
 			qtdFilmes++;
 
-		/**
-		 * Método que aumenta a quantidade de filmes no array
-		 * 
-		 * @author Pablo c, Pedro V.
-		 * @param f   Filme - Array de Filmes
-		 * @param pos int - Posição no array
-		 */
 	}
 
 	public int getQtdFilmes() {
@@ -85,84 +85,114 @@ public class Dados {
 		this.ingressos = ingressos;
 	}
 
+	/**
+	 * Método que aumenta a quantidade de ingresso no array
+	 * 
+	 * @author Pablo c, Pedro V.
+	 * @param i   Ingresso - Array de Ingressos
+	 * @param pos int - Posição no array
+	 */
 	public void inserirEditarIngresso(Ingresso i, int pos) {
 		this.ingressos[pos] = i;
 		if (pos == qtdIngressos)
 			qtdIngressos++;
 
-		/**
-		 * Método que aumenta a quantidade de ingresso no array
-		 * 
-		 * @author Pablo c, Pedro V.
-		 * @param i   Ingresso - Array de Ingressos
-		 * @param pos int - Posição no array
-		 */
 	}
 
+	/**
+	 * @return
+	 */
 	public int getQtdIngressos() {
 		return qtdIngressos;
 	}
 
+	/**
+	 * @param qtdIngressos
+	 */
 	public void setQtdIngressos(int qtdIngressos) {
 		this.qtdIngressos = qtdIngressos;
 	}
 
+	/**
+	 * @return
+	 */
 	public Espectador[] getEspectadores() {
 		return espectadores;
 	}
 
+	/**
+	 * @param espectadores
+	 */
 	public void setEspectadores(Espectador[] espectadores) {
 		this.espectadores = espectadores;
 	}
 
+	/**
+	 * Método que aumenta a quantidade de espectador no array
+	 * 
+	 * @author Pablo c, Pedro V.
+	 * @param e   Espectador - Array de espectadores
+	 * @param pos int - Posição no array
+	 */
 	public void inserirEditarEspectador(Espectador e, int pos) {
 		this.espectadores[pos] = e;
 		if (pos == qtdEspectadores)
 			qtdEspectadores++;
 
-		/**
-		 * Método que aumenta a quantidade de espectador no array
-		 * 
-		 * @author Pablo c, Pedro V.
-		 * @param e   Espectador - Array de espectadores
-		 * @param pos int - Posição no array
-		 */
 	}
 
+	/**
+	 * @return
+	 */
 	public int getQtdEspectadores() {
 		return qtdEspectadores;
 	}
 
+	/**
+	 * @param qtdEspectadores
+	 */
 	public void setQtdEspectadores(int qtdEspectadores) {
 		this.qtdEspectadores = qtdEspectadores;
 	}
 
+	/**
+	 * @return
+	 */
 	public Acompanhamento[] getAcompanhamentos() {
 		return acompanhamentos;
 	}
 
+	/**
+	 * @param acompanhamentos
+	 */
 	public void setAcompanhamentos(Acompanhamento[] acompanhamentos) {
 		this.acompanhamentos = acompanhamentos;
 	}
 
+	/**
+	 * Método que aumenta a quantidade de acompanhamentos no array
+	 * 
+	 * @author Pablo c, Pedro V.
+	 * @param a   Acompanhamento - Array de acompanhamentos
+	 * @param pos int - Posição no array
+	 */
 	public void inserirEditarAcompanhamento(Acompanhamento a, int pos) {
 		this.acompanhamentos[pos] = a;
 		if (pos == qtdAcompanhamentos)
 			qtdAcompanhamentos++;
 
-		/**
-		 * Método que aumenta a quantidade de acompanhamentos no array
-		 * 
-		 * @author Pablo c, Pedro V.
-		 * @param a   Acompanhamento - Array de acompanhamentos
-		 * @param pos int - Posição no array
-		 */
 	}
 
+	/**
+	 * @return
+	 */
 	public int getQtdAcompanhamentos() {
 		return qtdAcompanhamentos;
 	}
 
+	/**
+	 * @param qtdAcompanhamentos
+	 */
 	public void setQtdAcompanhamentos(int qtdAcompanhamentos) {
 		this.qtdAcompanhamentos = qtdAcompanhamentos;
 	}

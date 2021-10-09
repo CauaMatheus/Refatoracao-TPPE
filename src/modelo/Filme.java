@@ -20,10 +20,22 @@ public class Filme extends Cadastro {
 
 	// Método construtor//
 
+	/**
+	 * 
+	 */
 	public Filme() {
 		super();
 	}
 
+	/**
+	 * @param numSala
+	 * @param nomeFilme
+	 * @param horaFilme
+	 * @param duracao
+	 * @param genero
+	 * @param valor
+	 * @param faixaEtaria
+	 */
 	public Filme(int numSala, String nomeFilme, String horaFilme, int duracao, String genero, double valor,
 			int faixaEtaria) {
 		this.setNumSala(numSala);
@@ -35,6 +47,19 @@ public class Filme extends Cadastro {
 		this.setFaixaEtaria(faixaEtaria);
 	}
 
+	/**Método construct de Filme
+	 * @author Pablo C.
+	 * @param numSala int - Número da sala do Cinema
+	 * @param nomeFilme String - Nome do filme que será exibido
+	 * @param horaFilme String - Horarío que o Filme será exibido
+	 * @param duracao int - Duração total do filme em minutos
+	 * @param genero String - Genero do filme
+	 * @param valor double - Valor do Ingresso
+	 * @param faixaEtaria int - Faixa Etária exigida para se assistir o filme
+	 * @param d String - Dimensão do filme(2D/3D)
+	 * @param audio String - Informação sobre o audio do filme(inlgês, português etc)
+	 * @param espCad int - Quantidade de espectadores que irão assistir ao filme
+	 */
 	public Filme(int numSala, String nomeFilme, String horaFilme, int duracao, String genero, double valor,
 			int faixaEtaria, String d, String audio, int espCad) {
 		this.setNumSala(numSala);
@@ -48,19 +73,6 @@ public class Filme extends Cadastro {
 		this.setAudio(audio);
 		this.setEspCad(espCad);
 		
-		/**Método construct de Filme
-		 * @author Pablo C.
-		 * @param numSala int - Número da sala do Cinema
-		 * @param nomeFilme String - Nome do filme que será exibido
-		 * @param horaFilme String - Horarío que o Filme será exibido
-		 * @param duracao int - Duração total do filme em minutos
-		 * @param genero String - Genero do filme
-		 * @param valor double - Valor do Ingresso
-		 * @param faixaEtaria int - Faixa Etária exigida para se assistir o filme
-		 * @param d String - Dimensão do filme(2D/3D)
-		 * @param audio String - Informação sobre o audio do filme(inlgês, português etc)
-		 * @param espCad int - Quantidade de espectadores que irão assistir ao filme
-		 */
 	}
 
 	// Get Set

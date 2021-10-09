@@ -53,6 +53,15 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	private JList<String> listaIngresso;
 	private String[] listaNomes = new String[100];
 
+	/**
+	 * Cria a tela pra mostrar os dados no jlist com botões e o pesquisador
+	 * 
+	 * @author Pedro V.
+	 * @param d   ControleDado - Manipular os dados do array
+	 * @param esc int - Indica qual tela será mostrada de Filme, espectador ou
+	 *            ingresso
+	 */
+
 	public void mostrarDados(ControleDados d, int esc) {
 		dados = d;
 
@@ -211,19 +220,17 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			pesquisaIngresso.addActionListener(this);
 
 		}
-		/**
-		 * Cria a tela pra mostrar os dados no jlist com botões e o pesquisador
-		 * 
-		 * @author Pedro V.
-		 * @param d   ControleDado - Manipular os dados do array
-		 * @param esc int - Indica qual tela será mostrada de Filme, espectador ou
-		 *            ingresso
-		 * @return mostrar os dados setada
-		 */
 	}
 
 	@Override
 	// Captura de enventos
+	/**
+	 * Método que executa uma açãp de acordo com o evento escutado em um elemento do
+	 * jlist selecionado
+	 * 
+	 * @author Pedro V.
+	 * @param acao ActionSelectionEvent - Ação escutada pelo ListSelectionListener
+	 */
 	public void valueChanged(ListSelectionEvent acao) {
 		Object src = acao.getSource();
 
@@ -238,19 +245,19 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			new TelaEdit().inserirEditar(6, dados, this, listaIngresso.getSelectedIndex());
 		}
 
-		/**
-		 * Método que executa uma açãp de acordo com o evento escutado em um elemento do
-		 * jlist selecionado
-		 * 
-		 * @author Pedro V.
-		 * @param acao ActionSelectionEvent - Ação escutada pelo ListSelectionListener
-		 */
 
 	}
 
 	@Override
 
 	// Gatilho botões
+	/**
+	 * Método que executa uma ação de acordo com o evento escutado. Por aqui será
+	 * realizado o cadastro, edição ou remoção dos dados
+	 * 
+	 * @author Pablo C e Pedro V.
+	 * @param acao ActionEvent - Ação escutada pelo ActionListener
+	 */
 	public void actionPerformed(ActionEvent acao) {
 		Object gatilho = acao.getSource();
 
@@ -311,13 +318,6 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			;
 		}
 
-		/**
-		 * Método que executa uma ação de acordo com o evento escutado. Por aqui será
-		 * realizado o cadastro, edição ou remoção dos dados
-		 * 
-		 * @author Pablo C e Pedro V.
-		 * @param acao ActionEvent - Ação escutada pelo ActionListener
-		 */
 
 	}
 

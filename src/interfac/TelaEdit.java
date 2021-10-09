@@ -64,6 +64,17 @@ public class TelaEdit implements ActionListener {
 	private int opcao;
 	private String windown;
 
+	/**
+	 * Cria a tela de Edit adicionando elementos e editando os mesmos,
+	 * 
+	 * @author Pedro V.
+	 * @param op  int - De acordo com a opção selecionada, a tela terá algumas
+	 *            modificações
+	 * @param d   ControleDado - Manipular os dados do array
+	 * @param P   TelaFilme - Tela que mostra os dados na jlist
+	 * @param pos int - posição do dado em um array
+	 * @return tela de edit setada
+	 */
 	public void inserirEditar(int op, ControleDados d, TelaFilme p, int pos) {
 
 		opcao = op;
@@ -372,21 +383,17 @@ public class TelaEdit implements ActionListener {
 		botaoSalvar.addActionListener(this);
 		botaoExcluir.addActionListener(this);
 
-		/**
-		 * Cria a tela de Edit adicionando elementos e editando os mesmos,
-		 * 
-		 * @author Pedro V.
-		 * @param op  int - De acordo com a opção selecionada, a tela terá algumas
-		 *            modificações
-		 * @param d   ControleDado - Manipular os dados do array
-		 * @param P   TelaFilme - Tela que mostra os dados na jlist
-		 * @param pos int - posição do dado em um array
-		 * @return tela de edit setada
-		 */
 
 	}
 
 	@Override
+	/**
+	 * Método que executa uma açãp de acordo com o evento escutado. Por aqui será
+	 * realizado o cadastro, ediçõa ou remoção dos dados
+	 * 
+	 * @author Pablo C.
+	 * @param acao ActionEvent - Ação escutada pelo ActionListener
+	 */
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		if (src == botaoSalvar) {
@@ -519,57 +526,50 @@ public class TelaEdit implements ActionListener {
 
 		}
 
-		/**
-		 * Método que executa uma açãp de acordo com o evento escutado. Por aqui será
-		 * realizado o cadastro, ediçõa ou remoção dos dados
-		 * 
-		 * @author Pablo C.
-		 * @param acao ActionEvent - Ação escutada pelo ActionListener
-		 */
 	}
 
+	/**
+	 * Exibe mensagem de sucesso quando o dado for devidamente excluido
+	 * 
+	 * @author Pablo C. e Pedro V.
+	 */
 	public void mensagemSucessoExclusao() {
 		JOptionPane.showMessageDialog(null, "Os dados foram excluidos com sucesso!", null,
 				JOptionPane.INFORMATION_MESSAGE);
 		janela.dispose();
 
-		/**
-		 * Exibe mensagem de sucesso quando o dado for devidamente excluido
-		 * 
-		 * @author Pablo C. e Pedro V.
-		 */
 	}
 
+	/**
+	 * Exibe mensagem de sucesso quando o dado for devidamente cadastrado
+	 * 
+	 * @author Pablo C. e Pedro V.
+	 */
 	public void mensagemSucessoCadastro() {
 		JOptionPane.showMessageDialog(null, "Os dados foram salvos com sucesso!", null,
 				JOptionPane.INFORMATION_MESSAGE);
 		janela.dispose();
 
-		/**
-		 * Exibe mensagem de sucesso quando o dado for devidamente cadastrado
-		 * 
-		 * @author Pablo C. e Pedro V.
-		 */
 	}
 
+	/**
+	 * Exibe mensagem de Erro quando o dado não for devidamente cadastrado
+	 * 
+	 * @author Pablo C. e Pedro V.
+	 */
 	public void mensagemErroCadastro() {
 		JOptionPane.showMessageDialog(null, "ERRO AO SALVAR OS DADOS! ");
 
-		/**
-		 * Exibe mensagem de Erro quando o dado não for devidamente cadastrado
-		 * 
-		 * @author Pablo C. e Pedro V.
-		 */
 	}
 
+	/**
+	 * Exibe mensagem de Erro quando o dado não for devidamente excluido
+	 * 
+	 * @author Pablo C. e Pedro V.
+	 */
 	public void mensagemErroExclusao() {
 		JOptionPane.showMessageDialog(null, "ERRO AO EXCLUIR OS DADOS! ");
 
-		/**
-		 * Exibe mensagem de Erro quando o dado não for devidamente excluido
-		 * 
-		 * @author Pablo C. e Pedro V.
-		 */
 	}
 
 }

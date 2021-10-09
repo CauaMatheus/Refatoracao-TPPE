@@ -1,10 +1,10 @@
 package control;
+import modelo.Filme;
 /**Faz a comunicação com a classe modelo para manipular dados do Filme
  * @version 1.0
  * @author Pablo C.
  * @since Out 2021
  */
-import modelo.Filme;
 
 public class ControleFilme {
 
@@ -14,18 +14,22 @@ public class ControleFilme {
 
 	private int QntFilmes;
 
+	/**Método para guardar os filmes
+	 * @author Pablo C.
+	 * @param d ControleDados - Chama a classe que possui os gets e sets do dado
+	 */
 	public ControleFilme(ControleDados d) {
 		f = d.getFilmes();
 		QntFilmes = d.getQtdFilmes();
 		
-		/**Método para guardar os filmes
-		 * @author Pablo C.
-		 * @param d ControleDados - Chama a classe que possui os gets e sets do dado
-		 */
 	}
 
 	// Array de String que irá aparecer no Jlist
 
+	/**Cria um array de string com os nomes dos filmes para aparecer na jlist
+	 * @author Pablo C.
+	 * @return a
+	 */
 	public String[] getNomeFilme() {
 		String[] s = new String[QntFilmes];
 		for (int i = 0; i < QntFilmes; i++) {
@@ -34,13 +38,15 @@ public class ControleFilme {
 
 		return s;
 		
-		/**Cria um array de string com os nomes dos filmes para aparecer na jlist
-		 * @author Pablo C.
-		 */
 	}
 
 	// Função de pesquisa
 
+	/**Array de strings, pesquisa se no array de filme possui a string pesquisada
+	 * @author Pablo C.
+	 * @param pesFilme String - Nome do filme que será pesquisado 
+	 * @return s - O filme pesquisado
+	 */
 	public String[] getPesquisaFilme(String pesFilme) {
 		String[] s = new String[QntFilmes];
 		for (int i = 0; i < QntFilmes; i++) {
@@ -50,65 +56,113 @@ public class ControleFilme {
 		}
 		return s;
 		
-		/**Array de strings, pesquisa se no array de filme possui a string pesquisada
-		 * @author Pablo C.
-		 * @param pesFilme String - Nome do filme que será pesquisado 
-		 * @return s - O filme pesquisado
-		 */
 	}
 
+	/**
+	 * @return a
+	 */
 	public int getQtd() {
 		return QntFilmes;
 	}
 
+	/**
+	 * @param qtd a
+	 */
 	public void setQtd(int qtd) {
 		this.QntFilmes = qtd;
 	}
 
+	/**
+	 * @param i a
+	 * @return a
+	 */
 	public String getNome(int i) {
 		return f[i].getNomeFilme();
 	}
 
+	/**
+	 * @param i a
+	 * @return a
+	 */
 	public String getHora(int i) {
 		return f[i].getHoraFilme();
 	}
 
+	/**
+	 * @param i a
+	 * @return a
+	 */
 	public int getSala(int i) {
 		return f[i].getNumSala();
 	}
 
+	/**
+	 * @param i a
+	 * @return a
+	 */
 	public int getDuracao(int i) {
 		return f[i].getDuracao();
 	}
 
+	/**
+	 * @param QntFilmes a
+	 */
 	public void setQtdFilme(int QntFilmes) {
 		this.QntFilmes = QntFilmes;
 	}
 
+	/**
+	 * @param i a
+	 * @return a
+	 */
 	public String gethoraFilme(int i) {
 		return f[i].getHoraFilme();
 	}
 
+	/**
+	 * @param i a
+	 * @return a
+	 */
 	public String getGenero(int i) {
 		return f[i].getGenero();
 	}
 
+	/**
+	 * @param i a
+	 * @return a
+	 */
 	public Double getValor(int i) {
 		return f[i].getValor();
 	}
 
+	/**
+	 * @param i a
+	 * @return a
+	 */
 	public int getFaixa(int i) {
 		return f[i].getFaixaEtaria();
 	}
 
+	/**
+	 * @param i a
+	 * @return a
+	 */
 	public String getDimensao(int i) {
 		return f[i].getDimensao();
 	}
 
+	/**
+	 * @param i a
+	 * @return a
+	 */
 	public String getAudio(int i) {
 		return f[i].getAudio();
 	}
 
+	/**
+	 * @param i a
+	 * @return a
+	 */
 	public int getEspCad(int i) {
 		return f[i].getEspCad();
 	}

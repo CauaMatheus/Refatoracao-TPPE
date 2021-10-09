@@ -1,10 +1,5 @@
 package control;
 
-/**Controla os dados que irão entrar nos arrays
- * @version 1.0
- * @author Pablo C, Pedro V.
- * @since Out 2021
- */
 
 import modelo.Acompanhamento;
 import modelo.Dados;
@@ -12,55 +7,101 @@ import modelo.Espectador;
 import modelo.Filme;
 import modelo.Ingresso;
 
+/**Controla os dados que irão entrar nos arrays
+ * @version 1.0
+ * @author Pablo C, Pedro V.
+ * @since Out 2021
+ */
 public class ControleDados {
 	private Dados d = new Dados();
 
 	// chama método de criação de dados aleatórios
+	/**
+	 * 
+	 */
 	public ControleDados() {
 		d.fillWithSomeData();
 	}
 
+	/**
+	 * @return a
+	 */
 	public Dados getDados() {
 		return d;
 	}
 
+	/**
+	 * @param d a
+	 */
 	public void setDados(Dados d) {
 		this.d = d;
 	}
 
+	/**
+	 * @return s
+	 */
 	public Filme[] getFilmes() {
 		return this.d.getFilmes();
 	}
 
+	/**
+	 * @return s
+	 */
 	public int getQtdFilmes() {
 		return this.d.getQtdFilmes();
 	}
 
+	/**
+	 * @return s
+	 */
 	public Ingresso[] getIngressos() {
 		return this.d.getIngressos();
 	}
 
+	/**
+	 * @return s
+	 */
 	public int getQntIngressos() {
 		return this.d.getQtdIngressos();
 	}
 
+	/**
+	 * @return s
+	 */
 	public Espectador[] getEspectadores() {
 		return this.d.getEspectadores();
 	}
 
+	/**
+	 * @return s
+	 */
 	public int getQntEspectadores() {
 		return this.d.getQtdEspectadores();
 	}
 
+	/**
+	 * @return s
+	 */
 	public Acompanhamento[] getAcompanhamentos() {
 		return this.d.getAcompanhamentos();
 	}
 
+	/**
+	 * @return s
+	 */
 	public int getQntAcompanhamentos() {
 		return this.d.getQtdAcompanhamentos();
 	}
 
 	// Inserir e editar filme
+	
+	/**
+	 * Método para inserir os dados de Filme no array
+	 * 
+	 * @author Pablo C.
+	 * @param dadosFilmes String[] - String que irá repassar os dados para o array
+	 * @return true - Quando o dado é devidamente inserido
+	 */
 	public boolean inserirEditarFilme(String[] dadosFilmes) {
 
 		if (!dadosFilmes[2].matches("[0-9]+") || !dadosFilmes[4].matches("[0-9]+") || !dadosFilmes[6].matches("[0-9]+")
@@ -79,16 +120,16 @@ public class ControleDados {
 
 		}
 
-		/**
-		 * Método para inserir os dados de Filme no array
-		 * 
-		 * @author Pablo C.
-		 * @param dadosFilmes String[] - String que irá repassar os dados para o array
-		 * @return true - Quando o dado é devidamente inserido
-		 */
 	}
 
 	// remover Filme
+	/**
+	 * Método para excluir os dados de um filme
+	 * 
+	 * @author Pablo C.
+	 * @param i int - Variável de posição do filme a ser removido
+	 * @return true - Quando o dado é devidamente removido
+	 */
 	public boolean removerFilme(int i) {
 		String filmeRemovido = d.getFilmes()[i].getNomeFilme();
 
@@ -113,16 +154,17 @@ public class ControleDados {
 
 		}
 
-		/**
-		 * Método para excluir os dados de um filme
-		 * 
-		 * @author Pablo C.
-		 * @param i int - Variável de posição do filme a ser removido
-		 * @return true - Quando o dado é devidamente removido
-		 */
 	}
 
 	// Inserir e editar Ingresso
+	/**
+	 * Método para inserir os dados de Ingresso no array
+	 * 
+	 * @author Pedro V.
+	 * @param dadosIngressos String[] - String que irá repassar os dados para o
+	 *                       array
+	 * @return true - Quando o dado é devidamente inserido
+	 */
 	public boolean inserirEditarIngresso(String[] dadosIngressos) {
 		if (!dadosIngressos[6].matches("[0-9]+") || !dadosIngressos[5].matches("[0-9]+")) {
 			return false;
@@ -133,17 +175,16 @@ public class ControleDados {
 			return true;
 		}
 
-		/**
-		 * Método para inserir os dados de Ingresso no array
-		 * 
-		 * @author Pedro V.
-		 * @param dadosIngressos String[] - String que irá repassar os dados para o
-		 *                       array
-		 * @return true - Quando o dado é devidamente inserido
-		 */
 	}
 
 	// remover Ingresso
+	/**
+	 * Método para excluir os dados de um ingresso
+	 * 
+	 * @author Pedro V.
+	 * @param i int - Variável de posição do ingresso a ser removido
+	 * @return true - Quando o dado é devidamente removido
+	 */
 	public boolean removerIngresso(int i) {
 		String inRemovido = d.getIngressos()[i].getNomeFilme();
 
@@ -166,32 +207,32 @@ public class ControleDados {
 			return true;
 		}
 
-		/**
-		 * Método para excluir os dados de um ingresso
-		 * 
-		 * @author Pedro V.
-		 * @param i int - Variável de posição do ingresso a ser removido
-		 * @return true - Quando o dado é devidamente removido
-		 */
 	}
 
 	// Inserir e editar Espectador
+	/**
+	 * Método para inserir os dados de Espectador no array
+	 * 
+	 * @author Pedro V.
+	 * @param dadosEspectadores String[] - String que irá repassar os dados para o
+	 *                          array
+	 * @return true - Quando o dado é devidamente inserido
+	 */
 	public boolean inserirEditarEspectador(String[] dadosEspectadores) {
 		Espectador e = new Espectador(dadosEspectadores[1], dadosEspectadores[2], dadosEspectadores[3]);
 		d.inserirEditarEspectador(e, Integer.parseInt(dadosEspectadores[0]));
 		return true;
 
-		/**
-		 * Método para inserir os dados de Espectador no array
-		 * 
-		 * @author Pedro V.
-		 * @param dadosEspectadores String[] - String que irá repassar os dados para o
-		 *                          array
-		 * @return true - Quando o dado é devidamente inserido
-		 */
 	}
 
 	// remover Espectador
+	/**
+	 * Método para excluir os dados de um espectador
+	 * 
+	 * @author Pedro V.
+	 * @param i int - Variável de posição do espectador a ser removido
+	 * @return true - Quando o dado é devidamente removido
+	 */
 	public boolean removerEspectador(int i) {
 		String espcRemovido = d.getEspectadores()[i].getNome();
 
@@ -214,16 +255,17 @@ public class ControleDados {
 			return true;
 		}
 
-		/**
-		 * Método para excluir os dados de um espectador
-		 * 
-		 * @author Pedro V.
-		 * @param i int - Variável de posição do espectador a ser removido
-		 * @return true - Quando o dado é devidamente removido
-		 */
 	}
 
 	// Inserir e editar acompanhamento
+	/**
+	 * Método para inserir os dados de Espectador no array
+	 * 
+	 * @author Pablo C.
+	 * @param dadosAcomp String[] - String que irá repassar os dados para
+	 *                             o array
+	 * @return true - Quando o dado é devidamente inserido
+	 */
 	public boolean inserirEditarAcompanhamento(String[] dadosAcomp) {
 		if (!dadosAcomp[2].matches("[0.0-9.0]+") || !dadosAcomp[3].matches("[0-9]+")) {
 			return false;
@@ -235,17 +277,16 @@ public class ControleDados {
 			return true;
 		}
 
-		/**
-		 * Método para inserir os dados de Espectador no array
-		 * 
-		 * @author Pablo C.
-		 * @param dadosAcompanhamentos String[] - String que irá repassar os dados para
-		 *                             o array
-		 * @return true - Quando o dado é devidamente inserido
-		 */
 	}
 
 	// remover acompanhamento
+	/**
+	 * Método para excluir os dados de um acompanhamento
+	 * 
+	 * @author Pablo C.
+	 * @param i int - Variável de posição do acompanhamento a ser removido
+	 * @return true - Quando o dado é devidamente removido
+	 */
 	public boolean removerAcompanhamento(int i) {
 		String acompanhentoRemovido = d.getAcompanhamentos()[i].getNome();
 
@@ -268,12 +309,5 @@ public class ControleDados {
 			return true;
 		}
 
-		/**
-		 * Método para excluir os dados de um acompanhamento
-		 * 
-		 * @author Pablo C.
-		 * @param i int - Variável de posição do acompanhamento a ser removido
-		 * @return true - Quando o dado é devidamente removido
-		 */
 	}
 }

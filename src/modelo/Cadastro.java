@@ -14,38 +14,50 @@ public abstract class Cadastro {
 
 	// Construtor
 
+
 	public Cadastro() {
 		super();
-		/**Construtor da classe abstract Cadastro
-		 * @author Pedro V.
-		 * @param numSala int - Número da sala do Cinema
-		 * @param nomeFilme String - Nome do filme que será exibido
-		 * @param horaFilme String - Horarío que o Filme será exibido
-		 */
 	}
 
 	// Get and Set
 
-	public int getNumSala() {
-		return numSala;
+	/**
+	 * @return a
+	 */
+	public int getNumSala() { return numSala;
 	}
 
+	/**
+	 * @param numSala
+	 */
 	public void setNumSala(int numSala) {
 		this.numSala = numSala;
 	}
 
+	/**
+	 * @return
+	 */
 	public String getNomeFilme() {
 		return nomeFilme;
 	}
 
+	/**
+	 * @param nomeFilme
+	 */
 	public void setNomeFilme(String nomeFilme) {
 		this.nomeFilme = nomeFilme;
 	}
 
+	/**
+	 * @return
+	 */
 	public String getHoraFilme() {
 		return horaFilme;
 	}
 
+	/**
+	 * @param horaFilme
+	 */
 	public void setHoraFilme(String horaFilme) {
 		this.horaFilme = horaFilme;
 	}

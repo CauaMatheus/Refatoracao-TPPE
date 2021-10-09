@@ -15,50 +15,74 @@ public class Acompanhamento {
 
 	// Construtor
 
+	/** Método construct de Acompanhamento
+	 * @author Pedro V.
+	 * @param name String - Nome do produto
+	 * @param valor double - valor do produto
+	 * @param tam - Quantidade de produtos
+	 * @param tipo String - Tipo do produto(bebida, doce, salgado, entrre outros)
+	 */
 	public Acompanhamento(String name, double valor, int tam, String tipo) {
 		this.setNome(name);
 		this.setValor(valor);
 		this.setQnt(tam);
 		this.setTipo(tipo);
 		
-		/** Método construct de Acompanhamento
-		 * @author Pedro V.
-		 * @param name String - Nome do produto
-		 * @param valor double - valor do produto
-		 * @param tam - Quantidade de produtos
-		 * @param tipo String - Tipo do produto(bebida, doce, salgado, entrre outros)
-		 */
 	}
 
 	// Get Set
+	/**
+	 * @return a
+	 */
 	public String getNome() {
 		return nome;
 	}
 
+	/**
+	 * @param nome a
+	 */
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
+	/**
+	 * @return a
+	 */
 	public double getValor() {
 		return valor;
 	}
 
+	/**
+	 * @param valor a
+	 */
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
 
+	/**
+	 * @return a
+	 */
 	public int getQnt() {
 		return qnt;
 	}
 
+	/**
+	 * @param qnt a
+	 */
 	public void setQnt(int qnt) {
 		this.qnt = qnt;
 	}
 
+	/**
+	 * @return a
+	 */
 	public String getTipo() {
 		return tipo;
 	}
 
+	/**
+	 * @param tipo a
+	 */
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}

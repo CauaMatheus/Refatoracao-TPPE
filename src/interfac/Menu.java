@@ -1,9 +1,4 @@
 package interfac;
-/**Cria a tela de menu
- * @version 1.0
- * @author Pedro V.
- * @since Out 2021
- */
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +9,11 @@ import javax.swing.JLabel;
 
 import control.ControleDados;
 
+/**Cria a tela de menu
+ * @version 1.0
+ * @author Pedro V.
+ * @since Out 2021
+ */
 public class Menu implements ActionListener {
 
 	// Criando paramentros paras as janelas
@@ -24,8 +24,15 @@ public class Menu implements ActionListener {
 	private static JButton expectadores = new JButton("Espectadores");
 	private static JButton ingressos = new JButton("Ingressos");
 
+	/**
+	 * controle de dados
+	 */
 	public static ControleDados dados = new ControleDados();
 
+	/**Contruct do menu, cria a tela de menu inserindo objetos e editando os mesmos
+	 * @author Pedro V.
+	 * @return tela de menu setada
+	 */
 	public Menu() {
 
 		// Determinando tamanho dos ícones
@@ -53,12 +60,11 @@ public class Menu implements ActionListener {
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.setVisible(true);
 		
-		/**Contruct do menu, cria a tela de menu inserindo objetos e editando os mesmos
-		 * @author Pedro V.
-		 * @return tela de menu setada
-		 */
 	}
 
+	/**
+	 * @param args a
+	 */
 	public static void main(String[] args) {
 		Menu menu = new Menu();
 
@@ -68,6 +74,10 @@ public class Menu implements ActionListener {
 	}
 
 	@Override
+	/**Método que executa uma açãp de acordo com o evento escutado
+	 * @author Pedro V.
+	 * @param acao ActionEvent - Ação escutada pelo ActionListener
+	 */
 	public void actionPerformed(ActionEvent acao) {
 
 		// Disparando ações para o mesmo
@@ -83,10 +93,6 @@ public class Menu implements ActionListener {
 		if (src == ingressos)
 			new TelaFilme().mostrarDados(dados, 3);
 		
-		/**Método que executa uma açãp de acordo com o evento escutado
-		 * @author Pedro V.
-		 * @param acao ActionEvent - Ação escutada pelo ActionListener
-		 */
 
 	}
 }

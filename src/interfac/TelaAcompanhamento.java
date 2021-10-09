@@ -22,6 +22,10 @@ import javax.swing.event.ListSelectionListener;
 import control.ControleAcompanhamento;
 import control.ControleDados;
 
+/**
+ * @author pablo
+ *
+ */
 public class TelaAcompanhamento implements ActionListener, ListSelectionListener {
 
 	private JFrame janela;
@@ -39,6 +43,14 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 	private JList<String> listaAcompanhamentos;
 	private String[] listaNomes = new String[100];
 
+	/**
+	 * Cria a tela pra mostrar os dados de acompanhamento no jlist com botões e o
+	 * pesquisador
+	 * 
+	 * @author Pedro V.
+	 * @param d ControleDado - Manipular os dados do array
+	 * @return mostrar os dados setada
+	 */
 	public void mostrarDados(ControleDados d) {
 		dados = d;
 
@@ -91,18 +103,17 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 		listaAcompanhamentos.addListSelectionListener(this);
 		pesquisaAcompanhamento.addActionListener(this);
 
-		/**
-		 * Cria a tela pra mostrar os dados de acompanhamento no jlist com botões e o
-		 * pesquisador
-		 * 
-		 * @author Pedro V.
-		 * @param d ControleDado - Manipular os dados do array
-		 * @return mostrar os dados setada
-		 */
 	}
 
 	// Captura de enventos
 	@Override
+	/**
+	 * Método que executa uma açãp de acordo com o evento escutado em um elemento do
+	 * jlist selecionado
+	 * 
+	 * @author Pedro V.
+	 * @param acao ActionSelectionEvent - Ação escutada pelo ListSelectionListener
+	 */
 	public void valueChanged(ListSelectionEvent acao) {
 		Object src = acao.getSource();
 
@@ -111,19 +122,19 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 			new TelaEditCad().inserirEditar(2, dados, this, listaAcompanhamentos.getSelectedIndex());
 		}
 
-		/**
-		 * Método que executa uma açãp de acordo com o evento escutado em um elemento do
-		 * jlist selecionado
-		 * 
-		 * @author Pedro V.
-		 * @param acao ActionSelectionEvent - Ação escutada pelo ListSelectionListener
-		 */
 
 	}
 
 	// Gatilho botões
 
 	@Override
+	/**
+	 * Método que executa uma ação de acordo com o evento escutado. Por aqui será
+	 * feita a ação de cadastro e atualização do jlist pelo refresh
+	 * 
+	 * @author Pedro V.
+	 * @param acao ActionEvent - Ação escutada pelo ActionListener
+	 */
 	public void actionPerformed(ActionEvent acao) {
 		Object gatilho = acao.getSource();
 
@@ -136,13 +147,6 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 			listaAcompanhamentos.setListData(new ControleAcompanhamento(dados).getNome());
 			listaAcompanhamentos.updateUI();
 
-			/**
-			 * Método que executa uma ação de acordo com o evento escutado. Por aqui será
-			 * feita a ação de cadastro e atualização do jlist pelo refresh
-			 * 
-			 * @author Pedro V.
-			 * @param acao ActionEvent - Ação escutada pelo ActionListener
-			 */
 		}
 
 		if (gatilho == pesquisaAcompanhamento) {
