@@ -31,7 +31,7 @@ public class ControleIngresso {
 	public String[] getNomeIngresso() {
 		String[] s = new String[QntIngressos];
 		for (int i = 0; i < QntIngressos; i++) {
-			s[i] = in[i].getNomeFilme();
+			s[i] = in[i].getNomeEsp();
 		}
 
 		return s;
@@ -45,14 +45,14 @@ public class ControleIngresso {
 		 *         Ingresso
 		 */
 	}
-
+//(String.valueOf(in[i].getNumSala()) == pesIn || (in[i].getHoraFilme()) == pesIn) 
 	// Função pesquisar
 
-	public String[] getPesquisaEsp(String pesEsp) {
+	public String[] getPesquisaEsp(String pesIn) {
 		String[] s = new String[QntIngressos];
 		for (int i = 0; i < QntIngressos; i++) {
-			if ((in[i].getNomeEsp()).contains(pesEsp)) {
-				s[i] = in[i].getNomeFilme();
+			if ((String.valueOf(in[i].getNumSala()).equals(pesIn)) || ((in[i].getHoraFilme()).equals(pesIn))) {
+				s[i] = in[i].getNomeEsp();
 			}
 		}
 

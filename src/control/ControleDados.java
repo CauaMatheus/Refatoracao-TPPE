@@ -62,21 +62,22 @@ public class ControleDados {
 
 	// Inserir e editar filme
 	public boolean inserirEditarFilme(String[] dadosFilmes) {
-		
-		if (!dadosFilmes[2].matches("[0-9]+") || !dadosFilmes[4].matches("[0-9]+") ||
-			!dadosFilmes[6].matches("[0-9]+") || !dadosFilmes[7].matches("[0-9]+") ||
-		    !dadosFilmes[8].matches("[0-9]+") || !dadosFilmes[10].matches("[0-9]+")) {
-		  return false; 
-		  
-		} else {
-			
-		Filme f = new Filme(Integer.parseInt(dadosFilmes[1]), dadosFilmes[2], dadosFilmes[3],
-				Integer.parseInt(dadosFilmes[4]), dadosFilmes[5], Double.parseDouble(dadosFilmes[6]),
-				Integer.parseInt(dadosFilmes[7]), dadosFilmes[8], dadosFilmes[9], Integer.parseInt(dadosFilmes[10]));
-		d.inserirEditarFilme(f, Integer.parseInt(dadosFilmes[0]));
-		return true;
 
-		 }
+		if (!dadosFilmes[2].matches("[0-9]+") || !dadosFilmes[4].matches("[0-9]+") || !dadosFilmes[6].matches("[0-9]+")
+				|| !dadosFilmes[7].matches("[0-9]+") || !dadosFilmes[8].matches("[0-9]+")
+				|| !dadosFilmes[10].matches("[0-9]+")) {
+			return false;
+
+		} else {
+
+			Filme f = new Filme(Integer.parseInt(dadosFilmes[1]), dadosFilmes[2], dadosFilmes[3],
+					Integer.parseInt(dadosFilmes[4]), dadosFilmes[5], Double.parseDouble(dadosFilmes[6]),
+					Integer.parseInt(dadosFilmes[7]), dadosFilmes[8], dadosFilmes[9],
+					Integer.parseInt(dadosFilmes[10]));
+			d.inserirEditarFilme(f, Integer.parseInt(dadosFilmes[0]));
+			return true;
+
+		}
 
 		/**
 		 * Método para inserir os dados de Filme no array
@@ -123,15 +124,14 @@ public class ControleDados {
 
 	// Inserir e editar Ingresso
 	public boolean inserirEditarIngresso(String[] dadosIngressos) {
-		if(!dadosIngressos[6].matches("[0-9]+")) {
+		if (!dadosIngressos[6].matches("[0-9]+") || !dadosIngressos[5].matches("[0-9]+")) {
 			return false;
-		}else {
+		} else {
 			Ingresso in = new Ingresso(dadosIngressos[1], dadosIngressos[2], dadosIngressos[3], dadosIngressos[4],
 					Integer.parseInt(dadosIngressos[5]), Integer.parseInt(dadosIngressos[6]));
 			d.inserirEditarIngresso(in, Integer.parseInt(dadosIngressos[0]));
 			return true;
 		}
-
 
 		/**
 		 * Método para inserir os dados de Ingresso no array
@@ -225,14 +225,14 @@ public class ControleDados {
 
 	// Inserir e editar acompanhamento
 	public boolean inserirEditarAcompanhamento(String[] dadosAcomp) {
-		 if (!dadosAcomp[2].matches("[0.0-9.0]+") || !dadosAcomp[3].matches("[0-9]+")) {
-		 return false; 
-		 } else {
-	
-		Acompanhamento a = new Acompanhamento(dadosAcomp[1], Double.parseDouble(dadosAcomp[2]),
-				Integer.parseInt(dadosAcomp[3]), dadosAcomp[4]);
-		d.inserirEditarAcompanhamento(a, Integer.parseInt(dadosAcomp[0]));
-		return true;
+		if (!dadosAcomp[2].matches("[0.0-9.0]+") || !dadosAcomp[3].matches("[0-9]+")) {
+			return false;
+		} else {
+
+			Acompanhamento a = new Acompanhamento(dadosAcomp[1], Double.parseDouble(dadosAcomp[2]),
+					Integer.parseInt(dadosAcomp[3]), dadosAcomp[4]);
+			d.inserirEditarAcompanhamento(a, Integer.parseInt(dadosAcomp[0]));
+			return true;
 		}
 
 		/**

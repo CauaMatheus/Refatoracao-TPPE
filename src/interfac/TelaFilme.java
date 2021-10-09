@@ -172,9 +172,9 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 			acompanhamento = new JButton("Acompanhamento");
 
 			buscaIngr = new JTextField(200);
-			buscaIngr.setBounds(40, 200, 200, 30);
-			descricao = new JLabel("Pesquise pelo nome do Espectador");
-			descricao.setBounds(40, 165, 200, 40);
+			buscaIngr.setBounds(20, 200, 220, 30);
+			descricao = new JLabel("Pesquise pelo HORA ou SALA do filme");
+			descricao.setBounds(20, 165, 300, 40);
 
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
 			titulo.setBounds(145, 10, 250, 30);
