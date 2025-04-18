@@ -1,5 +1,5 @@
 package modelo;
-/**Classe de construção do Objto Filme
+/**Classe de construÃ§Ã£o do Objto Filme
  * @version 2.0
  * @author Pedro V.
  * @since Out 2021
@@ -13,7 +13,7 @@ public class Espectador {
 	private String nasc;
 	private String cpf;
 
-	// Método Constructor //
+	// MÃ©todo Constructor //
 
 	/**
 	 * @param nome
@@ -22,7 +22,7 @@ public class Espectador {
 		this.setNome(nome);
 	}
 
-	/**Método construct de Espectador
+	/**MÃ©todo construct de Espectador
 	 * @author Pablo C.
 	 * @param nome String - Nome do espectador
 	 * @param nasc String - Data de nascimento do espectador

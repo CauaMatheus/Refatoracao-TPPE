@@ -1,7 +1,7 @@
 package modelo;
 
 /**
- * Cria arrays que ser„o necess·rios para capturar os dados
+ * Cria arrays que ser√£o necess√°rios para capturar os dados
  * 
  * @version 1.0
  * @author Pablo C, Pedro V.
@@ -22,7 +22,7 @@ public class Dados {
 	private int qtdAcompanhamentos = 0;
 
 	/**
-	 * MÈtodo que insere alguns dados em um array especÌfico
+	 * M√©todo que insere alguns dados em um array espec√≠fico
 	 * 
 	 * @author Pablo C, Pedro V.
 	 */
@@ -30,7 +30,7 @@ public class Dados {
 
 		for (int i = 0; i < 3; i++) {
 
-			filmes[i] = new Filme(i + 5, "Advengers-" + i, "16:00", 120, "AÁ„o", 25.50, 14, "2d", "dublado", 50);
+			filmes[i] = new Filme(i + 5, "Advengers-" + i, "16:00", 120, "A√ß√£o", 25.50, 14, "2d", "dublado", 50);
 
 			ingressos[i] = new Ingresso("Espectador-" + i, "Advengers", "16:00", "Inteira", i + 2, i);
 
@@ -56,11 +56,11 @@ public class Dados {
 	}
 
 	/**
-	 * MÈtodo que aumenta a quantidade de filmes no array
+	 * M√©todo que aumenta a quantidade de filmes no array
 	 * 
 	 * @author Pablo c, Pedro V.
 	 * @param f   Filme - Array de Filmes
-	 * @param pos int - PosiÁ„o no array
+	 * @param pos int - Posi√ß√£o no array
 	 */
 	public void inserirEditarFilme(Filme f, int pos) {
 		this.filmes[pos] = f;
@@ -86,11 +86,11 @@ public class Dados {
 	}
 
 	/**
-	 * MÈtodo que aumenta a quantidade de ingresso no array
+	 * M√©todo que aumenta a quantidade de ingresso no array
 	 * 
 	 * @author Pablo c, Pedro V.
 	 * @param i   Ingresso - Array de Ingressos
-	 * @param pos int - PosiÁ„o no array
+	 * @param pos int - Posi√ß√£o no array
 	 */
 	public void inserirEditarIngresso(Ingresso i, int pos) {
 		this.ingressos[pos] = i;
@@ -128,11 +128,11 @@ public class Dados {
 	}
 
 	/**
-	 * MÈtodo que aumenta a quantidade de espectador no array
+	 * M√©todo que aumenta a quantidade de espectador no array
 	 * 
 	 * @author Pablo c, Pedro V.
 	 * @param e   Espectador - Array de espectadores
-	 * @param pos int - PosiÁ„o no array
+	 * @param pos int - Posi√ß√£o no array
 	 */
 	public void inserirEditarEspectador(Espectador e, int pos) {
 		this.espectadores[pos] = e;
@@ -170,11 +170,11 @@ public class Dados {
 	}
 
 	/**
-	 * MÈtodo que aumenta a quantidade de acompanhamentos no array
+	 * M√©todo que aumenta a quantidade de acompanhamentos no array
 	 * 
 	 * @author Pablo c, Pedro V.
 	 * @param a   Acompanhamento - Array de acompanhamentos
-	 * @param pos int - PosiÁ„o no array
+	 * @param pos int - Posi√ß√£o no array
 	 */
 	public void inserirEditarAcompanhamento(Acompanhamento a, int pos) {
 		this.acompanhamentos[pos] = a;

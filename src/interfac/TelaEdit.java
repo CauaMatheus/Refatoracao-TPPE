@@ -1,6 +1,6 @@
 package interfac;
 
-/**Tela de ediÁ„o, cadastro e remoÁ„o de dados
+/* Tela de edi√ß√£o, cadastro e remo√ß√£o de dados
  * @version 1.0
  * @author Pablo C. e Pedro V.
  * @since Out 2021
@@ -28,7 +28,7 @@ public class TelaEdit implements ActionListener {
 	private JTextField valorSala;
 	private JLabel labelHora = new JLabel("Hora: ");
 	private JTextField valorHora;
-	private JLabel labelDura = new JLabel("DuraÁ„o: ");
+	private JLabel labelDura = new JLabel("Dura√ß√£o: ");
 	private JTextField valorDura;
 	private JLabel labelGenero = new JLabel("Genero");
 	private JTextField valorGenero;
@@ -36,7 +36,7 @@ public class TelaEdit implements ActionListener {
 	private JTextField valorValor;
 	private JLabel labelFaixa = new JLabel("Faixa Etaria: ");
 	private JTextField valorFaixa;
-	private JLabel labelDim = new JLabel("Dimens„o: ");
+	private JLabel labelDim = new JLabel("Dimens√£o: ");
 	private JTextField valorDim;
 	private JLabel labelAudio = new JLabel("Audio: ");
 	private JTextField valorAudio;
@@ -53,7 +53,7 @@ public class TelaEdit implements ActionListener {
 	private JLabel LabelID = new JLabel("ID: ");
 	private JTextField valorID;
 
-	// Botıes
+	// Bot√µes
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
 
@@ -68,11 +68,11 @@ public class TelaEdit implements ActionListener {
 	 * Cria a tela de Edit adicionando elementos e editando os mesmos,
 	 * 
 	 * @author Pedro V.
-	 * @param op  int - De acordo com a opÁ„o selecionada, a tela ter· algumas
-	 *            modificaÁıes
+	 * @param op  int - De acordo com a op√ß√£o selecionada, a tela ter√° algumas
+	 *            modifica√ß√µes
 	 * @param d   ControleDado - Manipular os dados do array
 	 * @param P   TelaFilme - Tela que mostra os dados na jlist
-	 * @param pos int - posiÁ„o do dado em um array
+	 * @param pos int - posi√ß√£o do dado em um array
 	 * @return tela de edit setada
 	 */
 	public void inserirEditar(int op, ControleDados d, TelaFilme p, int pos) {
@@ -89,17 +89,17 @@ public class TelaEdit implements ActionListener {
 			windown = "Cadastro Ingresso";
 
 		if (op == 4)
-			windown = "EdiÁ„o Filme";
+			windown = "Edi√ß√£o Filme";
 		if (op == 5)
-			windown = "EdiÁ„o Espectador";
+			windown = "Edi√ß√£o Espectador";
 		if (op == 6)
-			windown = "EdiÁ„o Ingresso";
+			windown = "Edi√ß√£o Ingresso";
 
 		if (op == 7) {
 			windown = "Cadastro Acompanhamento";
 		}
 		if (op == 8) {
-			windown = "EdiÁ„o Acompanhamento";
+			windown = "Edi√ß√£o Acompanhamento";
 		}
 
 		janela = new JFrame(windown);
@@ -142,7 +142,7 @@ public class TelaEdit implements ActionListener {
 				valorEntrada = new JTextField(200);
 			}
 
-			// ConfiguraÁ„o pagina
+			// Configura√ß√£o pagina
 			labelNome.setBounds(30, 20, 100, 25);
 			valorNome.setBounds(136, 20, 200, 25);
 			labelSala.setBounds(30, 50, 100, 25);
@@ -164,7 +164,7 @@ public class TelaEdit implements ActionListener {
 			labelEspCad.setBounds(30, 290, 100, 25);
 			valorEspCad.setBounds(136, 290, 200, 25);
 
-			// Inserindo configuraÁıes na pagina
+			// Inserindo configura√ß√µes na pagina
 
 			this.janela.add(labelNome);
 			this.janela.add(valorNome);
@@ -240,7 +240,7 @@ public class TelaEdit implements ActionListener {
 
 			}
 
-			// ConfiguraÁ„o pagina
+			// Configura√ß√£o pagina
 			labelNomeEsp.setBounds(30, 20, 100, 25);
 			valorNomeEsp.setBounds(136, 20, 200, 25);
 			labelNascimento.setBounds(30, 50, 100, 25);
@@ -300,7 +300,7 @@ public class TelaEdit implements ActionListener {
 				valorCPF = new JTextField(200);
 			}
 
-			// ConfiguraÁ„o pagina
+			// Configura√ß√£o pagina
 			labelNomeEsp.setBounds(30, 20, 100, 25);
 			valorNomeEsp.setBounds(136, 20, 200, 25);
 			labelNome.setBounds(30, 50, 100, 25);
@@ -334,30 +334,30 @@ public class TelaEdit implements ActionListener {
 			this.janela.setSize(400, 300);
 		}
 
-		// Bot„o de salvar para cadastro filmes e ediÁ„o filme
+		// Bot√£o de salvar para cadastro filmes e edi√ß√£o filme
 		if (op == 4 || op == 1) {
 
 			botaoSalvar.setBounds(220, 340, 115, 30);
 			this.janela.add(botaoSalvar);
 
-			// Bot„o de excluir para Editar Filme
+			// Bot√£o de excluir para Editar Filme
 			if (op == 4) {
 				botaoExcluir.setBounds(50, 340, 115, 30);
 				this.janela.add(botaoExcluir);
 			}
 
-			// Bot„o de salvar para cadastro Espectador e ediÁ„o Espectador
+			// Bot√£o de salvar para cadastro Espectador e edi√ß√£o Espectador
 		} else if (op == 5 || op == 2) {
 
 			botaoSalvar.setBounds(220, 110, 115, 30);
 			this.janela.add(botaoSalvar);
 
-			// Coloca bot„o excluir para ediÁ„o Espectador
+			// Coloca bot√£o excluir para edi√ß√£o Espectador
 			if (op == 5) {
 				botaoExcluir.setBounds(50, 110, 115, 30);
 				this.janela.add(botaoExcluir);
 
-				// Bot„o salvar para cadastro de ingresso e ediÁ„o de ingresso
+				// Bot√£o salvar para cadastro de ingresso e edi√ß√£o de ingresso
 			}
 
 		} else if (op == 6 || op == 3) {
@@ -365,7 +365,7 @@ public class TelaEdit implements ActionListener {
 			botaoSalvar.setBounds(220, 210, 115, 30);
 			this.janela.add(botaoSalvar);
 
-			// Coloca bot„o excluir para ediÁ„o Espectador
+			// Coloca bot√£o excluir para edi√ß√£o Espectador
 			if (op == 6) {
 				botaoExcluir.setBounds(50, 210, 115, 30);
 				this.janela.add(botaoExcluir);
@@ -379,7 +379,7 @@ public class TelaEdit implements ActionListener {
 		this.janela.setLocationRelativeTo(null);
 		this.janela.setVisible(true);
 
-		// Atribuindo Escuta a interaÁ„o dos botıes
+		// Atribuindo Escuta a intera√ß√£o dos bot√µes
 		botaoSalvar.addActionListener(this);
 		botaoExcluir.addActionListener(this);
 
@@ -388,11 +388,11 @@ public class TelaEdit implements ActionListener {
 
 	@Override
 	/**
-	 * MÈtodo que executa uma aÁ„p de acordo com o evento escutado. Por aqui ser·
-	 * realizado o cadastro, ediÁıa ou remoÁ„o dos dados
+	 * M√©todo que executa uma a√ß√£p de acordo com o evento escutado. Por aqui ser√°
+	 * realizado o cadastro, edi√ß√µa ou remo√ß√£o dos dados
 	 * 
 	 * @author Pablo C.
-	 * @param acao ActionEvent - AÁ„o escutada pelo ActionListener
+	 * @param acao ActionEvent - A√ß√£o escutada pelo ActionListener
 	 */
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
@@ -553,7 +553,7 @@ public class TelaEdit implements ActionListener {
 	}
 
 	/**
-	 * Exibe mensagem de Erro quando o dado n„o for devidamente cadastrado
+	 * Exibe mensagem de Erro quando o dado n√£o for devidamente cadastrado
 	 * 
 	 * @author Pablo C. e Pedro V.
 	 */
@@ -563,7 +563,7 @@ public class TelaEdit implements ActionListener {
 	}
 
 	/**
-	 * Exibe mensagem de Erro quando o dado n„o for devidamente excluido
+	 * Exibe mensagem de Erro quando o dado n√£o for devidamente excluido
 	 * 
 	 * @author Pablo C. e Pedro V.
 	 */

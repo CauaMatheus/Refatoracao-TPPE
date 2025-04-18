@@ -1,7 +1,7 @@
 package modelo;
 
 /**
- * Classe de construção do Objto Ingresso
+ * Classe de construÃ§Ã£o do Objto Ingresso
  * 
  * @version 2.0
  * @author Pablo C.
@@ -29,13 +29,13 @@ public class Ingresso extends Cadastro {
 		this.setNumSala(i);
 
 		/**
-		 * Método construct de Filme
+		 * MÃ©todo construct de Filme
 		 * 
 		 * @author Pablo C.
-		 * @param numSala     int - Número da sala do Cinema
-		 * @param nomeFilme   String - Nome do filme que será exibido
-		 * @param horaFilme   String - Horarío que o Filme será exibido
-		 * @param tipoEntrada String- Se o tipo de entrada é meia ou inteira
+		 * @param numSala     int - NÃºmero da sala do Cinema
+		 * @param nomeFilme   String - Nome do filme que serÃ¡ exibido
+		 * @param horaFilme   String - HorarÃ­o que o Filme serÃ¡ exibido
+		 * @param tipoEntrada String- Se o tipo de entrada Ã© meia ou inteira
 		 * @param id          int - ID do ingresso
 		 * @param nome        Espectador- Nome do especatador
 		 */

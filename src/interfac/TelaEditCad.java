@@ -1,5 +1,5 @@
 package interfac;
-/**Tela de ediÁ„o dos dados relacionados ao acompanhamento
+/**Tela de edi√ß√£o dos dados relacionados ao acompanhamento
  * @version 1.0
  * @author Pedro V.
  * @since Out 2021
@@ -31,7 +31,7 @@ public class TelaEditCad implements ActionListener {
 	private JLabel labelTipo = new JLabel("Tipo: ");
 	private JTextField valorTipo;
 
-	// botıes
+	// bot√µes
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
 
@@ -43,13 +43,13 @@ public class TelaEditCad implements ActionListener {
 	private int opcao;
 	private String windown;
 
-	/** Cria as telas de ediÁ„o e de cadastro de Acompanahmento 
+	/** Cria as telas de edi√ß√£o e de cadastro de Acompanahmento 
 	 * @author Pedro V.
-	 * @param op  int - De acordo com a opÁ„o selecionada, a tela ter· algumas
-	 *            modificaÁıes
+	 * @param op  int - De acordo com a op√ß√£o selecionada, a tela ter√° algumas
+	 *            modifica√ß√µes
 	 * @param d   ControleDado - Manipular os dados do array
 	 * @param telaAcompanhamento   TelaAcompanhamento - Tela que mostra os dados de acompanhamento na jlist
-	 * @param pos int - posiÁ„o do dado em um array
+	 * @param pos int - posi√ß√£o do dado em um array
 	 */
 	public void inserirEditar(int op, ControleDados d, TelaAcompanhamento telaAcompanhamento, int pos) {
 		janela = new JFrame(windown);
@@ -70,7 +70,7 @@ public class TelaEditCad implements ActionListener {
 
 		}
 		if (op == 2) {
-			windown = "EdiÁ„o Acompanhamento";
+			windown = "Edi√ß√£o Acompanhamento";
 
 			valorNome = new JTextField(dados.getAcompanhamentos()[pos].getNome(), 200);
 			valorValor = new JTextField(String.valueOf(dados.getAcompanhamentos()[pos].getValor()), 200);
@@ -79,7 +79,7 @@ public class TelaEditCad implements ActionListener {
 
 		}
 
-		// ConfiguraÁ„o pagina
+		// Configura√ß√£o pagina
 
 		labelNome.setBounds(30, 20, 100, 25);
 		valorNome.setBounds(136, 20, 200, 25);
@@ -93,7 +93,7 @@ public class TelaEditCad implements ActionListener {
 		labelTipo.setBounds(30, 110, 100, 25);
 		valorTipo.setBounds(136, 110, 200, 25);
 
-		// Inserindo elementos na p·gina
+		// Inserindo elementos na p√°gina
 
 		this.janela.add(labelNome);
 		this.janela.add(valorNome);
@@ -110,7 +110,7 @@ public class TelaEditCad implements ActionListener {
 		botaoSalvar.setBounds(240, 160, 100, 30);
 		this.janela.add(botaoSalvar);
 
-		// Coloca bot„o excluir para ediÁ„o acompanhamento
+		// Coloca bot√£o excluir para edi√ß√£o acompanhamento
 
 		if (op == 2) {
 			botaoExcluir.setBounds(50, 160, 100, 30);
@@ -130,9 +130,9 @@ public class TelaEditCad implements ActionListener {
 
 	@Override
 	/**
-	 * MÈtodo que executa uma aÁ„o de acordo com o evento escutado. Por aqui ser· realizado o cadastro, ediÁ„o ou remoÁ„o dos dados
+	 * M√©todo que executa uma a√ß√£o de acordo com o evento escutado. Por aqui ser√° realizado o cadastro, edi√ß√£o ou remo√ß√£o dos dados
 	 * @author Pedro V.
-	 * @param acao ActionEvent - AÁ„o escutada pelo ActionListener
+	 * @param acao ActionEvent - A√ß√£o escutada pelo ActionListener
 	 */
 	public void actionPerformed(ActionEvent e) {
 		Object acao = e.getSource();
@@ -203,7 +203,7 @@ public class TelaEditCad implements ActionListener {
 	}
 
 	/**
-	 * Exibe mensagem de Erro quando o dado n„o for devidamente Cadastrado
+	 * Exibe mensagem de Erro quando o dado n√£o for devidamente Cadastrado
 	 * 
 	 * @author Pedro V.
 	 */
@@ -225,7 +225,7 @@ public class TelaEditCad implements ActionListener {
 	}
 	
 	/**
-	 * Exibe mensagem de Erro quando o dado n„o for devidamente excluido
+	 * Exibe mensagem de Erro quando o dado n√£o for devidamente excluido
 	 * 
 	 * @author Pablo C. e Pedro V.
 	 */

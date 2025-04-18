@@ -1,5 +1,5 @@
 package modelo;
-/**Classe abstrata que sr· pai de Filme e Ingresso
+/**Classe abstrata que ser√° pai de Filme e Ingresso
  * @version 2.0
  * @author Pablo C. e Pedro V.
  * @since Out 2021

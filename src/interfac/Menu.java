@@ -35,7 +35,7 @@ public class Menu implements ActionListener {
 	 */
 	public Menu() {
 
-		// Determinando tamanho dos Ìcones
+		// Determinando tamanho dos √≠cones
 
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(160, 10, 150, 50);
@@ -43,7 +43,7 @@ public class Menu implements ActionListener {
 		expectadores.setBounds(95, 125, 200, 40);
 		ingressos.setBounds(95, 180, 200, 40);
 
-		// Gerando janela com os par‚metros especificados
+		// Gerando janela com os par√¢metros especificados
 
 		janela.setLayout(null);
 
@@ -52,7 +52,7 @@ public class Menu implements ActionListener {
 		janela.add(expectadores);
 		janela.add(ingressos);
 
-		// Determinando tamanho padr„o da janela
+		// Determinando tamanho padr√£o da janela
 
 		janela.setSize(400, 300);
 		janela.setResizable(false);
@@ -74,13 +74,13 @@ public class Menu implements ActionListener {
 	}
 
 	@Override
-	/**MÈtodo que executa uma aÁ„p de acordo com o evento escutado
+	/**M√©todo que executa uma a√ß√£p de acordo com o evento escutado
 	 * @author Pedro V.
-	 * @param acao ActionEvent - AÁ„o escutada pelo ActionListener
+	 * @param acao ActionEvent - A√ß√£o escutada pelo ActionListener
 	 */
 	public void actionPerformed(ActionEvent acao) {
 
-		// Disparando aÁıes para o mesmo
+		// Disparando a√ß√µes para o mesmo
 
 		Object src = acao.getSource();
 

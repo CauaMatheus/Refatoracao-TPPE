@@ -2,7 +2,7 @@ package control;
 
 import modelo.Ingresso;
 
-/**Faz a comunicaÁ„o com a classe modelo para manipular dados do Ingresso
+/**Faz a comunica√ß√£o com a classe modelo para manipular dados do Ingresso
  * @version 1.0
  * @author Pedro V.
  * @since Out 2021
@@ -15,7 +15,7 @@ public class ControleIngresso {
 	private int QntIngressos;
 
 	/**
-	 * MÈtodo para guardar os ingressos
+	 * M√©todo para guardar os ingressos
 	 * 
 	 * @author Pedro V.
 	 * @param d ControleDados - Chama a classe que possui os gets e sets do dado
@@ -26,14 +26,14 @@ public class ControleIngresso {
 
 	}
 
-	// Array de String que ir· aparecer no Jlist
+	// Array de String que ir√° aparecer no Jlist
 
 	/**
-	 * Cria um array de string com os nomes dos filmes dentro do ingresso que ir·
+	 * Cria um array de string com os nomes dos filmes dentro do ingresso que ir√°
 	 * para aparecer na jlist
 	 * 
 	 * @author Pedro V.
-	 * @return s - Lista com os nomes dos filmes na mesma posiÁ„o no array de
+	 * @return s - Lista com os nomes dos filmes na mesma posi√ß√£o no array de
 	 *         Ingresso
 	 */
 	public String[] getNomeIngresso() {
@@ -46,14 +46,14 @@ public class ControleIngresso {
 
 	}
 
-	// FunÁ„o pesquisar
+	// Fun√ß√£o pesquisar
 
 	/**
 	 * Array de strings, pesquisa se no array de ingresso possui a string pesquisada
-	 * exibindo o FILME no qual o espectadore est· cadastrado
+	 * exibindo o FILME no qual o espectadore est√° cadastrado
 	 * 
 	 * @author Pedro V.
-	 * @return s - Lista com os nomes dos filmes na mesma posiÁ„o no array de
+	 * @return s - Lista com os nomes dos filmes na mesma posi√ß√£o no array de
 	 *         Ingresso
 	 * @param pesIn a
 	 */

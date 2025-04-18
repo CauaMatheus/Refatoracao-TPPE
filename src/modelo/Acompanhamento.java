@@ -1,5 +1,5 @@
 package modelo;
-/**Classe de construção do Objto Acompanhamento
+/**Classe de construÃ§Ã£o do Objto Acompanhamento
  * @version 2.0
  * @author Pedro V.
  * @since Out 2021
@@ -15,7 +15,7 @@ public class Acompanhamento {
 
 	// Construtor
 
-	/** Método construct de Acompanhamento
+	/** MÃ©todo construct de Acompanhamento
 	 * @author Pedro V.
 	 * @param name String - Nome do produto
 	 * @param valor double - valor do produto

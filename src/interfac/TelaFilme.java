@@ -1,6 +1,6 @@
 package interfac;
 
-/**Tela de que ir· mostrar os dados cadastrados no jlist, dar refresh e estabelecer o pesquisador
+/**Tela de que ir√° mostrar os dados cadastrados no jlist, dar refresh e estabelecer o pesquisador
  * @version 1.0
  * @author Pedro V.
  * @since Out 2021
@@ -54,11 +54,11 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	private String[] listaNomes = new String[100];
 
 	/**
-	 * Cria a tela pra mostrar os dados no jlist com botıes e o pesquisador
+	 * Cria a tela pra mostrar os dados no jlist com bot√µes e o pesquisador
 	 * 
 	 * @author Pedro V.
 	 * @param d   ControleDado - Manipular os dados do array
-	 * @param esc int - Indica qual tela ser· mostrada de Filme, espectador ou
+	 * @param esc int - Indica qual tela ser√° mostrada de Filme, espectador ou
 	 *            ingresso
 	 */
 
@@ -225,16 +225,16 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	@Override
 	// Captura de enventos
 	/**
-	 * MÈtodo que executa uma aÁ„p de acordo com o evento escutado em um elemento do
+	 * M√©todo que executa uma a√ß√£p de acordo com o evento escutado em um elemento do
 	 * jlist selecionado
 	 * 
 	 * @author Pedro V.
-	 * @param acao ActionSelectionEvent - AÁ„o escutada pelo ListSelectionListener
+	 * @param acao ActionSelectionEvent - A√ß√£o escutada pelo ListSelectionListener
 	 */
 	public void valueChanged(ListSelectionEvent acao) {
 		Object src = acao.getSource();
 
-		// ConsequÍncia gatilhos
+		// Consequ√™ncia gatilhos
 		if (acao.getValueIsAdjusting() && src == listaMovie) {
 			new TelaEdit().inserirEditar(4, dados, this, listaMovie.getSelectedIndex());
 		}
@@ -250,18 +250,18 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 
 	@Override
 
-	// Gatilho botıes
+	// Gatilho bot√µes
 	/**
-	 * MÈtodo que executa uma aÁ„o de acordo com o evento escutado. Por aqui ser·
-	 * realizado o cadastro, ediÁ„o ou remoÁ„o dos dados
+	 * M√©todo que executa uma a√ß√£o de acordo com o evento escutado. Por aqui ser√°
+	 * realizado o cadastro, edi√ß√£o ou remo√ß√£o dos dados
 	 * 
 	 * @author Pablo C e Pedro V.
-	 * @param acao ActionEvent - AÁ„o escutada pelo ActionListener
+	 * @param acao ActionEvent - A√ß√£o escutada pelo ActionListener
 	 */
 	public void actionPerformed(ActionEvent acao) {
 		Object gatilho = acao.getSource();
 
-		// Gatilhos para a pagina filme -> ExibiÁ„o, Cadastro, Edit e Busca
+		// Gatilhos para a pagina filme -> Exibi√ß√£o, Cadastro, Edit e Busca
 
 		if (gatilho == cadastroFilme) {
 			new TelaEdit().inserirEditar(1, dados, this, 0);
@@ -281,7 +281,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 
 		}
 
-		// Gatilhos para a pagina espectador -> ExibiÁ„o, Cadastro e Edit
+		// Gatilhos para a pagina espectador -> Exibi√ß√£o, Cadastro e Edit
 
 		if (gatilho == cadastroEspectador) {
 			new TelaEdit().inserirEditar(2, dados, this, 0);
@@ -298,7 +298,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 
 		}
 
-		// Gatilhos para a pagina ingresso -> ExibiÁ„o, Cadastro e Edit
+		// Gatilhos para a pagina ingresso -> Exibi√ß√£o, Cadastro e Edit
 
 		if (gatilho == cadastroIngresso) {
 			new TelaEdit().inserirEditar(3, dados, this, 0);

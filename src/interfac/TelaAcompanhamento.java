@@ -1,6 +1,6 @@
 package interfac;
 
-/**Tela de que ir· mostrar os dados cadastrados no jlist, dar refresh e estabelecer pesquisador dos acompanhamentos
+/**Tela de que ir√° mostrar os dados cadastrados no jlist, dar refresh e estabelecer pesquisador dos acompanhamentos
  * @version 1.0
  * @author Pedro V.
  * @since Out 2021
@@ -44,7 +44,7 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 	private String[] listaNomes = new String[100];
 
 	/**
-	 * Cria a tela pra mostrar os dados de acompanhamento no jlist com botıes e o
+	 * Cria a tela pra mostrar os dados de acompanhamento no jlist com bot√µes e o
 	 * pesquisador
 	 * 
 	 * @author Pedro V.
@@ -108,16 +108,16 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 	// Captura de enventos
 	@Override
 	/**
-	 * MÈtodo que executa uma aÁ„p de acordo com o evento escutado em um elemento do
+	 * M√©todo que executa uma a√ß√£p de acordo com o evento escutado em um elemento do
 	 * jlist selecionado
 	 * 
 	 * @author Pedro V.
-	 * @param acao ActionSelectionEvent - AÁ„o escutada pelo ListSelectionListener
+	 * @param acao ActionSelectionEvent - A√ß√£o escutada pelo ListSelectionListener
 	 */
 	public void valueChanged(ListSelectionEvent acao) {
 		Object src = acao.getSource();
 
-		// ConsequÍncia gatilho lista
+		// Consequ√™ncia gatilho lista
 		if (acao.getValueIsAdjusting() && src == listaAcompanhamentos) {
 			new TelaEditCad().inserirEditar(2, dados, this, listaAcompanhamentos.getSelectedIndex());
 		}
@@ -125,15 +125,15 @@ public class TelaAcompanhamento implements ActionListener, ListSelectionListener
 
 	}
 
-	// Gatilho botıes
+	// Gatilho bot√µes
 
 	@Override
 	/**
-	 * MÈtodo que executa uma aÁ„o de acordo com o evento escutado. Por aqui ser·
-	 * feita a aÁ„o de cadastro e atualizaÁ„o do jlist pelo refresh
+	 * M√©todo que executa uma a√ß√£o de acordo com o evento escutado. Por aqui ser√°
+	 * feita a a√ß√£o de cadastro e atualiza√ß√£o do jlist pelo refresh
 	 * 
 	 * @author Pedro V.
-	 * @param acao ActionEvent - AÁ„o escutada pelo ActionListener
+	 * @param acao ActionEvent - A√ß√£o escutada pelo ActionListener
 	 */
 	public void actionPerformed(ActionEvent acao) {
 		Object gatilho = acao.getSource();
