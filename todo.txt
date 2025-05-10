@@ -1,0 +1,20 @@
+Ponto de Controle 1 – Estrutura Padrão (07/04)
+Foco: Documentação + Infra
+
+Entregáveis:
+1. Documentação
+                                                                                                                                                            - UML
+- Backlog
+	                                                                                                                                                → História de Usuário - trello/jira/markdown
+	                                                                                                                                                                → Exemplos: Repositório Requisitos ou IHC do Guardiões da Saúde do professor
+
+2. Infra
+                                                                                                                                                        - Docker compose
+                                                                                                                                                        → Banco de Dados - Conexão com a “IDE(workbench/pyadmin/DBeaver)”
+                                                                                                                                                        → Testes TDD (unitário) → Ignorados
+                                                                                                                                                        → “Hello World” com o framework que escolheu para o back
+- Github
+	→ Readme com link para todos os documentos
+	→ Padrão de commit: “feat(docs <nome doc>): <comentário>”... “fix(docs):” “feat(tests):” “feat(infra):”...
+	→ Lint: Adicional
+	→ Ex estrutura: Repositório Amis Service do prof. (repository, schema, MVC)
